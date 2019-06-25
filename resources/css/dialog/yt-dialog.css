@@ -1,0 +1,65 @@
+@charset "utf-8";
+/**
+ * 
+ * 
+ * C(12)提示框工具样式
+ * 
+ * 
+ */
+/**
+ *内容超出截取显示...样式 
+ */
+.yt-dialog {
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+/**
+ * 提示框div上边框背景图
+ */
+.yt-dialog-help-up {
+	background: url(../../images/dialog/help_t1.png) left top no-repeat;
+}
+/**
+ *提示框div下边框背景图 
+ */
+.yt-dialog-help-down {
+	background: url(../../images/dialog/help_t2.png) left top no-repeat;
+}
+/**
+ *提示框div上变宽底部div的背景图(箭头向上背景图)
+ */
+.yt-dialog-help-up .yt-dialog-bottom {
+	height: 22px;
+	background: url(../../images/dialog/help_b1.png) left top no-repeat;
+}
+/**
+ *提示框div定位 
+ */
+#yt-dialog-modle {
+	position: absolute;
+	z-index: 100;
+}
+
+#yt-dialog-modle .yt-dialog-heard {
+	margin-top: 7px;
+}
+/**
+ *提示框div下边框下底部div的背景图(箭头向下)
+ */
+.yt-dialog-help-down .yt-dialog-bottom {
+	height: 9px;
+	background: url(../../images/dialog/help_b2.png) left top no-repeat;
+}
+/**
+ *提示框内容显示div样式 
+ */
+#yt-dialog-modle .yt-dialog-content {
+	line-height: 21px;
+    padding: 0px 8px;
+    width: 260px;
+    margin-top: 10px;
+	background:url(../../images/dialog/cont.png)repeat-y;
+}

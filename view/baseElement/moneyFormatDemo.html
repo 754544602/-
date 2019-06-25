@@ -1,0 +1,118 @@
+<script type="text/javascript" src="./resources/wordShow/Scripts/shCore.js"></script>
+
+<div class="web-criterion-model">
+	<div class="method-text">金额格式化处理：</div>
+	<p>1.注意事项:</p>
+	<div>
+		<p style="font-weight: normal;">
+			<span style="color:red;font-size: 16px;font-weight: bold;">
+				在给后台传输金额数据时,应该还原被格式的数据进行传值.
+			</span>
+		</p>
+	</div>
+	<p>2.调用方法:</p>
+	<div class="label-code-div-first" style="height: auto">
+		<table class="yt-table">
+			<thead class="yt-thead the-inner">
+				<tr>
+					<th width="200px">方法名</th>
+					<th width="300px">参数</th>
+					<th width="450px">参数说明</th>
+				</tr>
+			</thead>
+			<tbody class="yt-tbody">
+				<tr>
+					<td rowspan="2">
+						<div>
+							$yt_baseElement.fmMoney(s,n)<br />
+							格式化金额方法
+						</div>
+					</td>
+					<td>s</td>
+					<td>要格式化的金额字符串</td>
+				</tr>
+				<tr>
+					<td>n</td>
+					<td>小数点保留小数位数</td>
+				</tr>
+				<tr>
+					<td>
+						<span>$yt_baseElement.rmoney(s)</span><br />
+						还原金额格式化的方法
+					</td>
+					<td>s</td>
+					<td>要还原格式化的金额字符串</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!--基础表单标签规范START-->
+	<p>3.代码展现:</p>
+	<div class="label-code-div" style="height: auto;">
+		<textarea cols="50" rows="15" name="code" class="javaScript">
+		 <table>
+  	      <tr>
+  	      	   <td align="right">金额：</td>
+  	      	   <td>
+  	      	   	   <input type="text" class="yt-input money" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+  	      	   </td>
+  	      </tr>
+	  </table>
+	      <script type="text/javascript">
+				$(function(){
+					/**
+					 * 金额文本框获取焦点事件
+					 */
+					$(".money").on("focus",function(){
+						if($(this).val()!=""){
+							//调用还原格式化的方法
+						   $(this).val($yt_baseElement.rmoney($(this).val()));
+						}
+					});
+					/**
+					 * 金额文本框失去焦点事件
+					 */
+					$(".money").on("blur",function(){
+						if($(this).val()!=""){
+							//调用格式化金额方法
+							$(this).val($yt_baseElement.fmMoney($(this).val()));
+						}
+					});
+				});
+		 </script>
+		</textarea>
+	</div>
+	<p>4.文本框输入,格式化金额内容展示效果:</p>
+	<div class="base-form-model" style="padding-bottom: 30px;">
+	      <table>
+	      	      <tr>
+	      	      	   <td align="right">金额：</td>
+	      	      	   <td>
+	      	      	   	   <input type="text" class="yt-input money" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+	      	      	   </td>
+	      	      </tr>
+	      </table>
+	</div>
+<script type="text/javascript">
+	$(function(){
+		/**
+		 * 金额文本框获取焦点事件
+		 */
+		$(".money").on("focus",function(){
+			if($(this).val()!=""){
+				//调用还原格式化的方法
+			   $(this).val($yt_baseElement.rmoney($(this).val()));
+			}
+		});
+		/**
+		 * 金额文本框失去焦点事件
+		 */
+		$(".money").on("blur",function(){
+			if($(this).val()!=""){
+				//调用格式化金额方法
+				$(this).val($yt_baseElement.fmMoney($(this).val()));
+			}
+		});
+	});
+</script>
+</div>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+<div class="web-criterion-model">
+			<div class="method-text">滚动条：</div>
+			<p>1.使用说明:</p>
+			<div>
+				  <p style="font-weight: normal;">
+				  	<span>(1).需要引用独立的类样式文件：</span>
+				  	<span style="color:red;font-size: 16px;font-weight: bold;">jquery.mCustomScrollbar.css</span>
+				  </p>
+				  <p style="font-weight: normal;">
+				  	<span>(2).需要引用独立的js文件：</span>
+				  	<span style="color:red;font-size: 16px;font-weight: bold;">jquery.mCustomScrollbar.concat.min.js</span>
+				  </p>
+				  <p style="font-weight: normal;">(3).给需要设置滚动条的区域加上样式height和overflow:auto样式</p>
+				  <p style="font-weight: normal;">(4).如框架级项目,主体页面引用资源文件了,其他子页面使用就不要再次引用资源文件,直接调用方法</p>
+			</div>
+			<p>2.调用方法:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">方法名</th>
+							<th width="300px">参数类型</th>
+							<th width="580px">参数描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div>$(".yt-scroll-model").mCustomScrollbar();</div></td>
+							<td><div>obj</div></td>
+							<td>
+								autoHideScrollbar:true自适应隐藏,支持悬浮显示<br/>
+								theme:"square"滚动条样式,方形or圆形rounded
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div">
+			<textarea cols="50" rows="15" name="code" class="javaScript" >
+			<div class="yt-scroll-model">
+		    	<p style="padding-right: 10px;">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Donec in ligula id sem tristique ultrices eget id neque.
+							Duis enim turpis, tempus at accumsan vitae, lobortis id sapien.
+							Pellentesque nec orci mi, in pharetra ligula. Nulla facilisi.
+							Nulla facilisi. Mauris convallis venenatis massa, 
+							quis consectetur felis ornare quis. 
+							Sed aliquet nunc ac ante molestie ultricies. 
+							Nam pulvinar ultricies bibendum. Vivamus diam leo, 
+							faucibus et vehicula eu, molestie sit amet dui. 
+							Proin nec orci et elit semper ultrices. 
+							Cum sociis natoque penatibus et magnis dis parturient montes, 
+							nascetur ridiculus mus. 
+							Sed quis urna mi, ac dignissim mauris. Quisque mollis ornare mauris, 
+							sed laoreet diam malesuada quis. 
+							Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. 
+							Vestibulum nec risus eu lacus semper viverra. Lorem ipsum dolor sit amet, 
+							consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque. 
+							Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. 
+							Pellentesque nec orci mi, 
+							in pharetra ligula. Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, 
+							quis consectetur felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. 
+							Nam pulvinar ultricies bibendum. Vivamus diam leo, faucibus et vehicula eu, 
+							molestie sit amet dui. 
+							Proin nec orci et elit semper ultrices. 
+							Cum sociis natoque penatibus et magnis dis parturient montes, 
+							nascetur ridiculus mus. Sed quis urna mi, ac dignissim mauris. 
+							Quisque mollis ornare mauris, 
+							sed laoreet diam malesuada quis. 
+							Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. 
+							Vestibulum nec risus eu lacus semper viverra.
+						</p>
+		    </div>
+			<script type="text/javascript">
+				$(function() {
+					 //调用生成滚动条方法
+					$(".yt-scroll-model").mCustomScrollbar({
+						autoHideScrollbar:true,
+						theme:"square"
+					});
+				});
+			</script>
+			</textarea>
+			</div>
+			<p>3.鼠标悬浮显示滚动条展示效果:</p>
+			<div class="yt-scroll-model">
+				<p style="padding-right: 10px;"> 
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. Pellentesque nec orci mi, in pharetra ligula. Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis consectetur felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar ultricies bibendum. Vivamus diam leo, faucibus et vehicula eu, molestie sit amet dui. Proin nec orci et elit semper ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed quis urna mi, ac dignissim mauris. Quisque mollis ornare mauris, sed laoreet diam malesuada quis. Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. Vestibulum nec risus eu lacus semper viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. Pellentesque nec orci mi, in pharetra ligula. Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis consectetur felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar ultricies bibendum. Vivamus diam leo, faucibus et vehicula eu, molestie sit amet dui. Proin nec orci et elit semper ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed quis urna mi, ac dignissim mauris. Quisque mollis ornare mauris, sed laoreet diam malesuada quis. Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. Vestibulum nec risus eu lacus semper viverra.
+				</p>
+		    </div>
+		    <div class="method-text" style="margin-top: 25px;">初始显示滚动条：</div>
+		    <p>1.初始显示滚动条代码展现:</p>
+		    <div class="label-code-div">
+		    	 <textarea cols="50" rows="15" name="code" class="javaScript" >
+		    	 	       <div class="default-scroll-model" style="width: 400px;height: 300px;padding: 10px;overflow: auto;">
+						    	 <p style="padding-right: 10px;">
+						    	 	央视网消息(新闻联播)：中共中央总书记、国家主席、中央军委主席、中央财经领导小组组长习近平7月17日下午主持召开中央财经领导小组第十六次会议，研究改善投资和市场环境、扩大对外开放问题。习近平发表重要讲话强调，要改善投资和市场环境，加快对外开放步伐，降低市场运行成本，营造稳定公平透明、可预期的营商环境，加快建设开放型经济新体制，推动我国经济持续健康发展。
+				中共中央政治局常委、国务院总理、中央财经领导小组副组长李克强，中共中央政治局常委、国务院副总理、中央财经领导小组成员张高丽出席会议。
+				会议分别听取了国家发展改革委关于对外商投资实行准入前国民待遇加负面清单管理模式、商务部关于推动贸易平衡和中美双边投资有关问题、人民银行关于完善人民币汇率形成机制和扩大金融业对外开放的汇报。领导小组成员进行了讨论。
+				习近平在讲话中指出，我们提出建设开放型经济新体制，一个重要目的就是通过开放促进我们自身加快制度建设、法规建设，改善营商环境和创新环境，降低市场运行成本，提高运行效率，提升国际竞争力。外商投资推动了资源合理配置，促进了市场化改革，对我国经济发展发挥了重要作用。推进供给侧结构性改革，实现经济向更高形态发展，跟上全球科技进步步伐，都要继续利用好外资。要加快放开育幼养老、建筑设计、会计审计、商贸物流、电子商务，以及一般制造业和服务业等竞争性领域对外资准入限制和股比限制。要尽快在全国推行自由贸易试验区试行过的外商投资负面清单。
+						    	 </p>
+						   </div>
+						   <script type="text/javascript">
+							$(function() {
+								//调用生成滚动条方法
+								$(".default-scroll-model").mCustomScrollbar();
+							});
+							</script>	
+		    	 </textarea>
+		    </div>
+		    <p>2.初始显示滚动条展示效果:</p>
+		    <div class="default-scroll-model" style="width: 400px;height: 300px;padding: 10px;overflow: auto;">
+		    	 <p style="padding-right: 10px;">
+		    	 	央视网消息(新闻联播)：中共中央总书记、国家主席、中央军委主席、中央财经领导小组组长习近平7月17日下午主持召开中央财经领导小组第十六次会议，研究改善投资和市场环境、扩大对外开放问题。习近平发表重要讲话强调，要改善投资和市场环境，加快对外开放步伐，降低市场运行成本，营造稳定公平透明、可预期的营商环境，加快建设开放型经济新体制，推动我国经济持续健康发展。
+中共中央政治局常委、国务院总理、中央财经领导小组副组长李克强，中共中央政治局常委、国务院副总理、中央财经领导小组成员张高丽出席会议。
+会议分别听取了国家发展改革委关于对外商投资实行准入前国民待遇加负面清单管理模式、商务部关于推动贸易平衡和中美双边投资有关问题、人民银行关于完善人民币汇率形成机制和扩大金融业对外开放的汇报。领导小组成员进行了讨论。
+习近平在讲话中指出，我们提出建设开放型经济新体制，一个重要目的就是通过开放促进我们自身加快制度建设、法规建设，改善营商环境和创新环境，降低市场运行成本，提高运行效率，提升国际竞争力。外商投资推动了资源合理配置，促进了市场化改革，对我国经济发展发挥了重要作用。推进供给侧结构性改革，实现经济向更高形态发展，跟上全球科技进步步伐，都要继续利用好外资。要加快放开育幼养老、建筑设计、会计审计、商贸物流、电子商务，以及一般制造业和服务业等竞争性领域对外资准入限制和股比限制。要尽快在全国推行自由贸易试验区试行过的外商投资负面清单。
+		    	 </p>
+		    </div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+	<script type="text/javascript">
+	$(function() {
+		//动态引用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path; 
+		 //调用滚动条方法(鼠标显示滚动条)
+		$(".yt-scroll-model").mCustomScrollbar({
+			autoHideScrollbar:true,
+			theme:"square"
+		});
+		//默认初始显示的
+		$(".default-scroll-model").mCustomScrollbar();
+	});
+	</script>	
+

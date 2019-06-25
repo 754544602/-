@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html  style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta charset="UTF-8">
+		<!--引用CSS文件START-->
+		<link rel="stylesheet" type="text/css" href="./resources/css/common/homePage.min.css?YTVERSIONCODE=2018111901" />
+		<!--引用CSS文件END-->
+		<title>前端开发体系建设平台</title>
+	</head>
+
+	<body style="height: auto;">
+		<div class="body-div">
+			<div class="basic-div">
+				<div class="introduce-div clearfix">
+					<div class="introduce-content">
+						<div class="introduce-title">
+							平台介绍
+						</div>
+					    <p class="introduce-text">&nbsp;&nbsp;&nbsp;&nbsp;本平台现有基础元素、控件、通用、常规业务规范四大主要内容。其中：</p>
+					    <p class="introduce-text">&nbsp;&nbsp;&nbsp;&nbsp;基础元素项：<span class="color-or">金额输入框</span>、<span  class="color-or">单选按钮</span>、<span class="color-or">多选按钮</span>、<span class="color-or">下拉列表</span>、<span class="color-or">表格</span>
+					           、<span class="color-or">标题</span>、<span class="color-or">页面公用样式</span>...</p>
+					    <p class="introduce-text">&nbsp;&nbsp;&nbsp;&nbsp;控件项：<span class="color-or">分页</span>、<span class="color-or">提示工具</span>、<span class="color-or">日期选择框</span>、<span class="color-or">树形列表</span>、<span class="color-or">弹出框</span>
+					          、<span class="color-or">工作流相关</span>、<span class="color-or">上传附件</span>、<span class="color-or">高级查询</span>、<span class="color-or">人员多选可搜索</span>...</p>
+					    <p class="introduce-text">&nbsp;&nbsp;&nbsp;&nbsp;通用项：<span class="color-or">iframe框架嵌套页面跳转方式</span>、<span class="color-or">form表单设置值和取值方式</span>...给出在iframe嵌套框架下,页面跳转的几种方法。form表单字段赋值和取值封装公用方法的使用方式。</p>
+					    <p class="introduce-text">&nbsp;&nbsp;&nbsp;&nbsp;常规业务规范项：<span class="color-or">金额字段处理</span>、<span class="color-or">字段空值处理</span>、<span class="color-or">功能按钮操作禁用</span>...规范开发人员的开发习惯和统一系统的常规业务。</p>
+					    <p class="introduce-text" style="font-weight: bold;">开发人员必须使用平台中列举的基础元素项、控件项，并且要严格遵守常规业务规范、开发规范项。</p>
+					</div>
+					<!--<div class="introduce-icon">
+						<div class="home-hello-bg"></div>
+						<div style="text-align: right;padding-top: 40px;padding-right: 7px;">
+							<p>如有问题或好的建议,请以邮件方式进行反馈</p>
+							<p style="margin-bottom: 10px;"><a class="yt-link problem-link">问题反馈表.xlsx</a></p>
+							<p>解决方案部-叶玉玲</p>
+							<p style="color: #179ee8;">yeyuling@yitiangroup.com.cn</p>
+						</div>
+					</div>-->
+				</div>
+				<div class="statistics-div">
+					<div class="clearfix">
+						<div class="statistics-label">
+							<div class="statistics-icon index-B">
+							</div>
+							<div class="text-one">
+								基础元素（B）
+							</div>
+							<div class="text-two">
+								数量：17个
+							</div>
+							<!--<div class="text-three">
+								<span style="font-weight: bold;">浏览量</span> <span style="color: #ff884d;font-weight: bold;">20</span> <span style="color: #888;">次</span>
+							</div>-->
+						</div>
+						<div class="statistics-label" style="margin-left: 14px;">
+							<div class="statistics-icon index-C">
+							</div>
+							<div class="text-one">
+								控件（C）
+							</div>
+							<div class="text-two">
+								数量：27个
+							</div>
+							<!--<div class="text-three">
+								<span style="font-weight: bold;">浏览量</span> <span style="color: #ff884d;font-weight: bold;">30</span> <span style="color: #888;">次</span>
+							</div>-->
+						</div>
+					</div>
+					<div class="clearfix" style="margin-top: 12px;">
+						<div class="statistics-label">
+							<div class="statistics-icon index-G">
+							</div>
+							<div class="text-one">
+								通用（G）
+							</div>
+							<div class="text-two">
+								数量：3个
+							</div>
+							<!--<div class="text-three">
+								<span style="font-weight: bold;">浏览量</span> <span style="color: #ff884d;font-weight: bold;">10</span> <span style="color: #888;">次</span>
+							</div>-->
+						</div>
+						<div class="statistics-label" style="margin-left: 14px;">
+							<div class="statistics-icon index-CB">
+							</div>
+							<div class="text-one">
+								常规业务规范（CB）
+							</div>
+							<div class="text-two">
+								数量：8个
+							</div>
+							<!--<div class="text-three">
+								<span style="font-weight: bold;">浏览量</span> <span style="color: #ff884d;font-weight: bold;">25</span> <span style="color: #888;">次</span>
+							</div>-->
+						</div>
+					</div>
+					<!--动态浏览信息START-->
+					<!--<div class="massage-text yt-text-overflow">
+						<ul class="yt-text-roll">
+		           			 <li>1小时前，叶玉玲浏览了CB05弹出框表单端初始化设置常规业务规范项。</li>
+		       			 </ul>
+					</div>-->
+					<!--动态浏览信息END-->
+					<div class="down-frame-model">
+						<div>
+							<span class="yt-read-text" style="float: left;display: inline;margin-top: 10px;">下载最新的框架包：</span>
+							<a class="frame-a"></a>
+						</div>
+						<div style="clear: both;"></div>
+						<div style="margin-top: 10px;">
+							<span class="yt-read-text" style="display: block;margin-bottom: 5px;">下载最新的UE原型设计元件库：</span>
+							<a class="yt-link ue-a" style="color: #58b7ad;">UE原型设计元件库V1.1.2.rplib</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="con-model-list">
+				<div class="statistics-label">
+					<div class="statistics-icon">
+						<img src="resources/images/common/index-B.png" />
+					</div>
+					<div class="text-one">
+						基础元素（B）
+					</div>
+					<div class="text-two">
+						数量：15个
+					</div>
+				</div>
+				<div class="statistics-label" style="margin-left: 14px;">
+							<div class="statistics-icon">
+								<img src="resources/images/common/index-C.png" />
+							</div>
+							<div class="text-one">
+								控件（C）
+							</div>
+							<div class="text-two">
+								数量：20个
+							</div>
+						</div>
+					</div>
+					<div class="clearfix" style="margin-top: 12px;">
+						<div class="statistics-label">
+							<div class="statistics-icon">
+								<img src="resources/images/common/index-G.png" />
+							</div>
+							<div class="text-one">
+								通用（G）
+							</div>
+							<div class="text-two">
+								数量：3个
+							</div>
+						</div>
+						<div class="statistics-label" style="margin-left: 14px;">
+							<div class="statistics-icon">
+								<img src="resources/images/common/index-CB.png" />
+							</div>
+							<div class="text-one">
+								常规业务规范（CB）
+							</div>
+							<div class="text-two">
+								数量：8个
+							</div>
+						</div>
+			</div>-->
+			<div class="content-div">
+				<div class="left-div">
+					<div class="content-title title-one-bg">
+						热门项
+					</div>
+					<div class="content-box clearfix">
+						<div class="model-list">
+							<ul class="model-ul-b">
+								<!--<li><span>(B01)输入文本框</span></li>
+								<li><span>(B01)输入文本框</span></li>-->
+							</ul>
+						</div>
+						<div class="model-list">
+							<ul class="model-ul-c">
+								<!--<li><span>(B01)输入文本框</span></li>
+								<li><span>(B01)输入文本框</span></li>-->
+							</ul>
+						</div>
+						<div class="model-list">
+							<ul class="model-ul-cb">
+								<!--<li><span>(B01)输入文本框</span></li>
+								<li><span>(B01)输入文本框</span></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="right-div">
+					<div class="content-title title-two-bg">
+						当前版本信息
+					</div>
+					<div class="version-info">
+						<span>版本更新日期：2019-06-20</span><br />
+					</div>
+					<div class="content-version" style="overflow: auto;">
+						<ul>
+                            <li style="font-weight: bold;">【基础元素】完善项如下：</li>
+                            <li>1.(B01)文本输入框   (规范和优化示例代码,修改基础表单布局示例效果)</li>
+							<li>2.(B02)下拉列表     (规范和优化示例代码)</li>
+							<li>3.(B03)按钮         (规范并完善示例代码,优化显示效果,新增"局部按钮居中显示效果"和全局按钮显示效果)</li>
+							<li>4.(B04)表格         (规范并完善示例代码,优化显示效果)</li>
+							<li>5.(B05)单选按钮     (规范并完善示例代码,新增"单选切换效果"示例代码)</li>
+							<li>6.(B09)文本域       (规范并完善示例代码和显示效果)</li>
+							<li>7.(B14)列表无数据   (规范"表格拼接暂无数据"示例代码)</li>
+							<li>8.(B16)标题         (规范示例代码)</li>
+							<li>9.(B17)页面公用样式 (标签公用样式新增"默认提示信息文本样式")</li>
+							<li style="font-weight: bold;margin-top: 10px;">【控件】完善项如下：</li>
+							<li>1.(C01)横向Tab    (规范"审批列表页面Tab标签"示例代码)</li>
+							<li>2.(C02)分页       (规范示例代码,加上引用资源文件的示例代码)</li>
+							<li>3.(C07)日期选择框 (规范示例代码,加上引用资源文件的示例代码)</li>
+							<li>4.(C08)树形列表   (规范示例代码,加上引用资源文件的示例代码)</li>
+							<li>5.(C14)文本编辑器 (规范并完善示例代码,新增初始化编辑器Js文件和方法)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-div">
+				<span>当前版本号：V1.1.3.58001</span>
+				<!--<span style="margin-left: 20px;">最近一次升级日期：2018-11-19</span>-->
+				<span style="float: right;">copyright&copy;2018-2022 中科倚天（北京）信息科技有限公司</span>
+			</div>
+		</div>
+	</body>
+	<!--引用JS文件START-->
+	<script type="text/javascript" src="./resources/js/common/jquery.min.js"></script>
+	<script type="text/javascript" src="./resources/js/common/yt-option.js?YTVERSIONCODE=2018111901"></script>
+	<!--引用换肤js-->
+	<script type="text/javascript" src="./resources/js/common/yt-changeTheme.min.js?YTVERSIONCODE=2018122801"></script>
+	<script type="text/javascript" src="./resources/js/common/yt-common.min.js?YTVERSIONCODE=2018111901"></script>
+	<script type="text/javascript" src="./resources/js/common/yt-frame.min.js?YTVERSIONCODE=2018111901"></script>
+	<script type="text/javascript" charset="utf-8" src="./resources/js/common/homePage.min.js?YTVERSIONCODE=2019041601" ></script>
+	<!--引用JS文件END-->
+
+</html>

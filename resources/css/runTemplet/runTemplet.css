@@ -1,0 +1,56 @@
+@charset "utf-8";
+body {
+	background: #FFFFFF !important;
+}
+
+#applition {
+	float: left;
+	display: inline;
+	margin-top: 30px;
+	width: 100%;
+	height: auto;
+	overflow: scroll;
+	border: 0;
+}
+
+.left-code-model {
+	float: left;
+	display: inline;
+	width: 48%;
+	height: auto;
+	border: 1px solid #E5E5E5;
+	border-right: 0px;
+}
+
+.left-code-model .code-title,
+.right-show-model .show-title {
+	height: 50px;
+	line-height: 50px;
+	padding: 15px 10px 0px 10px;
+	background: #f3f3f3;
+}
+
+.left-code-model .code-info {
+	padding: 10px;
+}
+
+.main .title-text {
+	float: left;
+	display: inline;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.left-code-model .run-btn {
+	float: right;
+	display: inline;
+}
+
+.right-show-model {
+	float: left;
+	display: inline;
+	width: 48%;
+	height: 100%;
+	border: 1px solid #E5E5E5;
+}

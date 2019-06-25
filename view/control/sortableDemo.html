@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">表格数据拖拽排序：</div>
+			<!--基础表单标签规范START-->
+			<p>1.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.nodrag</div>
+							</td>
+							<td>
+								<div>禁止拖动的行样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.nodrop</div>
+							</td>
+							<td>
+								<div>拖拽时不能落下的行</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.ondragclass {
+				background-color: #418dcc;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="tablednd" border="0" cellspacing="0" cellpadding="0">
+			<!--nodrop:禁止落下  nodrag:禁止拖拽 -->
+			<tr class="nodrop nodrag">
+				<th>序号</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+				<th>电话</th>
+				<th>地址</th>
+			</tr>
+			<tr class="nodrop">
+				<td>1</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>20</td>
+				<td>15310219852</td>
+				<td>北京市通州区</td>
+			</tr>
+			<tr class="nodrag">
+				<td>2</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>20</td>
+				<td>15310219852</td>
+				<td>北京市通州区</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>20</td>
+				<td>15310219852</td>
+				<td>北京市通州区</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>20</td>
+				<td>15310219852</td>
+				<td>北京市通州区</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>20</td>
+				<td>15310219852</td>
+				<td>北京市通州区</td>
+			</tr>
+		</table>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/yt-sortable.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#tablednd').tableDnD({
+				onDragClass: "ondragclass",  //在拖动的持续时间中添加该类，然后在该行被删除时移除
+				onDrop: function(table, row) {  //传递一个函数，当该行被拖拽结束时将被调用。该函数需要2个参数：结束拖动的表和行
+					var rows = table.tBodies[0].rows; //获取tbody 的行数
+					var debugStr = "拖拽结束后的行：" + row.id;
+					for(var i = 0; i < rows.length; i++) {
+						debugStr += rows[i].id + " ";
+					}
+					console.log(debugStr);
+				},
+				onDragStart: function(table, row) { //开始拖动时调用的函数。该函数需要2个参数：开始拖动的表和行
+					console.log("当前拖拽的表格行：" + row.id);
+				}
+			});
+		});
+	</script>
+</html>
+			</textarea>
+			</div>
+			<p>3.调用方法:</p>
+			<div class="method-show-div">$('#tablednd').tableDnD();</div>
+			<p>4.方法参数说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">参数名</th>
+							<th width="300px">类型/默认值</th>
+							<th width="400px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>onDragClass</div>
+							</td>
+							<td>
+								<div>string类型;默认: ''</div>
+							</td>
+							<td>
+								<div>设定拖拽期间的类样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>onDragStart</div>
+							</td>
+							<td>
+								<div>function类型;默认function(){}</div>
+							</td>
+							<td>
+								<div>开始拖动时调用的函数。该函数需要2个参数：开始拖动的表和行</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>onDrop</div>
+							</td>
+							<td>
+								<div>function类型;默认function(){}</div>
+							</td>
+							<td>
+								<div>结束拖动时调用的函数。该函数需要2个参数：结束拖动的表和行</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>5.展示效果:</p>
+			<!--提示框规范START-->
+			<div class="model-criterion" style="width: 90%;padding-bottom: 50px;">
+				<table id="tablednd" class="yt-table" border="0" cellspacing="0" cellpadding="0" width="100%">
+					<!--nodrop:禁止落下  nodrag:禁止拖拽 -->
+					<thead class="yt-thead">
+						<tr class="nodrop nodrag">
+							<th>序号</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>年龄</th>
+							<th>电话</th>
+							<th>地址</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr class="nodrop">
+							<td>1(禁止落下)</td>
+							<td>张三</td>
+							<td>男</td>
+							<td>20</td>
+							<td>15310219852</td>
+							<td>北京市通州区</td>
+						</tr>
+						<tr class="nodrag">
+							<td>2(禁止拖拽)</td>
+							<td>张三</td>
+							<td>男</td>
+							<td>20</td>
+							<td>15310219852</td>
+							<td>北京市通州区</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>张三</td>
+							<td>男</td>
+							<td>20</td>
+							<td>15310219852</td>
+							<td>北京市通州区</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>张三</td>
+							<td>男</td>
+							<td>20</td>
+							<td>15310219852</td>
+							<td>北京市通州区</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>张三</td>
+							<td>男</td>
+							<td>20</td>
+							<td>15310219852</td>
+							<td>北京市通州区</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../resources/js/sortable/yt-sortable.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<style type="text/css">
+	.ondragclass {
+		background-color: #418dcc;
+		color: #fff;
+	}
+</style>
+
+<script type="text/javascript">
+	$(function() {
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+		
+		
+		$('#tablednd').tableDnD({
+			onDragClass: "ondragclass", //在拖动的持续时间中添加该类，然后在该行被删除时移除
+			onDrop: function(table, row) { //传递一个函数，当该行被拖拽结束时将被调用。该函数需要2个参数：开始拖动的表和行。
+				$(row).css('background-color', '#fff');
+				var rows = table.tBodies[0].rows; //获取tbody 的行数
+				var debugStr = "拖拽结束后的行：" + row.className;
+				for(var i = 0; i < rows.length; i++) {
+					debugStr += rows[i].id + " ";
+				}
+				console.log(debugStr);
+			},
+			onDragStart: function(table, row) { //开始拖动时调用的函数。该函数需要2个参数：开始拖动的表和行。
+				$(row).css('background-color', '#418dcc');
+				console.log("当前拖拽的表格行：" + row.className);
+			}
+		});
+	});
+</script>

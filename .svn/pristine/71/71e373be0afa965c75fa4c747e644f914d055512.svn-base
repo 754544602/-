@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+		<style type="text/css">
+			.font-p{
+				margin-left: 0px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text  test-title">页面规范说明</div>
+			<!-- 输入框的定义 -->
+			<p>规范说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<p style="font-weight: normal;">
+					<span style="font-size: 14px;">
+				         开发人员在开发页面时必须严格遵守规范项内容。
+					</span>
+				</p>
+			</div>
+			<div class="secondary-back receiving-objectinfo-back" style="top: 1px;"></div>
+		    <div class="secondary-title receiving-objectinfo-title">表单字段规则</div>
+		    <p class="font-p">1.1表单字段内容为读取</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/1.png"/>
+		    </div>
+		    <p class="font-p">1.2表单字段之间上下间距20px</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/2.png"/>
+		    </div>
+		    <!--表单字段文本规则-->
+		    <div class="secondary-back receiving-objectinfo-back" style="top: 1px;"></div>
+		    <div class="secondary-title receiving-objectinfo-title">表单字段文本规则</div>
+		    <p class="font-p">2.1文本字间距对齐</p>
+		    <p>(1).4个字的文本,字间距为5px,少于4个字,字间距加到对齐4个字的文本。</p>
+		    <p>(2).超过4个字的文本，内容左对齐，不加字间距。</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/3.png"/>
+		    </div>
+		    <p style="margin: 15px 0px;">(3).有必填标识字段和无必填标识字段字段对齐,依据文本对齐,不找必填标识对齐</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/4.png"/>
+		    </div>
+		    <p class="font-p">2.2字段内容无数据处理方式</p>
+		    <p>1.在原型没有给出特别要求情况下，字段内容无数据，统一处理显示- -</p>
+		    <p>
+		    	2.文本域字段为空值显示效果如:备注、描述、说明等。字段为文本域,内容为空时显示“无”
+		    </p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/5.png"/>
+		    </div>
+		    <p class="font-p">2.3字段带有单位</p>
+		    <p>字段带有单位，单位统一放在标签后面.</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/6.png"/>
+		    </div>
+		    <!--列表显示规则-->
+		    <div class="secondary-back receiving-objectinfo-back" style="top: 1px;"></div>
+		    <div class="secondary-title receiving-objectinfo-title">列表显示规则</div>
+		    <p class="font-p">3.1表格列的显示宽度</p>
+		    <p>1.可预测固定字段，给列加上固定宽度。</p>
+		    <p>2.文本内容较多，数据量大的内容居左显示，内容超出显示...，鼠标悬浮显示全部内容。</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/7.png"/>
+		    </div>
+		    <p class="font-p">3.2列表无数据显示效果</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/8.png"/>
+		    </div>
+		    <!--页面按钮规范-->
+		     <div class="secondary-back receiving-objectinfo-back" style="top: 1px;"></div>
+		    <div class="secondary-title receiving-objectinfo-title" style="margin-bottom: 10px;">页面按钮规范</div>
+		    <p>1.局部按钮宽高自动撑开;多个按钮之间间距10px。</p>
+		    <p>2.全局按钮字体大小18px,左右内间距30px,按钮之间35px间距。</p>
+		    <div>
+		    	<img src="../../resources/images/test/pageC/9.png"/>
+		    </div>
+		</div>
+	</body>
+	<!--引用JS文件START-->
+	<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+	<!--滚动条js-->
+	<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+	<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+	<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+	<!--引用换肤js-->
+	<script type="text/javascript" id="themeJs"></script>
+	<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+	<!--引用JS文件END-->
+	<script type="text/javascript">
+		document.getElementById("themeJs").src = $yt_themeJs_path;  
+	</script>
+</html>
+
+

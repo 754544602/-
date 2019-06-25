@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<style>
+			.dowebok {
+				width: 920px;
+				margin: 0 auto;
+				list-style-type: none;
+				zoom: 1;
+			}
+			
+			.dowebok:after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+			
+			.dowebok li {
+				float: left;
+				width: 180px;
+				height: 180px;
+				margin: 20px 10px 0;
+				display: inline;
+			}
+			
+			.dowebok1 {
+				border: 5px solid #d9534f;
+			}
+			
+			.dowebok1 img {
+				width: 180px;
+				height: 180px;
+				vertical-align: top;
+			}
+			
+			.dowebok2 {
+				border: 5px solid #5cb85c;
+			}
+		</style>
+		<div class="web-criterion-model">
+			<div class="method-text">缩略图居中裁：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div>jquery.min.js</div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div>jqthumb.min.js</div></td>
+							<td>resources/js/jqthumb/jqthumb.min.js</td>
+							<td><div>引用居中裁Js文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+				<img class="testjqthumb" src="../../resources/images/test/jqthumb/1.jpg" alt="美女1">
+				<script src="../../resources/js/jqthumb/jqthumb.min.js"></script>
+				$('.testjqthumb').jqthumb({
+					width: 180,
+					height: 180,
+					after: function(imgObj){//回调函数不必选
+						imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+					}
+				});
+           	</textarea>
+			</div>
+			<p>3.展示效果:</p>
+			<div class="base-form-model" style="padding-left: 10px;">
+				<img class="testjqthumb" src="../../resources/images/test/1920-1.jpg" alt="美女1">
+			</div>
+			<p>4.与原图对比效果:</p>
+			<label style="margin: 10px 10px;">一共有8张尺寸各不同的图片，红色方框里的图片是用样式固定死的，明显有拉伸的现象。而绿色方框里的是使用插件创建的，没有拉伸，效果好很多。</label>
+			<div class="base-form-model">
+				<ul class="dowebok">
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/1.jpg" alt="美女1"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/2.jpg" alt="美女2"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/3.jpg" alt="美女3"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/4.jpg" alt="美女4"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/1.jpg" alt="美女1"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/2.jpg" alt="美女2"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/3.jpg" alt="美女3"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/4.jpg" alt="美女4"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/5.jpg" alt="美女5"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/6.jpg" alt="美女6"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/7.jpg" alt="美女7"></li>
+					<li class="dowebok1"><img src="../../resources/images/test/jqthumb/8.jpg" alt="美女8"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/5.jpg" alt="美女5"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/6.jpg" alt="美女6"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/7.jpg" alt="美女7"></li>
+					<li class="dowebok2"><img src="../../resources/images/test/jqthumb/8.jpg" alt="美女8"></li>
+				</ul>
+			</div>
+
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../resources/js/jqthumb/jqthumb.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script>
+	$(function() {
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+		
+		
+		$('.dowebok2 img,.testjqthumb').jqthumb({
+			width: 180,
+			height: 180,
+			after: function(imgObj) {
+				imgObj.css('opacity', 0).animate({
+					opacity: 1
+				}, 2000);
+			}
+		});
+	});
+</script>

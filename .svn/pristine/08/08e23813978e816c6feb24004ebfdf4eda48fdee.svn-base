@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">textarea标签：</div>
+			<!--基础表单标签规范START-->
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">类名</th>
+							<th width="580px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div>.yt-textarea</div></td>
+							<td><div>文本域标签公用类样式</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div">
+			<textarea cols="50" rows="15" name="code" class="javaScript" >
+				<!--
+					div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+				    padding内间距对应值依次是上右下左
+				-->
+				<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+					 <table class="yt-form-table" style="width: 100%;">
+						<tr>
+							<td>
+								<!--vertical-align: top;设置内容垂直对齐方式居上对齐-->
+								<label style="vertical-align: top;"><span  style="letter-spacing: 20px;vertical-align: top;">备</span>注：</label>
+								&lt;textarea class='yt-textarea' placeholder='请输入'&gt;&lt;/textarea&gt;
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+			</textarea>
+			</div>
+			<p>4.展示效果:</p>
+			<!--
+				div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+			    padding内间距对应值依次是上右下左
+			-->
+			<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+				 <table class="yt-form-table" style="width: 100%;">
+					<tr>
+						<td>
+							<!--vertical-align: top;设置内容垂直对齐方式居上对齐-->
+							<label style="vertical-align: top;"><span  style="letter-spacing: 20px;vertical-align: top;">备</span>注：</label>
+							<textarea class='yt-textarea' placeholder='请输入'></textarea>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function() {
+			//动态引用主系统的换肤js
+			document.getElementById("themeJs").src = $yt_themeJs_path; 
+	});
+</script>

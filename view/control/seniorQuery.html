@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<!--提示信息控件-->
+		<link rel="stylesheet" type="text/css" href="../../resources/css/qtip/jquery.qtip.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+	<style>
+		.tbody td {
+			padding: 10px 4px;
+		}
+		
+		.query-prior-approval {
+			vertical-align: middle;
+			margin-left: -32px;
+			cursor: pointer;
+		}
+	</style>
+
+	<body>
+		<div class="web-criterion-model" style="padding-bottom: 20px;">
+			<div class="method-text">高级查询：</div>
+			<!--基础表单标签规范START-->
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.css</a>
+								</div>
+							</td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td>
+								<div>引用公用的样式文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>jquery.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td>
+								<div>引用jquery的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/yt-common.min.js</td>
+							<td>
+								<div>引用公用的js文件</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-senior-query</div>
+							</td>
+							<td>
+								<div>公用的高级查询框类名</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.调用方法:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th>方法名</th>
+							<th width="400px">参数</th>
+							<th width="400px">参数类型</th>
+							<th width="480px">参数说明</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td rowspan="4">seniorQuery()</td>
+							<td>obj</td>
+							<td>jquery对象</td>
+							<td>存储高级查询区域对象(<span class="font-red">*必传参数</span>)</td>
+						</tr>
+						<tr>
+							<td>formHtml</td>
+							<td>string</td>
+							<td>查询框中的表单代码(<span class="font-red">*必传参数</span>)</td>
+						</tr>
+						<tr>
+							<td>sqBtn</td>
+							<td>jquery对象</td>
+							<td>高级查询按钮对象(<span class="font-red">*必传参数</span>)</td>
+						</tr>
+						<tr>
+							<td>qBtnCla</td>
+							<td>string</td>
+							<td>高级查询框中查询按钮类名(<span class="font-red">*必传参数</span>)</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="yt-table" style="margin-top: 30px;">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="400px">返回值</th>
+							<th width="400px">返回值说明</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>无</td>
+							<td>无</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>4.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+				<style>
+					.tbody td {
+						padding: 10px 4px;
+					}
+					.query-prior-approval {
+						vertical-align: middle;
+						margin-left: -32px;
+						cursor: pointer;
+					}
+				</style>
+				<div style="padding-left: 80px;" class="sen-box">
+					<span>关键字：</span><input class="yt-input" id="" placeholder="请输入" style=""><img class="query-prior-approval" src="../../resources/images/icons/search.png" style="display: inline;">
+					<button class="yt-option-btn  up-btn" style="margin-left: 20px;">高级查询</button>
+				</div>
+				<script type="text/javascript">
+					//拼接自己的高级查询框表单字段
+					var formHtml = '<table>' +
+									'<tbody style="" class="tbody">' +
+										'<tr>' +
+											'<td><span style="letter-spacing: 16px;">字段</span>名：</td>' +
+											'<td><input class="yt-input" id="" placeholder="请输入" style=""></td>' +
+										'</tr>' +
+										'<tr>' +
+											'<td><span style="letter-spacing: 45px;">金</span>额：</td>' +
+											'<td><input class="yt-input yt-money-input" type="text" placeholder="请输入"></td>' +
+										'</tr>' +
+										'<tr>' +
+											'<td><span style="letter-spacing: 16px;">字段</span>名：</td>' +
+											'<td>' +
+												'<select class="yt-select">' +
+													'<option>选项1</option>' +
+													'<option>选项2</option>' +
+												'</select>' +
+											'</td>' +
+										'</tr>' +
+									'</tbody>' +
+								'</table>';
+					//调用公用的高级查询方法
+					/**
+					 *@param $(".sen-box") 存储高级查询区域对象
+				 	 *@param formHtml 查询框中的表单代码
+				 	 *@param $(".up-btn")  高级查询按钮对象
+				     *@param query-btn 高级查询框中查询按钮类名
+					 */
+					$yt_controlElement.seniorQuery($(".sen-box"),formHtml,$(".up-btn"),"query-btn");
+					//点击查询执行高级查询
+					$('.query-btn').click(function() {
+						//此处调用查询方法
+					});
+				</script>
+			</textarea>
+			</div>
+			<p class="yt-read-text">5.控件使用思路：</p>
+			<div style="color: #a5a5a5;">
+				 <p class="font-red">(1).开发人员写好初始的查询字段和高级查询按钮。</p>
+				 <p class="font-red">(2).开发人员拼接出要在高级查询栏中显示的查询字段html代码。</p>
+				 <p>(3).调用公用的高级查询方法,传入指定的参数。</p>
+				 <p>(4).高级查询按钮点击事件由公用方法处理</p>
+				 <p>(5).高级查询框中的重置按钮,取消按钮由公用方法处理</p>
+				 <p class="font-red">(6).高级查询框中的查询按钮操作事件由开发人员自己进行处理</p>
+			</div>
+			<p>6.展示效果：</p>
+			<div style="padding-left: 80px;" class="sen-box">
+				<span>关键字：</span><input class="yt-input" id="" placeholder="请输入" style=""><img class="query-prior-approval" src="../../resources/images/icons/search.png" style="display: inline;">
+				<button class="yt-option-btn up-btn" style="margin-left: 20px;">高级查询</button>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/sysCommon.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function() {
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+		//初始化select
+		$('select').niceSelect();
+		//拼接自己的高级查询框表单字段
+		var formHtml = '<table>' +
+						'<tbody style="" class="tbody">' +
+							'<tr>' +
+								'<td><span style="letter-spacing: 16px;">字段</span>名：</td>' +
+								'<td><input class="yt-input" id="" placeholder="请输入" style=""></td>' +
+							'</tr>' +
+							'<tr>' +
+								'<td><span style="letter-spacing: 45px;">金</span>额：</td>' +
+								'<td><input class="yt-input yt-money-input" type="text" placeholder="请输入"></td>' +
+							'</tr>' +
+							'<tr>' +
+								'<td><span style="letter-spacing: 16px;">字段</span>名：</td>' +
+								'<td>' +
+									'<select class="yt-select">' +
+										'<option>选项1</option>' +
+										'<option>选项2</option>' +
+									'</select>' +
+								'</td>' +
+							'</tr>' +
+						'</tbody>' +
+					'</table>';
+		//调用公用的高级查询方法
+		/**
+		 *@param $(".sen-box") 存储高级查询区域对象
+	 	 *@param formHtml 查询框中的表单代码
+	 	 *@param $(".up-btn")  高级查询按钮对象
+	     *@param query-btn 高级查询框中查询按钮类名
+		 */
+		$yt_controlElement.seniorQuery($(".sen-box"),formHtml,$(".up-btn"),"query-btn");
+		//点击查询执行高级查询
+		$('.query-btn').click(function() {
+			//此处调用查询方法
+		});
+	});
+</script>

@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<!--引用高拍仪上传附件公用样式文件-->
+		<link rel="stylesheet" type="text/css" href="../../resources/css/photo/photoAll.min.css?YTVERSIONCODE=2019011101" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">通用上传附件：</div>
+			<!--基础表单标签规范START-->
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.css</a>
+								</div>
+							</td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td>
+								<div>引用公用的样式文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>jquery.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td>
+								<div>引用jquery的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>ajaxfileupload.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/fileUpload/ajaxfileupload.min.js</td>
+							<td>
+								<div>引用公用上传附件的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/yt-common.min.js</td>
+							<td>
+								<div>引用公用的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>sysCommon.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/sysCommon.min.js</td>
+							<td>
+								<div>引用系统的js文件</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-file-table</div>
+							</td>
+							<td>
+								<div>附件外层样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.yt-file-title</div>
+							</td>
+							<td>
+								<div>附件标题样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.调用方法:</p>
+			<span class="font-red" style="margin-left: 80px;">*调用上传附件方法,可直接生成上传附件整个标签内容</span>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th>方法名</th>
+							<th width="400px">参数</th>
+							<th width="400px">参数类型</th>
+							<th width="480px">参数说明</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td rowspan="6">fileUpLoad()</td>
+							<td>titleName</td>
+							<td rowspan="6">obj对象</td>
+							<td>title名称</td>
+						</tr>
+						<tr>
+							<td>titleWid</td>
+							<td>title名称宽度,默认100px</td>
+						</tr>
+						<tr>
+							<td>fileUpId</td>
+							<td>文件input框的id 默认值为 fileUp</td>
+						</tr>
+						<tr>
+							<td>fileBtnId</td>
+							<td>“请上传”按钮id 默认值为 fileBtn</td>
+						</tr>
+						<tr>
+							<td>callback</td>
+							<td>//回调函数 返回文件数据</td>
+						</tr>
+						<tr>
+							<td>riskFontCode</td>
+							<td>风险字段code值，如果该字段是风险字段，传入参数。默认值空</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="yt-table" style="margin-top: 30px;">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="400px">返回值</th>
+							<th width="400px">返回值说明</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>无</td>
+							<td>无</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>4.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+				<!--上传附件START-->
+				<div class="yt-file-up"></div>
+				<!--上传附件END-->
+				<script type="text/javascript">
+					$(function(){
+					    //调用上传附件方法
+						$('.yt-file-up').fileUpLoad({
+							titleName: '上传附件：',  //title名称
+							titleWid:'75px',//附件标题宽度,可为空默认100px
+							fileUpId: '',  //文件input框的id  默认值为 fileUp
+							fileBtnId: '', //请上传按钮id 默认值为 fileBtn
+							riskFontCode:'', //风险字段code值 默认值为空,是风险字段的话必须传入参数值
+							callback:function(fileData) {  //回调函数 返回文件数据		console.log(fileData);
+										}
+						});
+					});
+				</script>
+			</textarea>
+			</div>
+			<p>5.展示效果:</p>
+			<div style="padding: 10px;">
+				<div class="yt-file-up"></div>
+			</div>
+			<!--
+            	作者：yeyuling
+            	时间：2019-03-22
+            	描述：详情页显示附件
+            -->
+			<div class="method-text">详情页显示附件信息效果：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.css</a>
+								</div>
+							</td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td>
+								<div>引用公用的样式文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>jquery.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td>
+								<div>引用jquery的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>ajaxfileupload.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/fileUpload/ajaxfileupload.min.js</td>
+							<td>
+								<div>引用公用上传附件的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/yt-common.min.js</td>
+							<td>
+								<div>引用公用的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>sysCommon.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/sysCommon.min.js</td>
+							<td>
+								<div>引用系统的js文件</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-file-info</div>
+							</td>
+							<td>
+								<div>显示附件信息区域公用类样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			    <!--附件信息START-->
+				<div class="yt-file-info">
+					<table style="width: 100%;">
+						<tbody>
+							<tr>
+								<td valign="top" align="right" width="150px" class="yt-read-text">事前申请相关附件：</td>
+								<td valign="top">
+									<div id="attIdStr" class="file-box" style="width: 100%;"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--附件信息END-->
+				<script type="text/javascript">
+					$(function(){
+						//详情页面附件信息显示
+						var fileList = [{
+							attId: 603, 
+							attName: "banner-1.jpg"
+						},{
+							attId: 604, 
+							attName: "业务工作座谈会议人员签到表.doc"
+						}]
+						//判断附件集合是否有值
+						if(fileList.length > 0) {
+							//图片显示拼接字符串
+							var ls = '';
+							//图片显示路径
+							var src = '';
+							//遍历附件集合
+							$.each(fileList, function(i, n) {
+								//获取附件格式
+								var imgType = n.attName.split('.');
+								//判断是否是图片
+								if(imgType.length > 1 && (imgType[1] == 'png' || imgType[1] == 'jpeg' || imgType[1] == 'bmp' || imgType[1] == 'jpg')) {
+									//拼接图片路径调用后台接口
+									//src = $yt_option.base_path + 'fileUpDownload/download?pkId=' + n.attId + '&isDownload=false';
+									src = $yt_option.websit_path+'resources/images/test/banner-1.jpg';
+									ls += '<div fid="' + n.attId + '" class="li-div"><span class="file-name" >' + n.attName + '</span><label class="file-dw">下载</label><label class="file-pv">预览<img src="' + src + '" ></label></div>';
+								} else {
+									//拼接其他文件
+									ls += '<div fid="' + n.attId + '" class="li-div"><span class="file-name" >' + n.attName + '</span><label class="file-dw">下载</label></div>';
+								}
+							});
+							$('.yt-file-info #attIdStr').html(ls);
+							//附件下载操作事件
+							$('.yt-file-info #attIdStr .file-dw').on('click', function() {
+								//获取附件Id
+								var id = $(this).parent().attr('fid');
+								//请求接口执行下载操作
+								//window.location.href = $yt_option.base_path + 'fileUpDownload/download?pkId=' + id + '&isDownload=true';
+							});
+							//调用公用的图片预览方法
+							$('.yt-file-info #attIdStr .file-pv img').showImg();
+						}else {
+							$(".yt-file-info #attIdStr").html("暂无附件");
+						}
+					});
+				</script>
+			</textarea>
+			</div>
+			<p>4.展示效果:</p>
+			<div class="yt-file-info">
+				<table style="width: 100%;">
+					<tbody>
+						<tr>
+							<td valign="top" align="right" width="150px" class="yt-read-text">事前申请相关附件：</td>
+							<td valign="top">
+								<div id="attIdStr" class="file-box" style="width: 100%;"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+				<div class="method-text">高拍仪上传附件：</div>
+				<p>1.使用条件:</p>
+				<div class="label-code-div-first" style="height: auto">
+					<table class="yt-table">
+						<thead class="yt-thead the-inner">
+							<tr>
+								<th width="500px">文件名</th>
+								<th width="500px">文件路径</th>
+								<th width="400px">文件描述</th>
+							</tr>
+						</thead>
+						<tbody class="yt-tbody">
+							<tr>
+								<td>
+									<div>
+										<a>yt-common.min.css</a>
+									</div>
+								</td>
+								<td>resources/css/common/yt-common.min.css</td>
+								<td>
+									<div>引用公用的样式文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>jquery.min.js</a>
+									</div>
+								</td>
+								<td>resources/js/common/jquery.min.js</td>
+								<td>
+									<div>引用jquery的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>ajaxfileupload.min.js</a>
+									</div>
+								</td>
+								<td>resources/js/fileUpload/ajaxfileupload.min.js</td>
+								<td>
+									<div>引用公用上传附件的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>yt-common.min.js</a>
+									</div>
+								</td>
+								<td>resources/js/common/yt-common.min.js</td>
+								<td>
+									<div>引用公用的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>sysCommon.min.js</a>
+									</div>
+								</td>
+								<td>resources/js/common/sysCommon.min.js</td>
+								<td>
+									<div>引用系统的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>photoAll.min.css</a>
+									</div>
+								</td>
+								<td>resources/css/photo/photoAll.min.css</td>
+								<td>
+									<div>引用高拍仪的的css文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>photoAll.min.js</a>
+									</div>
+								</td>
+								<td>resources/js/photo/photoAll.min.js</td>
+								<td>
+									<div>引用高拍仪的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>OcxUtil.js</a>
+									</div>
+								</td>
+								<td>resources/js/photo/OcxUtil.js</td>
+								<td>
+									<div>引用高拍仪公用的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>WsUtil.js</a>
+									</div>
+								</td>
+								<td>resources/js/photo/WsUtil.js</td>
+								<td>
+									<div>引用高拍仪公用的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>axCam_Ocx.js</a>
+									</div>
+								</td>
+								<td>resources/js/photo/axCam_Ocx.js</td>
+								<td>
+									<div>引用高拍仪公用的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>axCam_Ocx2.js</a>
+									</div>
+								</td>
+								<td>resources/js/photo/axCam_Ocx2.js</td>
+								<td>
+									<div>引用高拍仪公用的js文件</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<a>photo.js</a>
+									</div>
+								</td>
+								<td>resources/js/photo/photo.js</td>
+								<td>
+									<div>引用高拍仪公用的js文件</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>2.类样式说明:</p>
+				<div class="label-code-div-first" style="height: auto">
+					<span class="font-red" style="margin-left: 10px;">注:以下类名或ID名都为指定命名,不可随意更改。</span>
+					<table class="yt-table">
+						<thead class="yt-thead the-inner">
+							<tr>
+								<th width="300px">类名</th>
+								<th width="480px">描述</th>
+							</tr>
+						</thead>
+						<tbody class="yt-tbody">
+							<tr>
+								<td>
+									<div>.file-upload-img-btn</div>
+								</td>
+								<td>
+									<div>点击出现拍照弹窗按钮类</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>#camCan</div>
+								</td>
+								<td>
+									<div>点击拍照按钮ID</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>#camCen</div>
+								</td>
+								<td>
+									<div>点击取消按钮ID</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>.active-sdk</div>
+								</td>
+								<td>
+									<div>点击下载SDK超链接类</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>.active-div</div>
+								</td>
+								<td>
+									<div>点击按钮出现的弹框类</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>.active-tip</div>
+								</td>
+								<td>
+									<div>下载SDK链接外层div类</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>.min-but</div>
+								</td>
+								<td>
+									<div>拍照按钮外层div类</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>3.代码展现:</p>
+				
+				<div class="label-code-div">
+					<textarea cols="50" rows="15" name="code" class="javaScript">
+					<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+						<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+							<head>
+								<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+								<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+								<!--引用CSS文件START-->
+								<!--滚动条样式-->
+								<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+								<!--引用高拍仪上传附件公用样式文件-->
+								<link rel="stylesheet" type="text/css" href="../../resources/css/photo/photoAll.min.css?YTVERSIONCODE=2019011101" />
+								<!--引用CSS文件END-->
+							<title>前端开发体系建设平台</title>
+						</head>
+						<body>
+							<!--拍照上传按钮START-->
+							<button class="yt-option-btn file-upload-img-btn" style="margin-left: 90px;">拍照上传</button>
+							<!--拍照上传按钮END-->
+							<!--高拍仪上传弹出框START-->
+							<div class="active-div">
+								<div id="ActiveXDivOne"></div>
+								<div class="active-tip">
+									提示：使用高拍仪需要安装驱动，点击<span class="active-sdk">SDK</span>下载安装高拍仪驱动后，刷新页面重试。
+								</div>
+								<div class="min-but">
+									<button class="yt-option-btn cam-can" id="camCan">拍照上传</button>
+									<button class="yt-option-btn cam-cen" id="camCen">取消</button>
+								</div>
+							</div>
+							<!--高拍仪上传弹出框END-->
+					</body>
+					<!--引用JS文件START-->
+					<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+					<!--滚动条js-->
+					<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+					<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+					<!--引用换肤js-->
+					<script type="text/javascript" id="themeJs"></script>
+					<script type="text/javascript" src="../../resources/js/common/yt-common.js"></script>
+					<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+					<script type="text/javascript" src="../../resources/js/common/sysCommon.min.js"></script>
+					<!--高拍仪相关Js文件-->
+					<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/WsUtil.js" ></script>
+					<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/OcxUtil.js" ></script>
+					<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/axCam_Ocx.js" for="axCam_Ocx" event="MessageCallback(type,str)"></script>
+					<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/axCam_Ocx2.js" for="axCam_Ocx2" event="MessageCallback(type,str)"></script>
+					<!--  <script type="text/javascript" for="axCam_Ocx" event="MessageCallback(type,str)"> -->
+					<script  type="text/javascript" charset="utf-8" src="../../resources/js/photo/photo.js"></script>
+					<script  type="text/javascript" charset="utf-8" src="../../resources/js/photo/photoAll.min.js?YTVERSIONCODE=2019041101"></script>
+					<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+					<!--引用JS文件END-->
+					</html>
+				</textarea>
+				</div>
+				<p>5.展示效果:</p>
+				<!--拍照上传按钮START-->
+				<button class="yt-option-btn file-upload-img-btn" style="margin-left: 90px;">拍照上传</button>
+				<!--拍照上传按钮END-->
+				<!--高拍仪上传弹出框START-->
+				<div class="active-div">
+					<div id="ActiveXDivOne"></div>
+					<div class="active-tip">
+						提示：使用高拍仪需要安装驱动，点击<span class="active-sdk">SDK</span>下载安装高拍仪驱动后，刷新页面重试。
+					</div>
+					<div class="min-but">
+						<button class="yt-option-btn cam-can" id="camCan">拍照上传</button>
+						<button class="yt-option-btn cam-cen" id="camCen">取消</button>
+					</div>
+				</div>
+				<!--高拍仪上传弹出框END-->
+				<div style="padding-left: 90px;margin-top: 20px;">
+					<span class="yt-read-text"><<上传成功后附件回显效果：</span>
+					<span class="font-red">*因附件上传需要调用接口,此效果为静态效果,仅供预览。(控件已封装实现)</span>
+				</div>
+				<!--高拍仪上传成功后数据回显效果START-->
+				<div class="file-img-div" style="padding-left: 80px;">
+						<div id="133" class="file-lable" fid="133">
+						<img class="file-img file-preview show-img-box661610437" src="../../resources/images/common/shili.jpg">
+						<label class="file-del"></label>
+						<input type="text" class="file-name" value="68160b8f-5a47-4597-bf36-72e18f0cdd62.jpg">
+						<div class="file-name-bg"></div>
+					</div>
+				</div>
+				<!--高拍仪上传成功后数据回显效果END-->
+				<div style="padding-left: 90px;margin-top: 20px;">
+					<span class="yt-read-text"><<详情页高拍仪上传的附件显示效果：</span>
+					<span class="font-red">*因附件上传需要调用接口,此效果为静态效果,仅供预览。(控件已封装实现)</span>
+				</div>
+				<!--详情页高拍仪附件显示效果START-->
+				<div class="file-img-div" style="padding-left: 90px;margin-top: 20px;">
+					<div id="132" class="file-lable" fid="132">
+						<img class="file-img file-preview show-img-box813894024" src="../../resources/images/common/shili.jpg">
+						<div class="file-down-bg">下载</div>
+						<div class="text-overflow-photo" title="">示例1.jpg</div>
+					</div>
+				</div>
+				<!--详情页高拍仪附件显示效果END-->
+			</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/sysCommon.min.js"></script>
+<!--高拍仪相关Js文件-->
+<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/WsUtil.js" ></script>
+<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/OcxUtil.js" ></script>
+<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/axCam_Ocx.js" for="axCam_Ocx" event="MessageCallback(type,str)"></script>
+<script type="text/javascript" charset="utf-8" src="../../resources/js/photo/axCam_Ocx2.js" for="axCam_Ocx2" event="MessageCallback(type,str)"></script>
+<!--  <script type="text/javascript" for="axCam_Ocx" event="MessageCallback(type,str)"> -->
+<script  type="text/javascript" charset="utf-8" src="../../resources/js/photo/photo.js"></script>
+<script  type="text/javascript" charset="utf-8" src="../../resources/js/photo/photoAll.min.js?YTVERSIONCODE=2019041101"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function() {
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+
+		//调用上传附件方法
+		$('.yt-file-up').fileUpLoad({
+			titleName: '上传附件：', //title名称
+			titleWid: '75px', //附件标题宽度,可为空默认100px
+			fileUpId: '', //文件input框的id  默认值为 fileUp
+			fileBtnId: '', //请上传按钮id 默认值为 fileBtn
+			riskFontCode: '', //风险字段code值 默认值为空,是风险字段的话必须传入参数值
+			callback: function(fileData) { //回调函数 返回文件数据		console.log(fileData);
+			}
+		});
+		//图片预览
+		$('.file-img-div img').showImg();
+		
+		
+		
+		//详情页面附件信息显示
+		var fileList = [{
+			attId: 603, 
+			attName: "banner-1.jpg"
+		},{
+			attId: 604, 
+			attName: "业务工作座谈会议人员签到表.doc"
+		}]
+		//判断附件集合是否有值
+		if(fileList.length > 0) {
+			//图片显示拼接字符串
+			var ls = '';
+			//图片显示路径
+			var src = '';
+			//遍历附件集合
+			$.each(fileList, function(i, n) {
+				//获取附件格式
+				var imgType = n.attName.split('.');
+				//判断是否是图片
+				if(imgType.length > 1 && (imgType[1] == 'png' || imgType[1] == 'jpeg' || imgType[1] == 'bmp' || imgType[1] == 'jpg')) {
+					//拼接图片路径调用后台接口
+					//src = $yt_option.base_path + 'fileUpDownload/download?pkId=' + n.attId + '&isDownload=false';
+					src = $yt_option.websit_path+'resources/images/test/banner-1.jpg';
+					ls += '<div fid="' + n.attId + '" class="li-div"><span class="file-name" >' + n.attName + '</span><label class="file-dw">下载</label><label class="file-pv">预览<img src="' + src + '" ></label></div>';
+				} else {
+					//拼接其他文件
+					ls += '<div fid="' + n.attId + '" class="li-div"><span class="file-name" >' + n.attName + '</span><label class="file-dw">下载</label></div>';
+				}
+			});
+			$('.yt-file-info #attIdStr').html(ls);
+			//附件下载操作事件
+			$('.yt-file-info #attIdStr .file-dw').on('click', function() {
+				//获取附件Id
+				var id = $(this).parent().attr('fid');
+				//请求接口执行下载操作
+				//window.location.href = $yt_option.base_path + 'fileUpDownload/download?pkId=' + id + '&isDownload=true';
+			});
+			//调用公用的图片预览方法
+			$('.yt-file-info #attIdStr .file-pv img').showImg();
+		}else {
+			$(".yt-file-info #attIdStr").html("暂无附件");
+		}
+
+	});
+</script>

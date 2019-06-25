@@ -1,0 +1,27 @@
+{
+ "flag":0,
+ "data":{
+		"total": 1,
+		"rows": [
+			{
+					"applicantDept": "98",
+					"applicantTime": "2019-02-14",
+					"applicantUser": "sunchanglin",
+					"applicantUserDeptName": "运维部",
+					"applicantUserName": "孙长林",
+					"arrearsAmount": 1000,
+					"handleTime": "2019-02-14 10:29:31",
+					"isSettle": "2",
+					"loanAmount": 1000,
+					"loanAppId": 146,
+					"loanAppName": "住宿酒店提出要支付定金",
+					"loanAppNum": "LA20190214002",
+					"loanTerm": "一个月之内",
+					"nodeNowState": "待【部门负责人审批】",
+					"processInstanceId": "400290",
+					"stagnationTime": "20天1小时",
+					"taskKey": "WF_COMPLETED_QUERY_SQL_PARAMS"
+			}
+		]
+	}
+}

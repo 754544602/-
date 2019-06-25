@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>页面运行</title>
+		<link rel="stylesheet" href="../../resources/css/runTemplet/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../resources/css/yt-common.min.css"/>
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.css"/>
+		<link rel="stylesheet" href="../../resources/css/runTemplet/runTemplet.css"/>
+	</head>
+	<body onload="runTemplet.runCodeEvent()">
+		   <div class="main">
+		   	    <!--左侧代码模块START-->
+		   	    <div class="left-code-model">
+		   	    	<div class="code-title">
+		   	    	 	<p class="title-text">源代码如下:</p>
+		   	    	 	<button class="yt-option-btn yt-common-btn run-btn" onclick="runTemplet.runCodeEvent()">运行</button>
+		   	    	</div>
+		   	    	<div class="code-info">
+		   	    		<textarea id="coding" class="area-code" name="coding" wrap="logical" style="width:100%;">
+		   	    		</textarea>
+		   	    	</div>
+		   	    </div>
+		   	    <!--左侧代码模块END-->
+		   	    <!--右侧显示效果模块START-->
+		   	    <div class="right-show-model">
+		   	    	 <div class="show-title">
+		   	    	 	<p class="title-text">运行结果:</p>
+		   	    	 	<div class="code-show-info">
+		   	    	 		<iframe id="applition" name="applition" scrolling="auto">
+	
+							</iframe>
+							<div style="clear: both;"></div>
+		   	    	 	</div>
+		   	    	 </div>
+		   	    </div>
+		   	    <!--右侧显示效果模块END-->
+		   	    <div style="clear: both;"></div>
+		   </div>
+		   <div id="pop-modle-alert"></div>
+	</body>
+<script type="text/javascript" src="../../resources/js/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/yt-option.js"></script>
+<script type="text/javascript" src="../../resources/js/yt-common.js"></script>
+<script type="text/javascript" src="../../resources/js/runTemplet/runTemplet.js"></script>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<link rel="stylesheet" type="text/css" href="../../resources/js/jquery-easyui-1.5.1/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="../../resources/js/jquery-easyui-1.5.1/themes/icon.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+	<style type="text/css">
+		.tree-node-hover {
+			background: #fafafa;
+		}
+		
+		.tree-node-selected {
+			background: #d9e8f5;
+		}
+		
+		.tree-title {
+			font-size: 14px;
+			color: #333;
+		}
+		
+		.tree-node,
+		.tree-title {
+			height: 25px;
+			line-height: 25px;
+		}
+		
+		.easyui-tree>li>.tree-node>.tree-icon,
+		.tree-folder {
+			height: 23px;
+		}
+		
+		.easyui-tree>li>.tree-node>.tree-icon {
+			background: url(../../resources/images/tree/first_tree_icons.png) no-repeat 0 3px;
+		}
+		
+		.tree-folder {
+			background: url(../../resources/images/tree/tree-folder-icon.png) no-repeat 0 3px;
+		}
+		
+		.tree-folder-open {
+			background: url(../../resources/images/tree/tree-folder-open-icon.png) no-repeat 0 3px;
+		}
+		
+		.tree-file {
+			background: url(../../resources/images/tree/tree-file-icon.png) no-repeat 0 3px;
+		}
+		
+		.tree-expanded {
+			background: url(../../resources/images/tree/tree-expanded-icon.png) no-repeat 0 6px;
+		}
+		
+		.tree-collapsed {
+			background: url(../../resources/images/tree/tree-collapsed-icon.png) no-repeat 0 6px;
+		}
+		
+		.menu-line {
+			display: none;
+		}
+		
+		.menu-text {
+			padding: 0;
+		}
+		
+		.menu-sep {
+			border-top: 1px solid #E5E5E5;
+			margin: 5px 8px;
+		}
+		
+		.menu {
+			padding: 2px;
+			background-color: #ffffff;
+			-webkit-box-shadow: 0px 0px 8px 1px #f1f1f1;
+			-moz-box-shadow: 0px 0px 8px 1px #f1f1f1;
+			box-shadow: 0px 0px 8px 1px #f1f1f1;
+		}
+		
+		.menu-item {
+			color: #333;
+			height: 23px;
+			line-height: 23px;
+			padding: 0 8px;
+		}
+		
+		.tree-title input {
+			font-size: 14px;
+			height: 20px !important;
+			line-height: 20px !important;
+			margin-top: 2px;
+		}
+		
+		.menu-active {
+			-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+			border-radius: 0px;
+			background: #e5e5e5;
+			border-color: #e5e5e5;
+		}
+	</style>
+
+	<body>
+		<style type="text/css">
+			/**
+	 * 弹出框中的多选图标设置边距
+	 */
+			
+			.multi-tree label.yt-checkbox {
+				padding-left: 16px !important;
+			}
+			
+			.inp-model:after,
+			.inp-model-dou:after {
+				border-bottom: 2px solid #999;
+				border-right: 2px solid #999;
+				content: '';
+				display: block;
+				height: 5px;
+				margin-top: -4px;
+				pointer-events: none;
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				-webkit-transform-origin: 66% 66%;
+				-ms-transform-origin: 66% 66%;
+				transform-origin: 66% 66%;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transition: all 0.15s ease-in-out;
+				transition: all 0.15s ease-in-out;
+				width: 5px;
+			}
+			
+			.inp-model.open:after,
+			.inp-model-dou.open:after {
+				-webkit-transform: rotate(-135deg);
+				-ms-transform: rotate(-135deg);
+				transform: rotate(-135deg);
+			}
+			
+			.inp-model input,
+			.inp-model-dou input {
+				cursor: pointer;
+			}
+		</style>
+		<div class="web-criterion-model">
+			<div class="method-text">树列表示例一：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>easyui.css</a></div></td>
+							<td>resources/js/jquery-easyui-1.5.1/themes/default/easyui.css</td>
+							<td><div>引用树形列表的样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>icon.css</a></div></td>
+							<td>resources/js/jquery-easyui-1.5.1/themes/icon.css</td>
+							<td><div>引用树形列表的样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.easyui.min.js</a></div></td>
+							<td>resources/js/jquery-easyui-1.5.1/jquery.easyui.min.js</td>
+							<td><div>引用树形Js文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			<style>
+				.inp-model:after,
+				.inp-model-dou:after {
+					border-bottom: 2px solid #999;
+					border-right: 2px solid #999;
+					content: '';
+					display: block;
+					height: 5px;
+					margin-top: -4px;
+					pointer-events: none;
+					position: absolute;
+					right: 12px;
+					top: 50%;
+					-webkit-transform-origin: 66% 66%;
+					-ms-transform-origin: 66% 66%;
+					transform-origin: 66% 66%;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+					-webkit-transition: all 0.15s ease-in-out;
+					transition: all 0.15s ease-in-out;
+					width: 5px;
+				}
+				
+				.inp-model.open:after,
+				.inp-model-dou.open:after {
+					-webkit-transform: rotate(-135deg);
+					-ms-transform: rotate(-135deg);
+					transform: rotate(-135deg);
+				}
+				
+				.inp-model input,
+				.inp-model-dou input {
+					cursor: pointer;
+				}
+				.tree-node-hover {
+					background: #fafafa;
+				}
+				
+				.tree-node-selected {
+					background: #d9e8f5;
+				}
+				
+				.tree-title {
+					font-size: 14px;
+					color: #333;
+				}
+				
+				.tree-node,
+				.tree-title {
+					height: 25px;
+					line-height: 25px;
+				}
+				
+				.easyui-tree>li>.tree-node>.tree-icon,
+				.tree-folder {
+					height: 23px;
+				}
+				
+				.easyui-tree>li>.tree-node>.tree-icon {
+					background: url(../../resources/images/tree/first_tree_icons.png) no-repeat 0 3px;
+				}
+				
+				.tree-folder {
+					background: url(../../resources/images/tree/tree-folder-icon.png) no-repeat 0 3px;
+				}
+				
+				.tree-folder-open {
+					background: url(../../resources/images/tree/tree-folder-open-icon.png) no-repeat 0 3px;
+				}
+				
+				.tree-file {
+					background: url(../../resources/images/tree/tree-file-icon.png) no-repeat 0 3px;
+				}
+				
+				.tree-expanded {
+					background: url(../../resources/images/tree/tree-expanded-icon.png) no-repeat 0 6px;
+				}
+				
+				.tree-collapsed {
+					background: url(../../resources/images/tree/tree-collapsed-icon.png) no-repeat 0 6px;
+				}
+				
+				.menu-line {
+					display: none;
+				}
+				
+				.menu-text {
+					padding: 0;
+				}
+				
+				.menu-sep {
+					border-top: 1px solid #E5E5E5;
+					margin: 5px 8px;
+				}
+				
+				.menu {
+					padding: 2px;
+					background-color: #ffffff;
+					-webkit-box-shadow: 0px 0px 8px 1px #f1f1f1;
+					-moz-box-shadow: 0px 0px 8px 1px #f1f1f1;
+					box-shadow: 0px 0px 8px 1px #f1f1f1;
+				}
+				
+				.menu-item {
+					color: #333;
+					height: 23px;
+					line-height: 23px;
+					padding: 0 8px;
+				}
+				
+				.tree-title input {
+					font-size: 14px;
+					height: 20px !important;
+					line-height: 20px !important;
+					margin-top: 2px;
+				}
+				
+				.menu-active {
+					-webkit-border-radius: 0px;
+					-moz-border-radius: 0px;
+					border-radius: 0px;
+					background: #e5e5e5;
+					border-color: #e5e5e5;
+				}
+			</style>
+			<div class="sel-div-model" style="padding: 10px 0px 20px 95px; height: 200px;">
+				<div class="inp-model" style="position: absolute;">
+					<label>请选择：</label>
+					<input class="yt-input div-inp" placeholder="请选择" readonly="readonly" />
+				</div>
+				<div class="hid-div" style="height: 200px;width: 203px;border: 1px solid #e5e5e5;margin-top: 31px; margin-left: 60px;display: none;overflow: auto;">
+	
+				</div>
+			</div>
+			<div class="sel-div-model" style="padding: 10px 0px 20px 95px; height: 200px;">
+				<div class="inp-model-dou" style="position: absolute;">
+					<label>请选择：</label>
+					<input class="yt-input div-inp-dou" placeholder="请选择" readonly="readonly" />
+				</div>
+				<div class="hid-div-dou" style="height: 200px;width: 203px;border: 1px solid #e5e5e5;margin-top: 31px; margin-left: 60px;display: none;overflow: auto;">
+	
+				</div>
+			</div>
+			<script>
+				//创建easyui树形结构 单选
+				$(".hid-div").tree({
+					data: dataL,
+					animate: true,
+					checkbox: false,
+					onClick: function(node) {
+						$(".div-inp").val(node.text);
+					}
+				});
+				//创建easyui树形结构 多选
+				$(".hid-div-dou").tree({
+					data: dataL,
+					animate: true,
+					checkbox: true,
+					onClick: function(node) {
+						//添加变量
+						var inpval = "";
+						$(".hid-div-dou ul li").each(function(i, n) {
+							if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+								inpval += $(this).find(".tree-title").text() + ',';
+							}
+						});
+						//输入框内容替换
+						$(".div-inp-dou").val(inpval);
+					},
+					onCheck: function(node, checked) {
+						//添加变量
+						var inpval = "";
+						$(".hid-div-dou ul li").each(function(i, n) {
+							if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+								inpval += $(this).find(".tree-title").text() + ',';
+							} 
+						});
+						//输入框内容替换
+						$(".div-inp-dou").val(inpval);
+					}
+				});
+				/**
+				 * 
+				 * 阻止冒泡
+				 * 
+				 */
+				function eventStopPageaction() {
+					var e = arguments.callee.caller.arguments[0] || event;
+					if(e && e.stopPropagation) {
+						// this code is for Mozilla and Opera
+						e.stopPropagation();
+					} else if(window.event) {
+						// this code is for IE 
+						window.event.cancelBubble = true;
+					}
+				}
+				$('.div-inp-dou').on('click', function() {
+					//div点击显示再点击隐藏
+					$(".hid-div-dou").toggle();
+					//父级div点击增加open类三角图标旋转，再点击转回
+					$(".inp-model-dou").toggleClass('open');
+					//组织冒泡
+					eventStopPageaction();
+				});
+				$('.div-inp').on('click', function() {
+					//div点击显示再点击隐藏
+					$(".hid-div").toggle();
+					//父级div点击增加open类三角图标旋转，再点击转回
+					$(".inp-model").toggleClass('open');
+					//组织冒泡
+					eventStopPageaction();
+				});
+				$("body").click(function() {
+					// 点击body时 隐藏 div
+					$(".hid-div").hide();
+					$(".hid-div-dou").hide();
+					//点击body时点击去除open类三角图标旋转
+					$(".inp-model").removeClass('open');
+					$(".inp-model-dou").removeClass('open');
+				});
+			</script>
+        </textarea>
+			</div>
+			<p>3.单选下拉树形列表和多选下拉列表显示效果:</p>
+			<!--提示框规范START-->
+			<div class="model-criterion">
+				<div class="sel-div-model" style="padding: 10px 0px 20px 95px; height: 200px;">
+					<div class="inp-model" style="position: relative;float: left;">
+						<label>请选择：</label>
+						<input class="yt-input div-inp" placeholder="请选择" readonly="readonly" />
+						<div class="hid-div" style="height: 200px;width: 203px;border: 1px solid #e5e5e5;display: none;overflow: auto;position: absolute;top: 30px;left: 60px;background-color: #FFF;">
+
+						</div>
+					</div>
+					<div class="inp-model-dou" style="position: relative;float: left;margin-left: 200px;">
+						<label>请选择：</label>
+						<input class="yt-input div-inp-dou" placeholder="请选择" readonly="readonly" />
+						<div class="hid-div-dou" style="height: 200px;width: 203px;border: 1px solid #e5e5e5;display: none;overflow: auto;position: absolute;top: 30px;left: 60px;background-color: #FFF;">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--提示框规范END-->
+			<div class="method-text">区域显示树形列表：</div>
+			<p>1.单选树形列表代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			   <div class="single-tree">
+    	   	     <div class="yt-edit-alert-title" style="width: 290px;text-align: left;padding-left: 10px;">  
+		                <span class="yt-edit-alert-icon"><img src="./resources/images/icons/add-icon.png"></span>  
+		                <span class="yt-edit-alert-title-msg">选择部门</span>  
+		          </div>
+		          <div class="single-conent" id="singleTree" style="background: #FFFFFF;max-height: 200px;width: 298px;overflow: auto;border: 1px solid #dfe6f3;"></div>
+    	   		</div>  
+    	   		<script type="text/javascript">
+		    	   	 //创建easyui树形结构 单选
+					$("#singleTree").tree({
+						data: dataL,
+						animate: true,
+						checkbox: false,
+						onClick: function(node) {
+							$(".single-sel-data").text(node.text);
+						},
+						onCheck: function(node, checked) {
+							$(".single-sel-data").text(node.text);
+						}
+					});
+		    	</script>
+		</textarea>
+			</div>
+			<p>2.单选树形列表效果展示:</p>
+			<div style="padding-left:80px;">
+				<div class="single-tree" style="float: left;">
+					<div class="yt-edit-alert-title" style="width: 290px;text-align: left;padding-left: 10px;">
+						<span class="yt-edit-alert-icon"><img src="../../resources/images/icons/add-icon.png"></span>
+						<span class="yt-edit-alert-title-msg">选择部门</span>
+					</div>
+					<div class="single-conent" id="singleTree" style="background: #FFFFFF;max-height: 200px;width: 288px;overflow: auto;border: 1px solid #dfe6f3;padding-left: 10px;"></div>
+				</div>
+				<div style="float: left;text-align: left;padding-top: 35px;padding-left: 20px;width: 300px;">
+					<p>选中的数据有:</p>
+					<span class="single-sel-data" style="margin-left: 10px;"></span>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<p style="padding-top: 20px;">3.多选树形列表代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			 <div class="multi-tree">
+    	   	     <div class="yt-edit-alert-title" style="width: 290px;text-align: left;padding-left: 10px;">  
+		                <span class="yt-edit-alert-icon"><img src="./resources/images/icons/add-icon.png"></span>  
+		                <span class="yt-edit-alert-title-msg">选择部门</span>  
+		          </div>
+		          <div class="multi-conent" id="multiTree" style="background: #FFFFFF;max-height: 200px;width: 298px;overflow: auto;border: 1px solid #dfe6f3;"></div>
+    	    </div>
+    	    <script type="text/javascript">
+    	    	/**
+				 * 
+				 * 区域内展示多选树形
+				 * 
+				 */
+				$("#multiTree").tree({
+					data: dataL,
+					animate: true,
+					checkbox: true,
+					onClick: function(node) {
+						//添加变量
+						var inpval = "";
+						$("#multiTree ul li").each(function(i, n) {
+							if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+								inpval += $(this).find(".tree-title").text() + ',';
+							}
+						});
+						//输出显示内容替换
+						$(".div-inp-dou").val(inpval);
+					},
+					onCheck: function(node, checked) {
+						//添加变量
+						var inpval = "";
+						$("#multiTree ul li").each(function(i, n) {
+							if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+								inpval += $(this).find(".tree-title").text() + ',';
+							}
+						});
+						//输出显示内容替换
+						$(".multi-sel-data").text(inpval);
+					}
+				});
+    	    </script>
+		</textarea>
+			</div>
+			<p>4.多选树形列表效果展示:</p>
+			<div style="padding-left:80px;height: 300px;">
+				<div class="multi-tree" style="float: left;">
+					<div class="yt-edit-alert-title" style="width: 290px;text-align: left;padding-left: 10px;">
+						<span class="yt-edit-alert-icon"><img src="../../resources/images/icons/add-icon.png"></span>
+						<span class="yt-edit-alert-title-msg">选择部门</span>
+					</div>
+					<div class="multi-conent" id="multiTree" style="background: #FFFFFF;max-height: 200px;width: 288px;overflow: auto;border: 1px solid #dfe6f3;padding-left: 10px;"></div>
+				</div>
+				<div style="float: left;text-align: left;padding-top: 35px;padding-left: 20px;width: 300px;">
+					<p>选中的数据有:</p>
+					<span class="multi-sel-data" style="margin-left: 10px;"></span>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/jquery-easyui-1.5.1/jquery.easyui.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/common/json-test-data.js"></script>
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function(){
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+	});
+	/*var dataL = [{
+								id: 1,
+								text: '测试数据1',
+								children: [{
+									id: 11,
+									text: '测试数据1'
+								}, {
+									id: 12,
+									text: '测试数据1.1'
+								}, {
+									id: 13,
+									text: '测试数据1.2'
+								}, {
+									id: 14,
+									text: '测试数据1.3'
+								}, {
+									id: 15,
+									text: '测试数据1.4'
+								}, {
+									id: 16,
+									text: '测试数据1.5'
+								}, {
+									id: 17,
+									text: '测试数据1.6'
+								}, {
+									id: 18,
+									text: '测试数据1.7'
+								}]
+							}]*/
+	//创建easyui树形结构 单选
+	$(".hid-div").tree({
+		data: dataL,
+		animate: true,
+		checkbox: false,
+		onClick: function(node) {
+			$(".div-inp").val(node.text);
+		},
+		onCheck: function(node, checked) {
+			$(".div-inp").val(node.text);
+		}
+	});
+	//创建easyui树形结构 多选
+	$(".hid-div-dou").tree({
+		data: dataL,
+		animate: true,
+		checkbox: true,
+		onClick: function(node) {
+			//添加变量
+			var inpval = "";
+			$(".hid-div-dou ul li").each(function(i, n) {
+				if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+					inpval += $(this).find(".tree-title").text() + ',';
+				} else {
+
+				}
+			});
+			//输入框内容替换
+			$(".div-inp-dou").val(inpval);
+		},
+		onCheck: function(node, checked) {
+			//添加变量
+			var inpval = "";
+			$(".hid-div-dou ul li").each(function(i, n) {
+				if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+					inpval += $(this).find(".tree-title").text() + ',';
+				} else {
+
+				}
+			});
+			//输入框内容替换
+			$(".div-inp-dou").val(inpval);
+		}
+	});
+	/**
+	 * 
+	 * 阻止冒泡
+	 * 
+	 */
+	function eventStopPageaction() {
+		var e = arguments.callee.caller.arguments[0] || event;
+		if(e && e.stopPropagation) {
+			// this code is for Mozilla and Opera
+			e.stopPropagation();
+		} else if(window.event) {
+			// this code is for IE 
+			window.event.cancelBubble = true;
+		}
+	}
+	$('.div-inp-dou').on('click', function() {
+		//div点击显示再点击隐藏
+		$(".hid-div-dou").toggle();
+		//父级div点击增加open类三角图标旋转，再点击转回
+		$(".inp-model-dou").toggleClass('open');
+		//组织冒泡
+		eventStopPageaction();
+	});
+	$('.div-inp').on('click', function() {
+		//div点击显示再点击隐藏
+		$(".hid-div").toggle();
+		//父级div点击增加open类三角图标旋转，再点击转回
+		$(".inp-model").toggleClass('open');
+		//组织冒泡
+		eventStopPageaction();
+	});
+	$("body").click(function() {
+		// 点击body时 隐藏 div
+		$(".hid-div").hide();
+		$(".hid-div-dou").hide();
+		//点击body时点击去除open类三角图标旋转
+		$(".inp-model").removeClass('open');
+		$(".inp-model-dou").removeClass('open');
+	});
+	//创建easyui树形结构 单选
+	$("#singleTree").tree({
+		data: dataL,
+		animate: true,
+		checkbox: false,
+		onClick: function(node) {
+			$(".single-sel-data").text(node.text);
+		},
+		onCheck: function(node, checked) {
+			$(".single-sel-data").text(node.text);
+		}
+	});
+	//定义中转站数组
+	var inpListDiv = [];
+	//创建easyui树形结构 多选
+	$("#multiTree").tree({
+		data: dataL,
+		animate: true,
+		checkbox: true,
+		onClick: function(node) {
+			//添加变量
+			var inpval = "";
+			$("#multiTree ul li").each(function(i, n) {
+				if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+					inpval += $(this).find(".tree-title").text() + ',';
+				}
+			});
+			//输出显示内容替换
+			$(".div-inp-dou").val(inpval);
+		},
+		onCheck: function(node, checked) {
+			//添加变量
+			var inpval = "";
+			$("#multiTree ul li").each(function(i, n) {
+				if($(this).find(".tree-node").find(".tree-checkbox").hasClass('tree-checkbox1')) {
+					inpval += $(this).find(".tree-title").text() + ',';
+				}
+			});
+			//输出显示内容替换
+			$(".multi-sel-data").text(inpval);
+		}
+	});
+	/**
+	 * 点击树列表节点触发事件
+	 * @param {Object} obj 点击的对象
+	 * @param {Number} id 点击对象的ID
+	 * @param {String} name 点击对象的名称
+	 */
+	function getTreeData(obj, id, name) {
+		$('.single-sel-data').text('' + id + ',' + name);
+	}
+	/**
+	 * 点击复选框触发事件
+	 * @param {Object} checkNode 选中的对象list
+	 */
+	function getMultiChecked(checkNode) {
+		var check = '';
+		$.each(checkNode, function(i, n) {
+			check += n.id + ',' + n.name + ';';
+		});
+		$('.multi-sel-data').text(check);
+	}
+	/**
+	 * 点击树列表节点触发事件
+	 * @param {Object} obj 点击的对象
+	 * @param {Number} id 点击对象的ID
+	 * @param {String} name 点击对象的名称
+	 */
+	function getNode(obj, id, name) {
+		$('#textTree').val('' + id + ',' + name);
+	}
+	/**
+	 * 点击复选框触发事件
+	 * @param {Object} checkNode 选中的对象list
+	 */
+	function getCheckNode(checkNode) {
+		var check = '';
+		$.each(checkNode, function(i, n) {
+			check += n.id + ',' + n.name + ';';
+		});
+		$('#checkTree').val(check);
+	}
+
+	$(function() {
+		//给树形列表添加滚动条样式
+		$("#treeDiv,#checkDiv").mCustomScrollbar({
+			autoHideScrollbar: true,
+			theme: "square"
+		});
+		$("#singleTree,#multiTree").mCustomScrollbar({
+			autoHideScrollbar: true,
+			theme: "square"
+		});
+	});
+</script>

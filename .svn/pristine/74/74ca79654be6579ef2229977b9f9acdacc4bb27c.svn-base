@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">一、页面跳转方式：</div>
+			<p>1.系统左侧菜单项中存在要跳转的页面</p>
+			<p>调用方法：</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			  $yt_common.parentAction({
+					url:$yt_option.parent_action_path,//父级中转地址,固定配置项,只有统一修改处理。
+					funName:'locationToMenu',//指定方法名，定位到菜单方法
+					data:{
+						url:'view/newPPs/projectList.html'//要跳转的页面路径
+					}
+				});
+		</textarea>
+			</div>
+			<p>2.左侧菜单项中不存在要跳转的页面</p>
+			<p>调用方法：</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+		//拼接跳转路径带有参数的
+		var pageUrl= "view/newPPs/addPps.html?prjId="+prjId+'&prjStatus='+prjStatus;
+		/**
+		* 调用显示loading方法
+		*/
+		parent.parent.$yt_baseElement.showLoading();
+		//使用window.location.href方法直接跳转
+		window.location.href = $yt_option.websit_path+pageUrl;
+	</textarea>
+			</div>
+			<p>3.跳转页面需要打开新的窗口(如:详情页等)</p>
+			<p>调用方法：</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+		//拼接要跳转的页面路径
+		var pageUrl = "view/newPPs/projectDetails.html?prjId=2";
+		//指定在系统左侧菜单中要选中的页面路径
+		var goPageUrl = "view/newPPs/projectList.html";
+		//使用window.open方法执行跳转
+		window.open($yt_option.websit_path+"newIndex.html?pageUrl="+encodeURIComponent(pageUrl)+'&goPageUrl='+goPageUrl);
+	</textarea>
+			</div>
+			<div class="method-text">二、获取页面跳转传输的参数：</div>
+			<p>方法如下：</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			//获取页面跳转传输的参数对象
+			var requerParameter = $yt_common.GetRequest();
+			//获取传输自己指定的参数,例子中获取的自定义项目ID
+			var projectId=requerParameter.prjId;
+		</textarea>
+			</div>
+			<div class="method-text">三、关闭当前窗体调用方法：</div>
+			<p>方法如下:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			//调用父级关闭当前窗体方法
+			parent.closeWindow();
+		</textarea>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function(){
+		//动态调用主系统的换主题JS
+		document.getElementById("themeJs").src = $yt_themeJs_path; 
+	});
+</script>

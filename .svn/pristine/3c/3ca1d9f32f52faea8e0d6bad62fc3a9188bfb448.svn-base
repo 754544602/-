@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<style>
+			.text-overflow {
+				max-width: 200px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		</style>
+		<div class="web-criterion-model">
+			<div class="method-text  test-title">[CB04]列表数据显示规则</div>
+			<p>1.规范说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<p style="font-weight: normal;">
+					<span style="font-size: 14px;">
+						列表中的数据可分为,可预测宽度和不可预测宽度字段。其中:日期、状态、编号等为可预测宽度字段，我们可以加上固定的宽度。不可预测宽度字段，文本居左显示，同时做文本超出显示处理。
+					</span>
+				</p>
+			</div>
+			<p>2.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+					</tbody>
+				</table> 
+			</div>
+			<div class="secondary-back receiving-objectinfo-back" style="top: 1px;"></div>
+			<div class="secondary-title receiving-objectinfo-title">示例展示</div>
+			<p class="font-p">1.字段宽度处理:</p>
+			<p class="color-p">&lt;&lt;代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+		<style>
+		.text-overflow {
+			max-width: 200px; /*设定一个最小宽度*/
+			overflow: hidden; /*隐藏溢出*/
+			white-space: nowrap; /*设定不换行属性*/
+			text-overflow: ellipsis; /*多行文字溢出显示...属性*/
+		}
+		</style>
+		<table class="yt-table cost-tab" style="width: 100%;">
+				<thead class="yt-thead">
+					<!--已确定长度的列，设定一个固定宽，未知长度反之-->
+					<tr>
+						<th style="width:110px">政策法规编号</th>
+						<th>政策法规标题</th>
+						<th style="width:80px">公布日期</th>
+						<th>有效性</th>
+						<th style="width:100px">最近修改日期</th>
+					</tr>
+				</thead>
+				<tbody class="yt-tbody">
+
+				</tbody>
+		</table>
+		<script>
+		$(function() {
+			var costData = [{
+				policyNum: "PL20180926001",
+				policyTitle: "关于印发《中央和国家机关工作人员赴地方 差旅住宿费标准明细表》的通知",
+				publishDate: "2016-09-01",
+				effective: "有效",
+				latelyDate: "2018-10-09",
+			}, {
+				policyNum: "PL20180927001",
+				policyTitle: "中华人民共和国政府采购法",
+				publishDate: "2016-04-01",
+				effective: "未有效",
+				latelyDate: "2018-09-23",
+			}];
+			//清空表格数据
+			$("table .cost-tab tbody").empty();
+			var trStr = "";
+			//遍历数据追加到表格中
+			$.each(costData, function(i, n) {
+				trStr += '<tr>' +
+					'<td>' + n.policyNum + '</td>' +
+					'<td style="text-align: left;" class="text-overflow" title="' + n.policyTitle + '">' + n.policyTitle + '</td>' + //添加text-overflow类,实现多字显示...并省略效果,同事将所有值赋值title
+					'<td>' + n.publishDate + '</td>' +
+					'<td>' + n.effective + '</td>' +
+					'<td>' + n.latelyDate + '</td>' +
+					'</tr>';
+			});
+			$("table .cost-tab tbody").html(trStr);
+			});
+			</script>
+		</textarea>
+			</div>
+			<p class="color-p">&lt;&lt;效果展示:</p>
+			<div class="base-form-model" style="width: 100%;overflow: hidden;">
+				<div class="right-box" style="width: 100%;margin-bottom: 20px;">
+					<table class="yt-table cost-tab" style="width: 100%;">
+						<thead class="yt-thead">
+							<tr>
+								<th style="width:110px">政策法规编号</th>
+								<th>政策法规标题</th>
+								<th style="width:80px">公布日期</th>
+								<th>有效性</th>
+								<th style="width:100px">最近修改日期</th>
+							</tr>
+						</thead>
+						<tbody class="yt-tbody">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<p class="font-p">2.无数据处理:</p>
+			<p class="color-p">&lt;&lt;代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			<table class="yt-table cost-tab-null" style="width: 100%;">
+				<thead class="yt-thead">
+					<tr>
+						<th style="width:110px">政策法规编号</th>
+						<th>政策法规标题</th>
+						<th style="width:80px">公布日期</th>
+						<th>有效性</th>
+						<th style="width:100px">最近修改日期</th>
+					</tr>
+				</thead>
+				<tbody class="yt-tbody"></tbody>
+			</table>
+			<script>
+				var costDataNull = [];
+				//清空表格数据
+				$("table .cost-tab-null tbody").empty();
+				var trStr = "";
+				//遍历数据追加到表格中,如数组中有数据则正常添加，如无数据则调用公用暂无数据方法显示
+				if(costDataNull.length == 0) {
+					var noDataStr = '<tr style="border:0px;background-color:#fff !important;"><td  colspan="5" align="center"style="border:0px;">'
+			              +'<div class="listNoData"></div>'
+			              +'</td></tr>';
+					//调用公用暂无数据方法
+					$("table .cost-tab-null tbody").append(noDataStr);
+				} else {
+					$.each(costDataNull, function(i, n) {
+						trStr += '<tr>' +
+							'<td style="width:110px">' + n.policyNum + '</td>' +
+							'<td style="text-align: left;" class="text-overflow" title="' + n.policyTitle + '">' + n.policyTitle + '</td>' +
+							'<td>' + n.publishDate + '</td>' +
+							'<td>' + n.effective + '</td>' +
+							'<td>' + n.latelyDate + '</td>' +
+							'</tr>';
+					});
+					$("table .cost-tab-null tbody").html(trStr);
+				}
+			</script>
+		</textarea>
+			</div>
+			<p class="color-p">&lt;&lt;效果展示:</p>
+			<div class="base-form-model" style="width: 100%;overflow: hidden;">
+				<div class="right-box" style="width: 100%;margin-bottom: 20px;">
+					<table class="yt-table cost-tab-null" style="width: 100%;">
+						<thead class="yt-thead">
+							<tr>
+								<th style="width:110px">政策法规编号</th>
+								<th>政策法规标题</th>
+								<th style="width:80px">公布日期</th>
+								<th>有效性</th>
+								<th style="width:100px">最近修改日期</th>
+							</tr>
+						</thead>
+						<tbody class="yt-tbody"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script>
+	$(function() {
+		//动态调用主系统的换主题JS
+		document.getElementById("themeJs").src = $yt_themeJs_path; 
+		
+		
+		var costData = [{
+			policyNum: "PL20180926001",
+			policyTitle: "关于印发《中央和国家机关工作人员赴地方 差旅住宿费标准明细表》的通知",
+			publishDate: "2016-09-01",
+			effective: "有效",
+			latelyDate: "2018-10-09",
+		}, {
+			policyNum: "PL20180927001",
+			policyTitle: "中华人民共和国政府采购法",
+			publishDate: "2016-04-01",
+			effective: "未有效",
+			latelyDate: "2018-09-23",
+		}];
+		//清空表格数据
+		$("table .cost-tab tbody").empty();
+		var trStr = "";
+		//遍历数据追加到表格中
+		$.each(costData, function(i, n) {
+			trStr += '<tr>' +
+				'<td style="width:110px">' + n.policyNum + '</td>' +
+				'<td style="text-align: left;" class="text-overflow" title="' + n.policyTitle + '">' + n.policyTitle + '</td>' +
+				'<td>' + n.publishDate + '</td>' +
+				'<td>' + n.effective + '</td>' +
+				'<td>' + n.latelyDate + '</td>' +
+				'</tr>';
+		});
+		$(".base-form-model .cost-tab tbody").html(trStr);
+
+		var costDataNull = [];
+		//清空表格数据
+		$("table .cost-tab-null tbody").empty();
+		var trStr = "";
+		//遍历数据追加到表格中,如数组中有数据则正常添加，如无数据则调用公用暂无数据方法显示
+		if(costDataNull) {
+			var noDataStr = '<tr style="border:0px;background-color:#fff !important;"><td  colspan="5" align="center"style="border:0px;">'
+			              +'<div class="listNoData"></div>'
+			              +'</td></tr>';
+			//调用公用暂无数据方法
+			$(".base-form-model .cost-tab-null tbody").append(noDataStr);
+		} else {
+			$.each(costDataNull, function(i, n) {
+				trStr += '<tr>' +
+					'<td style="width:110px">' + n.policyNum + '</td>' +
+					'<td style="text-align: left;" class="text-overflow" title="' + n.policyTitle + '">' + n.policyTitle + '</td>' +
+					'<td>' + n.publishDate + '</td>' +
+					'<td>' + n.effective + '</td>' +
+					'<td>' + n.latelyDate + '</td>' +
+					'</tr>';
+			});
+			$(".base-form-model .cost-tab-null tbody").html(trStr);
+		}
+	})
+</script>

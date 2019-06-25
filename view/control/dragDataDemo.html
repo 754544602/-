@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link rel="stylesheet" href="../../resources/css/drag/yt-drag.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model" style="padding-bottom: 30px;">
+			<div class="method-text">拖拽添加数据：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-drag.min.css</a></div></td>
+							<td>resources/css/drag/yt-drag.min.css</td>
+							<td><div>引用拖拽添加数据集样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-drag.min.js</a></div></td>
+							<td>resources/js/drag/yt-drag.min.js</td>
+							<td><div>引用拖拽添加数据集Js文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--基础表单标签规范START-->
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-drag-list</div>
+							</td>
+							<td>
+								<div>要进行数据拖拽的标识类</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.yt-drag-div</div>
+							</td>
+							<td>
+								<div>存放拖拽产生的div</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.yt-drag-down</div>
+							</td>
+							<td>
+								<div>数据框类名</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.yt-drag-down-ative</div>
+							</td>
+							<td>
+								<div>悬浮在数据框区域标识类样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.drag-clone</div>
+							</td>
+							<td>
+								<div>拖拽产生的div</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.data-sel-styl</div>
+							</td>
+							<td>
+								<div>点击数据选中样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+				<!DOCTYPE html>
+				<html>
+					<head>
+						<meta charset="UTF-8">
+						<title></title>
+						<link rel="stylesheet" href="./resources/css/drag/yt-drag.min.css"/>
+					</head>
+				<body>
+				    <div class="darg-model" style="margin-bottom: 25px;">
+							<table>
+							     <tr>
+							     	  <td width="335px" valign="top" style="border-right: 1px dashed #4F81BD;text-align: center;">
+							     	  	    <div class="yt-drag-list" onselectstart="return false">
+												<div class="yt-drag">第1条数据</div>
+												<div class="yt-drag">第2条数据</div>
+												<div class="yt-drag">第3条数据</div>
+												<div class="yt-drag">第4条数据</div>
+												<div class="yt-drag">第5条数据</div>
+											</div>
+											<button class="yt-option-btn yt-common-btn add-div-btn">添加数据</button>
+											<div style="clear: both;"></div>
+							     	  </td>
+							     	  <td valign="top" onselectstart="return false">
+							     	  	    <div class="drag-down-title">
+							     	  	    	 <div>数据框一</div>
+							     	  	    	 <div>数据框二</div>
+							     	  	    </div>
+							     	  	  	<div class="yt-drag-down"></div>
+											<div class="yt-drag-down"></div>
+							     	  </td>
+							     </tr>
+							</table>
+					</div>
+				</body>
+				<script type="text/javascript" src="./resources/js/drag/yt-drag.min.js"></script>
+				<script type="text/javascript">
+				   $(function() {
+							//调用点击添加数据方法
+							dragEvent.clickAddData();
+							/**
+							 * 
+							 * 列表数据拖拽到数据框内,实现方法
+							 * 
+							 */
+							//实例1:数据列表拖拽数据,参数selObj:数据列表区域标识;dataFram:数据框区域标识;
+							//mouseupFunction:鼠标松开的操作事件;
+							//isPosition是否是定义摆放位置,默认false
+							//实例1:不可拖拽添加重复数据
+							dragEvent.drageData({
+								selObj: $(".yt-drag-list"),
+								dataFram: $(".yt-drag-down"),
+								isPosition:true,//是否是定义摆放位置,默认false
+								mouseupFunction: function(dataFram) { //数据框标识
+									var dataFramDiv = $(".yt-drag-down-ative").find("div");
+									//判断是否有重复数据
+									if(dataFramDiv.text().indexOf($(".yt-drag-div .drag-clone").text()) == -1) {
+										//将数据框拼接到在数据框范围内的里面
+										$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+									}
+						
+								}
+							});
+							/**
+							 * 
+							 *数据框内数据相互拖拽添加,实现方法
+							 * 
+							 */
+							//实例1:数据框内拖拽数据,参数selObj:数据列表区域标识;
+							//dataFram:数据框区域标识;mouseupFunction:鼠标松开的操作事件;
+							//isPosition是否是定义摆放位置,默认false
+							dragEvent.drageData({
+								selObj: $(".yt-drag-down"),
+								dataFram: $(".yt-drag-down"),
+								isPosition:true,//是否是定义摆放位置,默认false
+								mouseupFunction: function(dataFram, thisData) { //数据框标识,thisData当前选中数据
+									//从数据框内,删除当前选中数据项
+									$(thisData).remove();
+									var dataFramDiv = $(".yt-drag-down-ative").find("div");
+									//判断是否有重复数据
+									if(dataFramDiv.text().indexOf($(".yt-drag-div .drag-clone").text()) == -1) {
+										//将数据框拼接到在数据框范围内的里面
+										$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+									}
+								}
+							});
+						});
+				</script>
+				</html>
+			</textarea>
+			</div>
+			<p>4.调用方法:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">方法名</th>
+							<th width="150px">参数名</th>
+							<th width="350px">参数类型</th>
+							<th width="450px">参数描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td rowspan="5">
+								dragEvent.drageData({<br/> selObj:"",
+								<br/> dataFram:"",
+								<br/> isPosition:true,
+								<br/> mouseupFunction:fun
+								<br/> });
+							</td>
+							<td>
+								<div>selObj</div>
+							</td>
+							<td>string类型</td>
+							<td>
+								<div>数据列表区域标识</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>dataFram</div>
+							</td>
+							<td>string类型</td>
+							<td>
+								<div>鼠标松开事件回调方法</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>isPosition</div>
+							</td>
+							<td>boolean类型;默认false</td>
+							<td>
+								<div>是否自定义拖拽显示位置</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>mouseupFunction</div>
+							</td>
+							<td>回调函数</td>
+							<td>
+								<div>数据框区域标识</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>5.展示效果:</p>
+			<div class="method-text">实例1(不可添加重复数据,可随意摆放位置)：</div>
+			<div class="darg-model" style="margin-bottom: 25px;">
+				<table>
+					<tr>
+						<td width="335px" valign="top" style="border-right: 1px dashed #4F81BD;text-align: center;">
+							<div class="yt-drag-list" onselectstart="return false">
+								<div class="yt-drag">第1条数据</div>
+								<div class="yt-drag">第2条数据</div>
+								<div class="yt-drag">第3条数据</div>
+								<div class="yt-drag">第4条数据</div>
+								<div class="yt-drag">第5条数据</div>
+							</div>
+							<button class="yt-option-btn yt-common-btn add-div-btn">添加数据</button>
+							<div style="clear: both;"></div>
+						</td>
+						<td valign="top" onselectstart="return false">
+							<div class="drag-down-title">
+								<div>数据框一</div>
+								<div>数据框二</div>
+							</div>
+							<div class="yt-drag-down"></div>
+							<div class="yt-drag-down"></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>实例2代码展现</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+				<!DOCTYPE html>
+				<html>
+					<head>
+						<meta charset="UTF-8">
+						<title></title>
+						<link rel="stylesheet" href="./resources/css/drag/yt-drag.min.css"/>
+					</head>
+				<body>
+					<div class="darg-model" style="margin-bottom: 25px;">
+						<table>
+						     <tr>
+						     	  <td width="335px" valign="top" style="border-right: 1px dashed #4F81BD;text-align: center;">
+						     	  	    <div class="yt-drag-list1" onselectstart="return false">
+											<div></div><div class="yt-drag">第1条数据</div>
+											<div class="yt-drag">第2条数据</div>
+											<div class="yt-drag">第3条数据</div>
+											<div class="yt-drag">第4条数据</div>
+											<div class="yt-drag">第5条数据</div>
+										</div>
+										<button class="yt-option-btn yt-common-btn add-div-btn">添加数据</button>
+										<div style="clear: both;"></div>
+						     	  </td>
+						     	  <td valign="top" onselectstart="return false">
+						     	  	    <div class="drag-down-title">
+						     	  	    	 <div>数据框四</div>
+						     	  	    	 <div>数据框五</div>
+						     	  	    </div>
+						     	  	  	<div class="yt-drag-down1"></div>
+										<div class="yt-drag-down1"></div>
+						     	  </td>
+						     </tr>
+						</table>
+					</div>	
+				</body>
+				<script type="text/javascript" src="./resources/js/drag/yt-drag.min.js"></script>
+				<script type="text/javascript">
+				   $(function() {
+							//调用点击添加数据方法
+							dragEvent.clickAddData();
+							/**
+							 * 实例2:数据列表拖拽数据,参数selObj:数据列表区域标识;dataFram:数据框区域标识;
+							 * mouseupFunction:鼠标松开的操作事件
+							 */
+							//实例2:可拖拽添加重复数据
+							dragEvent.drageData({
+								selObj: $(".yt-drag-list1"),
+								dataFram: $(".yt-drag-down1"),
+								mouseupFunction: function(dataFram) { //数据框标识
+									//将数据框拼接到在数据框范围内的里面
+									$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+								}
+							});
+							/**
+							 * 数据框内拖拽数据,参数selObj:数据列表区域标识;
+							 * dataFram:数据框区域标识;mouseupFunction:鼠标松开的操作事件
+							 */
+							//实例2:不删除数据框内当前选中项,可拖拽添加重复数据
+							dragEvent.drageData({
+								selObj: $(".yt-drag-down1"),
+								dataFram: $(".yt-drag-down1"),
+								mouseupFunction: function(dataFram, thisData) { //数据框标识,thisData当前选中数据
+									//将数据框拼接到在数据框范围内的里面
+									$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+								}
+							});
+						});
+				</script>
+				</html>
+			</textarea>
+			</div>
+			<div class="method-text">实例2(可添加重复数据)：</div>
+			<div class="darg-model" style="margin-bottom: 25px;">
+				<table>
+					<tr>
+						<td width="335px" valign="top" style="border-right: 1px dashed #4F81BD;text-align: center;">
+							<div class="yt-drag-list1" onselectstart="return false">
+								<div></div>
+								<div class="yt-drag">第1条数据</div>
+								<div class="yt-drag">第2条数据</div>
+								<div class="yt-drag">第3条数据</div>
+								<div class="yt-drag">第4条数据</div>
+								<div class="yt-drag">第5条数据</div>
+							</div>
+							<button class="yt-option-btn yt-common-btn add-div-btn">添加数据</button>
+							<div style="clear: both;"></div>
+						</td>
+						<td valign="top" onselectstart="return false">
+							<div class="drag-down-title">
+								<div>数据框四</div>
+								<div>数据框五</div>
+							</div>
+							<div class="yt-drag-down1"></div>
+							<div class="yt-drag-down1"></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/drag/yt-drag.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function() {
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+		
+		//调用点击添加数据方法
+		dragEvent.clickAddData();
+		/**
+		 * 
+		 * 
+		 * 列表数据拖拽到数据框内,实现方法
+		 * 
+		 * 
+		 * 
+		 */
+		//实例1:数据列表拖拽数据,参数selObj:数据列表区域标识;dataFram:数据框区域标识;mouseupFunction:鼠标松开的操作事件;isPosition是否是定义摆放位置,默认false
+		//实例1:不可拖拽添加重复数据
+		dragEvent.drageData({
+			selObj: $(".yt-drag-list"),
+			dataFram: $(".yt-drag-down"),
+			isPosition: true, //是否是定义摆放位置,默认false
+			mouseupFunction: function(dataFram) { //数据框标识
+				var dataFramDiv = $(".yt-drag-down-ative").find("div");
+				//判断是否有重复数据
+				if(dataFramDiv.text().indexOf($(".yt-drag-div .drag-clone").text()) == -1) {
+					//将数据框拼接到在数据框范围内的里面
+					$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+				}
+
+			}
+		});
+		//实例2:数据列表拖拽数据,参数selObj:数据列表区域标识;dataFram:数据框区域标识;mouseupFunction:鼠标松开的操作事件
+		//实例2:可拖拽添加重复数据
+		dragEvent.drageData({
+			selObj: $(".yt-drag-list1"),
+			dataFram: $(".yt-drag-down1"),
+			mouseupFunction: function(dataFram) { //数据框标识
+				//将数据框拼接到在数据框范围内的里面
+				$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+			}
+		});
+
+		/**
+		 * 
+		 * 
+		 *数据框内数据相互拖拽添加,实现方法
+		 * 
+		 * 
+		 */
+
+		//实例1:数据框内拖拽数据,参数selObj:数据列表区域标识;dataFram:数据框区域标识;mouseupFunction:鼠标松开的操作事件;isPosition是否是定义摆放位置,默认false
+		dragEvent.drageData({
+			selObj: $(".yt-drag-down"),
+			dataFram: $(".yt-drag-down"),
+			isPosition: true, //是否是定义摆放位置,默认false
+			mouseupFunction: function(dataFram, thisData) { //数据框标识,thisData当前选中数据
+				//从数据框内,删除当前选中数据项
+				$(thisData).remove();
+				var dataFramDiv = $(".yt-drag-down-ative").find("div");
+				//判断是否有重复数据
+				if(dataFramDiv.text().indexOf($(".yt-drag-div .drag-clone").text()) == -1) {
+					//将数据框拼接到在数据框范围内的里面
+					$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+				}
+			}
+		});
+		//实例2:数据框内拖拽数据,参数selObj:数据列表区域标识;dataFram:数据框区域标识;mouseupFunction:鼠标松开的操作事件
+		//实例2:不删除数据框内当前选中项,可拖拽添加重复数据
+		dragEvent.drageData({
+			selObj: $(".yt-drag-down1"),
+			dataFram: $(".yt-drag-down1"),
+			mouseupFunction: function(dataFram, thisData) { //数据框标识,thisData当前选中数据
+				//将数据框拼接到在数据框范围内的里面
+				$(".yt-drag-down-ative").append($(".yt-drag-div .drag-clone").removeClass("drag-clone"));
+			}
+		});
+	});
+</script>

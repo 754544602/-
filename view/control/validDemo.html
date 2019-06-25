@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+	<style type="text/css">
+		.valid-tab tr td,
+		.valid-tab2 tr td,
+		.valid-tab3 tr td {
+			padding-bottom: 20px;
+		}
+		
+		
+	</style>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">统一验证字段方法：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-valid.min.js</a></div></td>
+							<td>resources/js/valid/yt-valid.min.js</td>
+							<td><div>引用验证Js文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<p style="font-weight: normal;">
+					(1).在需要做验证的标签里加上<span style="color:red;font-size: 16px;font-weight: bold;">validform自定义属性,json格式</span>
+				</p>
+				<p style="font-weight: normal;">
+					(2).在需要做验证的<span style="color:red;font-size: 16px;font-weight: bold;">标签下方添加一个span标签引用公用的类样式</span> ,用来显示验证信息使用.
+				</p>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.valid-font</div>
+							</td>
+							<td>
+								<div>验证信息默认样式(<span style="color: red;">*</span>里面样式可做改变,但是类名不可改变,目前以此类名为基础添加信息)</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.自定义属性说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">属性名称</th>
+							<th width="300px">参数</th>
+							<th width="450px">参数说明</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td rowspan="6">validform="{isNull:true,size:10,type:'pattern',blurFlag:true,msg:'此信息不能为空,不要超过10个字'}"</td>
+						</tr>
+						<tr>
+							<td>isNull</td>
+							<td>boolean类型,验证是否为空</td>
+						</tr>
+						<tr>
+							<td>size</td>
+							<td>int类型,验证个数</td>
+						</tr>
+						<tr>
+							<td> type</td>
+							<td>
+								string类型,验证类型.目前包括以下:<br/> phone 手机号<br/> telPhone 电话号<br/> email 邮箱<br/> fax 传真<br/> idCard 身份证<br/> pattern 特殊字符<br/> upperCase 大写字母<br/> 也可以写自己的正则表达式
+							</td>
+						</tr>
+						<tr>
+							<td>blurFlag</td>
+							<td>boolean类型,验证是否支持失去焦点验证,默认false</td>
+						</tr>
+						<tr>
+							<td>msg</td>
+							<td>string类型,验证提示信息</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.调用方法:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">方法名</th>
+							<th width="300px">参数</th>
+							<th width="400px">方法返回值</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>$yt_valid.validForm($("#valid-model"));</td>
+							<td>验证区域标识</td>
+							<td>boolean类型</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>4.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+					   <!--示例一统一校验,不支持失去焦点验证START-->
+			<p>示例一(点击按钮统一验证):</p>
+			<div class="base-form-model">
+				  <table class="valid-tab">
+				  	     <tr>
+				  	     	 <td align="right"><span class="not-null">*</span><label>姓名：</label></td>
+				  	     	 <td style="position: relative;">
+				  	     	 	<input type="text" class="yt-input" validform="{isNull:true,size:10,msg:'请输入姓名,不要超过10个字'}"/>
+				  	     	 	<span class="valid-font"></span>
+				  	     	 </td>
+				  	     </tr>
+				  	     <tr>
+				  	     	 <td  align="right"><span class="not-null">*</span><label>工号：</label></td>
+				  	     	 <td style="position: relative;">
+				  	     	 	<input type="text" class="yt-input" validform="{isNull:true,type:'^[0-9]+$',msg:'请输入工号,只能是数字'}"/>
+				  	     	 	<span class="valid-font"></span>
+				  	     	 </td>
+				  	    </tr>
+				  	    <tr>
+				  	     	 <td  align="right"><span class="not-null">*</span><label>手机号：</label></td>
+				  	     	 <td style="position: relative;">
+				  	     	 	<input type="text" class="yt-input" validform="{isNull:true,type:'phone',msg:'重要信息不能为空,输入正确的手机号'}"/>
+				  	     	 	<span class="valid-font"></span>
+				  	     	 </td>
+				  	    </tr>
+				  	     <tr>
+				  	     	 <td  align="right"><label>地址：</label></td>
+				  	     	 <td style="position: relative;">
+				  	     	 	<input type="text" class="yt-input" validform="{type:'pattern',msg:'不能包含特殊字符'}"/>
+				  	     	 	<span class="valid-font"></span>
+				  	     	 </td>
+				  	    </tr>
+				  </table>
+				  <button class="yt-option-btn yt-common-btn sure-btn" style="margin-left: 115px;margin-bottom: 10px;">确定</button>
+			</div>
+			<!--示例一统一校验,不支持失去焦点验证END-->
+			<!--示例二统一校验,支持失去焦点验证START-->
+			<p>示例二(支持失去焦点验证和点击按钮统一验证):</p>
+			<div class="base-form-model">
+			<table class="valid-tab2">
+				  	     <tr>
+				  	     	 <td align="right"><span class="not-null">*</span><label>项目名称：</label></td>
+				  	     	 <td style="position: relative;">
+				  	     	 	<input type="text" class="yt-input" validform="{isNull:true,size:10,blurFlag:true,msg:'请输入项目名称,不要超过10个字'}"/>
+				  	     	 	<span class="valid-font"></span>
+				  	     	 </td>
+				  	     </tr>
+				  	     <tr>
+				  	     	 <td  align="right"><span class="not-null">*</span><label>项目编号：</label></td>
+				  	     	 <td style="position: relative;">
+				  	     	 	<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'upperCase',msg:'请输入项目编号,大写英文字母'}"/>
+				  	     	 	<span class="valid-font"></span>
+				  	     	 </td>
+				  	    </tr>
+			</table>
+			<button class="yt-option-btn yt-common-btn sure-btn1" style="margin-left: 115px;margin-bottom: 10px;">确定</button>
+			</div>
+			<!--示例二统一校验,支持失去焦点验证END-->
+			
+			<script type="text/javascript">
+				//初始化下拉框
+			   $('.yt-select').niceSelect();
+			   $(".sure-btn").off().on("click",function(){
+			   	   /**
+			   	    * 调用验证方法
+			   	    */
+			   	   $yt_valid.validForm($(".valid-tab"));
+			   });
+			   $("sure-btn1").off().on("click",function(){
+			   	   /**
+			   	    * 调用验证方法
+			   	    */
+			   	   $yt_valid.validForm($(".valid-tab2"));
+			   });
+			   $(".sure-btn2").off().on("click", function() {
+					/**
+					 * 调用验证方法
+					 */
+					$yt_valid.validForm($(".valid-tab3"));
+				});
+		</script>
+				</textarea>
+			</div>
+			<p>5.展示效果:</p>
+			<!--示例一统一校验,不支持失去焦点验证START-->
+			<p>示例一(点击按钮统一验证):</p>
+			<div class="base-form-model" style="padding-left: 165px;">
+				<table class="valid-tab">
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>姓名：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,size:10,msg:'请输入姓名,不要超过10个字'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>工号：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,type:'^[0-9]+$',msg:'请输入工号,只能是数字'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>手机号：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,type:'phone',msg:'重要信息不能为空,输入正确的手机号'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><label>地址：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{type:'pattern',msg:'不能包含特殊字符'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+				</table>
+				<button class="yt-option-btn yt-common-btn sure-btn" style="margin-left: 115px;margin-bottom: 10px;">确定</button>
+			</div>
+			<!--示例一统一校验,不支持失去焦点验证END-->
+			<!--示例二统一校验,支持失去焦点验证START-->
+			<p>示例二(支持失去焦点验证和点击按钮统一验证):</p>
+			<div class="base-form-model" style="padding-left: 165px;">
+				<table class="valid-tab2">
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>项目名称：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,size:10,blurFlag:true,msg:'请输入项目名称,不要超过10个字'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>项目编号：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'upperCase',msg:'请输入项目编号,大写英文字母'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+				</table>
+				<button class="yt-option-btn yt-common-btn sure-btn1" style="margin-left: 115px;margin-bottom: 10px;">确定</button>
+			</div>
+			<!--示例二统一校验,支持失去焦点验证END-->
+			<p>6.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+					<!--示例三统一校验,支持失去焦点验证,特殊格式验证START-->
+					<p>示例三(支持失去焦点验证,特殊格式验证):</p>
+					<div class="base-form-model" style="padding-left: 165px;">
+						<table class="valid-tab3">
+							<tr>
+								<td align="right"><span class="not-null">*</span><label>电话号码：</label></td>
+								<td style="position: relative;">
+									<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'phone',msg:'请输入正确的电话号码'}" />
+									<span class="valid-font"></span>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><span class="not-null">*</span><label>邮箱：</label></td>
+								<td style="position: relative;">
+									<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'email',msg:'请输入正确的邮箱格式'}" />
+									<span class="valid-font"></span>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><span class="not-null">*</span><label>传真：</label></td>
+								<td style="position: relative;">
+									<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'fax',msg:'请输入正确的传真'}" />
+									<span class="valid-font"></span>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><span class="not-null">*</span><label>身份证：</label></td>
+								<td style="position: relative;">
+									<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'idCard',msg:'请输入正确的身份证号'}" />
+									<span class="valid-font"></span>
+								</td>
+							</tr>
+							<tr>
+								<td align="right"><span class="not-null">*</span><label>所在区：</label></td>
+								<td style="position: relative;">
+									<select class="yt-select" validform="{isNull:true,msg:'请选择所在区'}">
+										<option>请选择</option>
+										<option>海淀区</option>
+										<option>朝阳区</option>
+									</select>
+									<span class="valid-font"></span>
+								</td>
+							</tr>
+						</table>
+						<button class="yt-option-btn yt-common-btn sure-btn2" style="margin-left: 115px;margin-bottom: 10px;">确定</button>
+					</div>
+					<!--示例三统一校验,支持失去焦点验证,特殊格式验证END-->
+					<script type="text/javascript">
+						//初始化下拉框
+					   $('.yt-select').niceSelect();
+					   $(".sure-btn").off().on("click",function(){
+					   	   /**
+					   	    * 调用验证方法
+					   	    */
+					   	   $yt_valid.validForm($(".valid-tab"));
+					   });
+					   $("sure-btn1").off().on("click",function(){
+					   	   /**
+					   	    * 调用验证方法
+					   	    */
+					   	   $yt_valid.validForm($(".valid-tab2"));
+					   });
+					   $(".sure-btn2").off().on("click", function() {
+							/**
+							 * 调用验证方法
+							 */
+							$yt_valid.validForm($(".valid-tab3"));
+						});
+				</script>
+				</textarea>
+			</div>
+			<!--示例三统一校验,支持失去焦点验证,特殊格式验证START-->
+			<p>示例三(支持失去焦点验证,特殊格式验证):</p>
+			<div class="base-form-model" style="padding-left: 165px;">
+				<table class="valid-tab3">
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>电话号码：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'telPhone',msg:'请输入正确的电话号码'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>邮箱：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'email',msg:'请输入正确的邮箱格式'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>传真：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'fax',msg:'请输入正确的传真'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>身份证：</label></td>
+						<td style="position: relative;">
+							<input type="text" class="yt-input" validform="{isNull:true,blurFlag:true,type:'idCard',msg:'请输入正确的身份证号'}" />
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"><span class="not-null">*</span><label>所在区：</label></td>
+						<td style="position: relative;">
+							<select class="yt-select" validform="{isNull:true,msg:'请选择所在区'}">
+								<option value="">请选择</option>
+								<option value="1">海淀区</option>
+								<option value="2">朝阳区</option>
+							</select>
+							<span class="valid-font"></span>
+						</td>
+					</tr>
+				</table>
+				<button class="yt-option-btn yt-common-btn sure-btn2" style="margin-left: 115px;margin-bottom: 10px;">确定</button>
+			</div>
+			<!--示例三统一校验,支持失去焦点验证,特殊格式验证END-->
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/valid/yt-valid.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function(){
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+	});
+	
+	//初始化下拉框
+	$('.yt-select').niceSelect();
+	$(".sure-btn").off().on("click", function() {
+		/**
+		 * 调用验证方法
+		 */
+		$yt_valid.validForm($(".valid-tab"));
+	});
+	$(".sure-btn1").off().on("click", function() {
+		/**
+		 * 调用验证方法
+		 */
+		$yt_valid.validForm($(".valid-tab2"));
+	});
+	$(".sure-btn2").off().on("click", function() {
+		/**
+		 * 调用验证方法
+		 */
+		$yt_valid.validForm($(".valid-tab3"));
+	});
+</script>

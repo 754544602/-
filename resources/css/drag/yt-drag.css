@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/***
+ * 
+ *
+ * C(21)拖拽添加数据 
+ * 
+ * 
+ * 
+ */
+
+/**
+ * 展示数据div样式
+ */
+.yt-drag {
+	border: 1px solid #4387CD;
+	cursor: pointer;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+/**
+ *要进行拖拽数据div
+ */
+
+.yt-drag-list,.yt-drag-list1 {
+	padding-left: 10px;
+	-moz-user-select: none;
+	margin: 0 auto;
+}
+
+
+/**
+ * 拖拽div
+ */
+
+.yt-drag-div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 100;
+}
+
+
+/**
+ * 数据框样式
+ */
+
+.yt-drag-down,
+.yt-drag-down1 {
+	min-height: 200px;
+	width: 310px;
+	border: 1px solid #DFE6F3;
+	float: left;
+	margin-left: 14px;
+}
+
+
+/**
+ * 悬浮在数据框区域内样式
+ */
+
+.yt-drag-down-ative {
+	border: 1px solid red;
+}
+
+
+/**
+ * 选中拖拽克隆div样式
+ */
+
+.drag-clone {
+	position: relative;
+	z-index: 101;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+
+
+/**
+ * 数据框标题样式
+ */
+
+.drag-down-title div {
+	float: left;
+	width: 310px;
+	text-align: center;
+	padding-bottom: 10px;
+	font-size: 16px;
+	margin-left: 14px;
+}
+
+
+/**
+ * 添加按钮
+ */
+
+.add-div-btn {
+	float: right;
+	margin-right: 15px;
+}
+
+
+/**
+ * 点击选中数据样式
+ */
+
+.data-sel-styl {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}

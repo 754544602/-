@@ -1,0 +1,711 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/dialog/jquery.qtip.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model" style="padding-bottom: 30px;">
+			<div class="method-text">提示工具：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>jquery.qtip.min.css</a></div></td>
+							<td>resources/js/dialog/jquery.qtip.min.css</td>
+							<td><div>引用提示工具css样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.qtip.min.js</a></div></td>
+							<td>resources/js/dialog/jquery.qtip.min.js</td>
+							<td><div>引用提示工具js文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--基础表单标签规范START-->
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-dialog</div>
+							</td>
+							<td>
+								<div>内容超出截取...显示</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.qtip-default</div>
+							</td>
+							<td>
+								<div>提示框默认样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.qtip</div>
+							</td>
+							<td>
+								<div>提示框的定位样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/yt-common.css" />
+		<link rel="stylesheet" type="text/css" href="js/dialog/jquery.qtip.min.css" />
+		<style type="text/css">
+			.qtip-style {
+				background-color: #fff;
+				padding: 8px 4px;
+				border: 1px solid #dfe6f3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table class="yt-table">
+			<thead class="yt-thead">
+				<tr>
+					<th width="64px">NO</th>
+					<th width="240px">公司名称</th>
+					<th width="197px">报销类型</th>
+					<th width="200px">报销金额(元)</th>
+					<th width="197px">申请日期</th>
+					<th width="200px">单据状态</th>
+				</tr>
+			</thead>
+			<tbody class="yt-tbody">
+				<tr>
+					<td>
+						<div style="text-align: center;">01</div>
+					</td>
+					<td>
+						<div class="yt-dialog" style="width: 240px;">公司名称公司名称公司名称公司名称公司名称公司名称公司名称</div>
+					</td>
+					<td>
+						<div>普通报销</div>
+					</td>
+					<td>
+						<div style="text-align: right;">200.00</div>
+					</td>
+					<td>
+						<div>2017-02-16</div>
+					</td>
+					<td>
+						<div>审批中</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="yt-table-br" style="text-align: center;">02</div>
+					</td>
+					<td>
+						<div class="yt-dialog">公司名称公司名称</div>
+					</td>
+					<td>
+						<div>普通报销</div>
+					</td>
+					<td>
+						<div style="text-align: right;">200.00</div>
+					</td>
+					<td>
+						<div>2017-02-16</div>
+					</td>
+					<td>
+						<div>审批中</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/dialog/jquery.qtip.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//注意：以下配置参数如无特别说明均为默认，使用时只需配置相关参数即可
+		$('.yt-dialog').qtip({
+			//默认为事件触发时加载，设置为true时，会在页面加载时加载提示 类型：boolean，true, false (默认: false)
+			prerender: false,
+			// 为提示信息设置id，如设置为myTooltip就可以通过ui-tooltip-myTooltip访问这个提示信息  类型:"String", false (默认: false)
+			id: false,
+			// 每次显示提示都删除上一次的提示  类型：boolean，true, false (默认: true)
+			overwrite: true,
+			// 通过元素属性创建提示  如a[title]，把原有的title重命名为oldtitle  类型：boolean，true, false (默认: true)
+			suppress: true,
+			// 内容相关的设置   
+			content: {
+				// 提示信息的内容，如果只设置内容可以直接 content: "提示信息"，而不需要 content: { text: { "提示信息" } }  
+				text: function(event) {
+					var txt = $(this).text();
+					return txt || '';
+				},
+				// 提示信息使用的元素属性 类型: "String" (默认: "title")
+				attr: 'title',
+				title: {
+					// 提示信息的标题，如果只设置标题可以直接 title: "标题"  
+					text: false,
+					// 提示信息的关闭按钮  如button:"x",button:"关闭"
+					button: false
+				}
+			},
+			// 位置相关的设置  
+			position: {
+				// 提示信息的位置  
+				// 如提示的目标元素的右下角(at属性)  
+				// 对应 提示信息的左上角(my属性)  
+				my: 'bottom center',  //(默认: "top left")
+				at: 'top right',  // (默认: "bottom right")
+				// 提示的目标元素，默认为选择器  也可以设置为“mouse”或“event”（在目标的位置触发的工具提示），或一个数组包含一个绝对的X / Y的位置
+				target: false,
+				// 提示信息默认添加到的容器   false (默认: document.body)
+				container: false,
+				// 使提示信息在指定目标内可见，不会超出边界  
+				viewport: $('body'),
+				adjust: {
+					// 提示信息位置偏移  
+					x: 0,
+					y: 0,
+					//是否在鼠标悬停时提示 true, false (默认: true)
+					mouse: true,
+					//是否可以调整提示信息的位置
+					resize: true,
+					method: 'flip flip'
+				},
+				// 提示信息的触发动画设置
+				effect: function(api, pos, viewport) {
+					//this为当前显示的提示信息
+					$(this).animate(pos, {
+						duration: 200,
+						easing: 'linear',
+						queue: false // 设置此为false，所以它不会干扰显示/隐藏动画
+					});
+				}
+			},
+			// 显示提示的相关设置  
+			show: {
+				// 触发事件的目标元素  默认为选择器元素
+				target: false,
+				// 事件名称，默认为鼠标移到时
+				event: 'mouseenter',
+				// 特效  
+				effect: true,
+				// 延迟显示时间设置 默认: 90毫秒
+				delay: 90,
+				// 隐藏其他提示 true, false (默认: false)
+				solo: false,
+				// 在页面加载完就显示提示  
+				ready: false,
+				modal: {
+					// 启用模态对话框效果  
+					on: false,
+					// 确定显示和隐藏模态覆盖时发生的效果类型。自定义方法也可以使用时，其范围是叠加元素时调用
+					effect: true,
+					//显示模态效果后点击背景隐藏提示
+					blur: true
+				}
+			},
+			// 隐藏提示的相关设置  参考show
+			hide: {
+				target: false,
+				//隐藏触发事件 默认为鼠标离开选择器
+				event: 'mouseleave',
+				effect: true,
+				delay: 0,
+				//设置为true 工具提示将不会隐藏，如果鼠标滑过，允许内容被点击和互动 
+				fixed: false,
+				//离开窗口时指定工具提示是否隐藏
+				leave: 'window'
+			},
+			// 样式相关  
+			style: {
+				// 自定义提示框类样式 多个类样式以空格分割
+				classes: 'qtip-style',
+				//确定是否themeroller UI风格的UI部件类应用你的工具提示
+				widget: false,
+				//重写工具提示的所有应用CSS宽度样式。可以是任何有效宽度的CSS值。请注意，这并不覆盖最大/最小宽度样式！
+				width: false,
+				//同width设置
+				height: false,
+				// tip插件，箭头相关设置  
+				tip: {
+					//是否显示箭头
+					corner: true,
+					//定义箭头的角度 如 “right center”默认false
+					mimic: false,
+					//箭头的宽度
+					width: 15,
+					//箭头的高度
+					height: 10,
+					//是否有边框
+					border: true,
+					//确定尖端相对于其当前拐角位置的偏移量 Integer (默认: 0)
+					offset: 0
+				}
+			},
+			// 事件对象确定绑定到工具提示的初始事件处理程序
+			events: {
+				//当工具提示被渲染时被触发
+				render: null,
+				//当工具提示被重新定位时，或者由库本身，或者当用户调用API方法时被触发
+				move: null,
+				//当工具提示显示由库本身或用户调用适当的切换或显示API方法时被触发
+				show: null,
+				//当工具提示被隐藏时，由库本身或用户调用适当的切换或隐藏API方法引发
+				hide: null,
+				//当工具提示被触发时被触发，即显示或隐藏，由用户调用适当的开关或隐藏API方法
+				toggle: null,
+				//当工具提示变成可见的，即在显示之后立即被触发。效果已经完成，qTip是可见的，并且有维度
+				visible: null,
+				//提示工具获取焦点，或鼠标滑过时触发
+				focus: function(event, api) {
+					console.log(event);
+				},
+				//工具提示失去焦点时，即由库本身或焦点API方法所关注的另一个工具提示
+				blur: null
+			}
+		});
+	</script>
+
+</html>
+			</textarea>
+			</div>
+			<p>4.调用方法:</p>
+			<div class="method-show-div">$('.yt-dialog').qtip();</div>
+			<p>5.定位说明:</p>
+			<div class="method-show-div" style="width: 797px;">
+				<p>弹出框与目标元素的相对位置示意图如下：</p>
+				<div class="" style="text-align: center;">
+					<img src="../../resources/images/dialog/qtip-position.jpg" />
+				</div>
+				<div>主要针对控件position属性下的at与my属性说明，如想提示信息出现在目标元素的左侧，则目标元素(at属性)的值应为"left center"，提示信息(my属性)的值应为"right center"</div>
+			</div>
+			<p>6.展示效果:</p>
+			<table class="yt-table" style="margin-left: 10px;margin-right: 10px;">
+				<thead class="yt-thead">
+					<tr>
+						<th width="64px">NO</th>
+						<th width="240px">公司名称</th>
+						<th width="197px">报销类型</th>
+						<th width="200px">报销金额(元)</th>
+						<th width="197px">申请日期</th>
+						<th width="200px">单据状态</th>
+					</tr>
+				</thead>
+				<tbody class="yt-tbody">
+					<tr>
+						<td>
+							<div style="text-align: center;">01</div>
+						</td>
+						<td>
+							<div class="yt-dialog" style="width: 240px;">公司名称公司名称公司名称公司名称公司名称公司名称公司名称</div>
+						</td>
+						<td>
+							<div>普通报销</div>
+						</td>
+						<td>
+							<div style="text-align: right;">200.00</div>
+						</td>
+						<td>
+							<div class="qtip-left">2017-02-16</div>
+						</td>
+						<td>
+							<div class="qtip-right">审批中</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="yt-table-br" style="text-align: center;">02</div>
+						</td>
+						<td>
+							<div class="yt-dialog">公司名称公司名称</div>
+						</td>
+						<td>
+							<div>普通报销</div>
+						</td>
+						<td>
+							<div style="text-align: right;">200.00</div>
+						</td>
+						<td>
+							<div class="qtip-left">2017-02-16</div>
+						</td>
+						<td>
+							<div class="qtip-right">审批中</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>7.代码实例:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+			//左侧提示信息
+			$('.qtip-left').qtip({
+				content:{
+					text:function(){
+						var txt = $(this).text();
+						return txt || '';
+					}
+				},
+				position:{
+					my: 'right center',
+					at: 'left center',
+					container: $('#yt-index-main-nav'),
+					viewport: $('body'),
+					adjust: {
+						x: 0,
+						y: 0,
+						//是否在鼠标悬停时提示 true, false (默认: true)
+						mouse: true,
+						//是否可以调整提示信息的位置
+						resize: true,
+						method: 'flip flip'
+					},
+				},
+				style: {
+					// 自定义提示框类样式 多个类样式以空格分割
+					classes: 'qtip-style',
+					// tip插件，箭头相关设置  
+					tip: {
+						//是否显示箭头
+						corner: true,
+						//箭头的宽度
+						width: 15,
+						//箭头的高度
+						height: 10,
+						//是否有边框
+						border: true
+					}
+				}
+			});
+			//右侧提示信息
+			$('.qtip-right').qtip({
+				content:{
+					text:function(){
+						var txt = $(this).text();
+						return txt || '';
+					}
+				},
+				position:{
+					my: 'left center',
+					at: 'right center',
+					container: $('#yt-index-main-nav'),
+					viewport: $('body'),
+					adjust: {
+						x: 0,
+						y: 0,
+						//是否在鼠标悬停时提示 true, false (默认: true)
+						mouse: true,
+						//是否可以调整提示信息的位置
+						resize: true,
+						method: 'flip flip'
+						},
+				},
+				style: {
+					// 自定义提示框类样式 多个类样式以空格分割
+					classes: 'qtip-style',
+					// tip插件，箭头相关设置  
+					tip: {
+						//是否显示箭头
+						corner: true,
+						//箭头的宽度
+						width: 15,
+						//箭头的高度
+						height: 10,
+						//是否有边框
+						border: true
+					}
+				}
+			});	
+								
+			</textarea>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../../resources/js/dialog/jquery.qtip.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	
+	$(function(){
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+	});
+	
+	
+	//创建一个不包含顶部导航的div，限制提示信息显示的区域
+	var viow = $('<div style="position: fixed;bottom: 0;z-index: -1000;left: 0;right: 0;top:105px;"></div>');
+	$('#yt-index-main-nav').append(viow);
+	//左侧提示信息
+	$('.qtip-left').qtip({
+		content: {
+			text: function() {
+				var txt = $(this).text();
+				return txt || '';
+			}
+		},
+		position: {
+			my: 'right center',
+			at: 'left center',
+			container: $('#yt-index-main-nav'),
+			viewport: $('body'),
+			adjust: {
+				x: 0,
+				y: 0,
+				//是否在鼠标悬停时提示 true, false (默认: true)
+				mouse: true,
+				//是否可以调整提示信息的位置
+				resize: true,
+				method: 'flip flip'
+			},
+		},
+		style: {
+			// 自定义提示框类样式 多个类样式以空格分割
+			classes: 'qtip-style',
+			// tip插件，箭头相关设置  
+			tip: {
+				//是否显示箭头
+				corner: true,
+				//箭头的宽度
+				width: 15,
+				//箭头的高度
+				height: 10,
+				//是否有边框
+				border: true
+			}
+		}
+	});
+
+	//右侧提示信息
+	$('.qtip-right').qtip({
+		content: {
+			text: function() {
+				var txt = $(this).text();
+				return txt || '';
+			}
+		},
+		position: {
+			my: 'left center',
+			at: 'right center',
+			container: $('#yt-index-main-nav'),
+			viewport: $('body'),
+			adjust: {
+				x: 0,
+				y: 0,
+				//是否在鼠标悬停时提示 true, false (默认: true)
+				mouse: true,
+				//是否可以调整提示信息的位置
+				resize: true,
+				method: 'flip flip'
+			},
+		},
+		style: {
+			// 自定义提示框类样式 多个类样式以空格分割
+			classes: 'qtip-style',
+			// tip插件，箭头相关设置  
+			tip: {
+				//是否显示箭头
+				corner: true,
+				//箭头的宽度
+				width: 15,
+				//箭头的高度
+				height: 10,
+				//是否有边框
+				border: true
+			}
+		}
+	});
+
+	$('.yt-dialog').qtip({
+		//默认为事件触发时加载，设置为true时，会在页面加载时加载提示 类型：boolean，true, false (默认: false)
+		prerender: false,
+		// 为提示信息设置id，如设置为myTooltip就可以通过ui-tooltip-myTooltip访问这个提示信息  类型:"String", false (默认: false)
+		id: false,
+		// 每次显示提示都删除上一次的提示  类型：boolean，true, false (默认: true)
+		overwrite: true,
+		// 通过元素属性创建提示  如a[title]，把原有的title重命名为oldtitle  类型：boolean，true, false (默认: true)
+		suppress: true,
+		// 内容相关的设置   
+		content: {
+			// 提示信息的内容，如果只设置内容可以直接 content: "提示信息"，而不需要 content: { text: { "提示信息" } }  
+			text: function(event) {
+				var txt = $(this).text();
+				return txt || '';
+			},
+			// 提示信息使用的元素属性  "String" (默认: "title")
+			attr: 'title',
+			title: {
+				// 提示信息的标题，如果只设置标题可以直接 title: "标题"  
+				text: false,
+				// 提示信息的关闭按钮  如button:"x",button:"关闭"
+				button: false
+			}
+		},
+		// 位置相关的设置  
+		position: {
+			// 提示信息的位置  
+			// 如提示的目标元素的右下角(at属性)  
+			// 对应 提示信息的左上角(my属性)  
+			my: 'bottom center',
+			at: 'top right',
+			// 提示的目标元素，默认为选择器  也可以设置为“mouse”或“event”（在目标的位置触发的工具提示），或一个数组包含一个绝对的X / Y的位置
+			target: false,
+			// 提示信息默认添加到的容器   false (默认: document.body)
+			container: $('#yt-index-main-nav'),
+			// 使提示信息在指定目标内可见，不会超出边界  
+			viewport: viow,
+			adjust: {
+				// 提示信息位置偏移  
+				x: 0,
+				y: 0,
+				//是否在鼠标悬停时提示 true, false (默认: true)
+				mouse: true,
+				//是否可以调整提示信息的位置
+				resize: true,
+				method: 'flip flip'
+			},
+			// 提示信息的触发动画设置
+			effect: function(api, pos, viewport) {
+				//this为当前显示的提示信息
+				$(this).animate(pos, {
+					duration: 200,
+					easing: 'linear',
+					queue: false // 设置此为false，所以它不会干扰显示/隐藏动画
+				});
+			}
+		},
+		// 显示提示的相关设置  
+		show: {
+			// 触发事件的目标元素  默认为选择器元素
+			target: false,
+			// 事件名称，默认为鼠标移到时
+			event: 'mouseenter',
+			// 特效  
+			effect: true,
+			// 延迟显示时间设置 默认: 90毫秒
+			delay: 90,
+			// 隐藏其他提示 true, false (默认: false)
+			solo: false,
+			// 在页面加载完就显示提示  
+			ready: false,
+			modal: {
+				// 启用模态对话框效果  
+				on: false,
+				// 确定显示和隐藏模态覆盖时发生的效果类型。自定义方法也可以使用时，其范围是叠加元素时调用
+				effect: true,
+				//显示模态效果后点击背景隐藏提示
+				blur: true
+			}
+		},
+		// 隐藏提示的相关设置  参考show
+		hide: {
+			target: false,
+			//隐藏触发事件 默认为鼠标离开选择器
+			event: 'mouseleave',
+			effect: true,
+			delay: 0,
+			//设置为true 工具提示将不会隐藏，如果鼠标滑过，允许内容被点击和互动 
+			fixed: false,
+			//离开窗口时指定工具提示是否隐藏
+			leave: 'window'
+		},
+		// 样式相关  
+		style: {
+			// 自定义提示框类样式 多个类样式以空格分割
+			classes: 'qtip-style',
+			//确定是否themeroller UI风格的UI部件类应用你的工具提示
+			widget: false,
+			//重写工具提示的所有应用CSS宽度样式。可以是任何有效宽度的CSS值。请注意，这并不覆盖最大/最小宽度样式！
+			width: false,
+			//同width设置
+			height: false,
+			// tip插件，箭头相关设置  
+			tip: {
+				//是否显示箭头
+				corner: true,
+				//定义箭头的角度 如 “right center”默认false
+				mimic: false,
+				//箭头的宽度
+				width: 15,
+				//箭头的高度
+				height: 10,
+				//是否有边框
+				border: true,
+				//确定尖端相对于其当前拐角位置的偏移量 Integer (默认: 0)
+				offset: 0
+			}
+		},
+		// 事件对象确定绑定到工具提示的初始事件处理程序
+		events: {
+			//当工具提示被渲染时被触发
+			render: null,
+			//当工具提示被重新定位时，或者由库本身，或者当用户调用API方法时被触发
+			move: null,
+			//当工具提示显示由库本身或用户调用适当的切换或显示API方法时被触发
+			show: null,
+			//当工具提示被隐藏时，由库本身或用户调用适当的切换或隐藏API方法引发
+			hide: null,
+			//当工具提示被触发时被触发，即显示或隐藏，由用户调用适当的开关或隐藏API方法
+			toggle: null,
+			//当工具提示变成可见的，即在显示之后立即被触发。效果已经完成，qTip是可见的，并且有维度
+			visible: null,
+			//提示工具获取焦点，或鼠标滑过时触发
+			focus: function(event, api) {
+				console.log(event);
+			},
+			//工具提示失去焦点时，即由库本身或焦点API方法所关注的另一个工具提示
+			blur: null
+		}
+	});
+</script>
