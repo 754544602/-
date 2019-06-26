@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+<div class="web-criterion-model">
+	<div class="method-text">radio标签：</div>
+	<!--基础表单标签规范START-->
+	<p>1.使用条件:</p>
+	<div class="label-code-div-first" style="height: auto">
+		<table class="yt-table">
+			<thead class="yt-thead the-inner">
+				<tr>
+					<th width="500px">文件名</th>
+					<th width="500px">文件路径</th>
+					<th width="400px">文件描述</th>
+				</tr>
+			</thead>
+			<tbody class="yt-tbody">
+				<tr>
+					<td><div><a>yt-common.min.css</a></div></td>
+					<td>resources/css/common/yt-common.min.css</td>
+					<td><div>引用公用的样式文件</div></td>
+				</tr>
+				<tr>
+					<td><div><a>jquery.min.js</a></div></td>
+					<td>resources/js/common/jquery.min.js</td>
+					<td><div>引用jquery的js文件</div></td>
+				</tr>
+				<tr>
+					<td><div><a>yt-common.min.js</a></div></td>
+					<td>resources/js/common/yt-common.min.js</td>
+					<td><div>引用公用的js文件</div></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p>2.类样式说明:</p>
+	<div class="label-code-div-first" style="height: auto">
+		<table class="yt-table">
+			<thead class="yt-thead the-inner">
+				<tr>
+					<th width="200px">类名</th>
+					<th width="580px">描述</th>
+				</tr>
+			</thead>
+			<tbody class="yt-tbody">
+				<tr>
+					<td>
+						<div>.check-label .yt-radio</div>
+					</td>
+					<td>
+						<div>单选按钮公用类名</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>.check</div>
+					</td>
+					<td>
+						<div>选中样式类</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>.yt-radio-disabled</div>
+					</td>
+					<td>
+						<div>禁用</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p>3.调用方法:</p>
+	<div class="label-code-div-first" style="height: auto">
+		<table class="yt-table">
+			<thead class="yt-thead the-inner">
+				<tr>
+					<th width="200px">方法</th>
+					<th width="300px">参数类型</th>
+					<th width="400px">参数说明</th>
+				</tr>
+			</thead>
+			<tbody class="yt-tbody">
+				<tr>
+					<td>
+						<div>setRadioState("")</div>
+					</td>
+					<td>
+						<div>string</div>
+					</td>
+					<td>
+						<div>
+							 目前有4个固定参数值值:<br/>check(选中),<br/>uncheck(取消选中),<br/>disabled(禁用),<br/>undisabled(取消禁用)
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<p>4.代码展现:</p>
+	<div class="label-code-div">
+		<textarea cols="50" rows="15" name="code" class="javaScript">
+		<!--
+			div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+		    padding内间距对应值依次是上右下左
+		-->	
+		<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+			<table class="yt-form-table" style="width: 100%;">
+			    <tr>
+			         <td>
+			         	<label><span class="yt-lep5">单选按</span>钮：</label>
+			         	<!--选中状态的单选按钮给label加check类名-->
+			            <label class="check-label yt-radio check" style="margin-right: 15px;">
+						    <input id="radio1" type="radio" name="test"  value="0"/>选中
+						</label>
+						<!--未选中状态的单选按钮-->
+						<label class="check-label yt-radio" style="margin-right: 15px;">
+						    <input id="radio2" type="radio" name="test"  value="1"/>未选中
+					    </label>
+					    <!--禁用状态单选按钮给label加yt-radio-disabled类名,input设置disabled="disabled"-->
+			    		<label class="check-label yt-radio yt-radio-disabled">
+						    <input id="radio3" type="radio" name="test"  value="3" disabled="disabled"/>禁用
+						</label>
+			         </td> 
+			    </tr>
+			</table>
+		</div>
+		
+    	<script type="text/javascript">
+    		/******************************以下示例代码为开发人员实际开发提供参考***********************************/
+		     /**
+		      * 
+		      * 设置单选按钮选中
+		      * 
+		      */
+		     function setRadioChecked(){
+		     	$("#radio1").setRadioState("check");
+		     }
+		     /*
+		      * 设置单选按钮取消选中
+		      */
+		     function setRadioUnChecked(){
+		     	$("#radio1").setRadioState("uncheck");
+		     }
+		     /**
+		      * 设置单选按钮禁用
+		      */
+		     function setRadioDisabled(){
+		     	$("#radio1").setRadioState("disabled");
+		     }
+		     /**
+			 * 设置取消禁用
+			 */
+			function setRadioUnDisabled(){
+				$("#radio1").setRadioState("undisabled");
+			}
+			/**
+			 * 获取选中的值
+			 */
+			function getCheckVal(){
+				var  checkVal = $(".check-label.check input").val();
+				alert(checkVal);
+			}
+	</script>
+				</textarea>
+	</div>
+	<p>5.展示效果:</p>
+	<!--
+		div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+	    padding内间距对应值依次是上右下左
+	-->	
+	<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+	<table class="yt-form-table" style="width: 100%;">
+		    <tr>
+		         <td>
+		         	<label><span class="yt-lep5">单选按</span>钮：</label>
+		         	<!--选中状态的单选按钮给label加check类名-->
+		            <label class="check-label yt-radio check" style="margin-right: 15px;">
+					    <input id="radio1" type="radio" name="test"  value="0"/>选中
+					</label>
+					<!--未选中状态的单选按钮-->
+					<label class="check-label yt-radio" style="margin-right: 15px;">
+					    <input id="radio2" type="radio" name="test"  value="1"/>未选中
+				    </label>
+				    <!--禁用状态单选按钮给label加yt-radio-disabled类名,input设置disabled="disabled"-->
+		    		<label class="check-label yt-radio yt-radio-disabled">
+					    <input id="radio3" type="radio" name="test"  value="3" disabled="disabled"/>禁用
+					</label>
+		         </td> 
+		    </tr>
+		</table>
+	</div>
+	<div class="bot-fun-btn" style="text-align: left;padding-left: 85px;padding-bottom: 10px;">
+		<button class="yt-option-btn" onclick="setRadioChecked()">设置选中</button>
+		<button class="yt-option-btn" onclick="setRadioUnChecked()">设置取消选中</button>
+		<button class="yt-option-btn" onclick="setRadioDisabled()">设置禁用</button>
+		<button class="yt-option-btn" onclick="setRadioUnDisabled()">设置取消禁用</button>
+		<button class="yt-option-btn" onclick="getCheckVal()">获取选中的值</button>
+	</div>
+	<div class="method-text">单选切换效果示例：</div>
+	<p>1.代码示例:</p>
+	<div class="label-code-div">
+		<textarea cols="50" rows="15" name="code" class="javaScript">
+		<!--表单字段START-->
+		<!--
+			div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+		    padding内间距对应值依次是上右下左
+		-->	
+		<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+			<table class="yt-form-table" style="width: 100%;">
+				<tr>
+					<td>
+						<div class="is-radio">
+							<label>是否银行转账：</label>
+							<!--选中状态的单选按钮给label加check类名-->
+				            <label class="check-label yt-radio check" style="margin-right: 15px;">
+							    <input id="radioM1" type="radio" name="money"  value="1"/>是
+							</label>
+							<!--未选中状态的单选按钮-->
+							<label class="check-label yt-radio" style="margin-right: 15px;">
+							    <input id="radioM2" type="radio" name="money"  value="2"/>否
+						    </label>
+					    </div>
+					</td>
+					<td style="height: 50px;">
+						<div class="bank-car-div">
+						  <label><span class="yt-lep5">银行账</span>号：</label><input type="text" class="yt-input" placeholder="请输入"/>
+						</div>
+					</td>
+				</tr>
+			 </table>
+		</div>
+		<!--表单字段END-->
+		
+		<script type="text/javascript">
+			//必带初始化内容
+			$(function(){
+				//单选按钮切换事件实现显示隐藏字段功能
+				$(".is-radio label.yt-radio input").change(function(){
+					//获取选中的单选按钮的value值1是2否
+					var thisVal = $(this).val();
+					if(thisVal == 1){
+						//显示银行卡号的div
+						$(".bank-car-div").show();
+					}else{
+						//隐藏银行卡号的div
+						$(".bank-car-div").hide();
+					}
+				});
+			});
+		</script>
+        </textarea>
+   </div>
+    <p>2.展示效果:</p>
+	<div style="padding-left: 10px;">
+		<!--表单字段START-->
+		<!--
+			div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+		    padding内间距对应值依次是上右下左
+		-->	
+		<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+		<table class="yt-form-table" style="width: 100%;">
+			<tr>
+				<td>
+					<div class="is-radio">
+						<label>是否银行转账：</label>
+						<!--选中状态的单选按钮给label加check类名-->
+			            <label class="check-label yt-radio check" style="margin-right: 15px;">
+						    <input id="radioM1" type="radio" name="money"  value="1"/>是
+						</label>
+						<!--未选中状态的单选按钮-->
+						<label class="check-label yt-radio" style="margin-right: 15px;">
+						    <input id="radioM2" type="radio" name="money"  value="2"/>否
+					    </label>
+				    </div>
+				</td>
+				<td style="height: 50px;">
+					<div class="bank-car-div">
+					  <label><span class="yt-lep5">银行账</span>号：</label><input type="text" class="yt-input" placeholder="请输入"/>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<!--表单字段END-->
+	</div>
+</div>
+</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function(){
+		//动态引用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path; 
+		//单选按钮切换事件
+		$(".is-radio label.yt-radio input").change(function(){
+			//获取选中的单选值1是2否
+			var thisVal = $(this).val();
+			if(thisVal == 1){
+				//显示银行卡号的div
+				$(".bank-car-div").show();
+			}else{
+				//隐藏银行卡号的div
+				$(".bank-car-div").hide();
+			}
+		});
+	});
+	/**
+	 * 
+	 * 设置单选按钮选中
+	 * 
+	 */
+	function setRadioChecked() {
+		$("#radio1").setRadioState("check");
+	}
+	/*
+	 * 设置单选按钮取消选中
+	 */
+	function setRadioUnChecked() {
+		$("#radio1").setRadioState("uncheck");
+	}
+	/**
+	 * 设置单选按钮禁用
+	 */
+	function setRadioDisabled() {
+		$("#radio1").setRadioState("disabled");
+	}
+	/**
+	 * 设置取消禁用
+	 */
+	function setRadioUnDisabled(){
+		$("#radio1").setRadioState("undisabled");
+	}
+	/**
+	 * 获取选中的值
+	 */
+	function getCheckVal(){
+		var  checkVal = $(".check-label.check input").val();
+		alert(checkVal);
+	}
+</script>

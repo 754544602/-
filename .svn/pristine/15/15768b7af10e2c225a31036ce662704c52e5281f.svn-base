@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../resources/css/calendar/yt-calendar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">表头筛选：</div>
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-calendar.min.css</a></div></td>
+							<td>resources/css/calendar/yt-calendar.min.css</td>
+							<td><div>引用公用的日期样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div>jquery.min.js</div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-common.min.js</a></div></td>
+							<td>resources/js/yt-common.min.js</td>
+							<td><div>引用公用的Js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-calendar.min.js</a></div></td>
+							<td>resources/js/calendar/yt-calendar.min.js</td>
+							<td><div>引用日期控件Js文件</div></td>
+						</tr>
+						<tr>
+							<td><div>yt-thead-query.js</div></td>
+							<td>resources/js/tableQuery/yt-thead-query.js</td>
+							<td><div>引用自身Js文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--基础表单标签规范START-->
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-screen-thead</div>
+							</td>
+							<td>
+								<div>公用的支持筛选的表头</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.th-font-change</div>
+							</td>
+							<td>
+								<div>公用的点击表头改变字体颜色样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.yt-suspension-model</div>
+							</td>
+							<td>
+								<div>公用的查询条件弹出框样式</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>.yt-clear-query</div>
+							</td>
+							<td>
+								<div>公用的查询条件弹出框中的清除查询样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">	
+		  <table class="yt-table yt-screen-thead" style="width: 100%;">
+		  	     <thead class="yt-thead">
+		  	     	    <tr>
+		  	     	    	<th style="position: relative;">
+		  	     	    		<span class="yt-screen-font">系统名称<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+		  	     	    		 <!--多选查询条件START-->
+								  <div class="yt-suspension-model checobox-query">
+								  	    <div class="yt-clear-query"><a  class="yt-link">清除查询</a></div>
+								  	    <ul>
+								  	    	<li>
+								  	    	 	<label class="check-label yt-checkbox">
+								  	    	 		<input  type="checkbox" name="test" value="zkyt">
+								  	    	 		<span>中科倚天软件项目管理系统</span>
+								  	    	 	</label>
+								  	    	</li>
+								  	    	<li>
+								  	    	 	<label class="check-label yt-checkbox">
+								  	    	 		<input type="checkbox" name="test" value="bzcb">
+								  	    	 	    <span>标准成本</span>
+								  	    	 	</label>
+								  	    	</li>
+								  	    	<li>
+								  	    	 	<label class="check-label yt-checkbox">
+								  	    	 	<input type="checkbox" name="test" value="shenji">
+								  	    	 	<span>审计项目管理系统</span>
+								  	    	 	</label>
+								  	    	</li>
+								  	    	<li>
+								  	    	 	<label class="check-label yt-checkbox">
+								  	    	 		<input type="checkbox" name="test" value="zkyt">
+								  	    	 		<span>中科倚天软件项目管理系统</span>
+								  	    	 	</label>
+								  	    	</li>
+								  	    	<li>
+								  	    	 	<label class="check-label yt-checkbox">
+								  	    	 		<input type="checkbox" name="test" value="biaozhun">
+								  	    	 		<span>标准成本</span>
+								  	    	 	</label>
+								  	    	</li>
+								  	    </ul>
+								  </div>
+								  <!--多选查询条件END-->
+		  	     	    	</th>
+		  	     	    	<th width="150px" style="position: relative;">
+		  	     	    		<span class="yt-screen-font">创建时间<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+		  	     	    		  <!--日期查询条件END-->
+								  <div class="yt-suspension-model data-query">
+								  	   <div class="yt-clear-query"><a  class="yt-link">清除查询</a></div>
+								  	   <div>
+								  	   	    <ul class="ul-list">
+								  	   	         <li>
+								  	   	         	<label class="check-label yt-checkbox">
+									  	    	 		<input type="checkbox" name="test" value="start">
+									  	    	 		<span>起始</span>
+								  	    	 		</label>
+								  	    	 		<input id="start-time" style="" class="calendar-input" type="text" />
+								  	    	 		<div class="dadta-right-icon"><img src="../../resources/images/icons/right.png"/></div>
+								  	   	         </li>
+								  	   	         <li>
+								  	   	         	<label class="check-label yt-checkbox">
+									  	    	 		<input type="checkbox" name="test" value="end">
+									  	    	 		<span>结束</span>
+								  	    	 		</label>
+								  	    	 		<input id="end-time" class="calendar-input" type="text" style="top:10px;"/>
+								  	    	 		<div class="dadta-right-icon"><img src="../../resources/images/icons/right.png"/></div>
+								  	   	         </li>
+								  	   		</ul>
+								  	   </div>
+								  </div>
+								  <!--日期查询条件START-->
+		  	     	    	</th>
+		  	     	    	<th width="78px" style="position: relative;">
+		  	     	    		<span class="yt-screen-font">创建人<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+		  	     	    		 <!--单选查询条件END-->
+								  <div class="yt-suspension-model radio-query" style="display: none;">
+								  	    <div class="yt-clear-query"><a  class="yt-link">清除查询</a></div>
+								  	    <ul class="ul-list">
+								  	    	<li>
+								  	    		<label class="check-label yt-radio">
+							   					 <input  type="radio" name="username" value="caojianming">
+							   					 <span>曹建明</span>
+												</label>
+								  	    	</li>
+								  	    	<li>
+								  	    		<label class="check-label yt-radio">
+							   					 <input type="radio" name="username" value="chengbingbing">
+							   					 <span>程斌斌</span>
+												</label>
+								  	    	</li>
+								  	    	<li>
+								  	    		<label class="check-label yt-radio">
+							   					 <input type="radio" name="username" value="zhangchengjun">
+							   					 <span>张成俊</span>
+												</label>
+								  	    	</li>
+								  	    </ul>
+								  </div>
+								  <!--单选查询条件START-->
+		  	     	    	</th>
+		  	     	    	<th style="position: relative;">
+		  	     	    		<span class="yt-screen-font">日志类型<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+		  	     	    		 <!--模糊查询条件END-->
+								  <div class="yt-suspension-model vague-query">
+								  	    <div style="margin-bottom: 10px;">
+								  	    	 <input type="text" class="yt-input key-word" placeholder="请输入关键字" style="width: 192px;"/>
+								  	    	 <span class="clear-span"><a class="yt-link">清除查询</a></span>
+								  	    </div>
+								  	    <div class="query-list">
+								  	    	  <ul class="ul-li">
+								  	    	  	   
+								  	    	  </ul>
+								  	    </div>
+								  </div>
+							    <!--模糊查询条件START-->
+		  	     	    	</th>
+		  	     	    	<th style="position: relative;">
+		  	     	    		<span class="yt-screen-font">数字<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+		  	     	    		 <!--数字查询条件END-->
+								  <div class="yt-suspension-model number-query">
+								  	    <div class="yt-clear-query"><a  class="yt-link">清除查询</a></div>
+								  	    <div class="yt-numberInput-box">  
+										    <span style="margin-left: 10px;">≤</span><input class="yt-numberInput" type="text" value="0" step="1"  style="ime-mode:disabled;width: 62px;">  
+										    <div class="yt-spin-wrap">  
+											    <div class="yt-spin yt-spin-up" data-node="up"></div>  
+											    <div class="yt-spin yt-spin-down" data-node="down"></div>  
+										    </div>  
+										</div> 
+										<div class="yt-numberInput-box">  
+										   <span style="margin-left: 10px;">≥</span><input class="yt-numberInput" type="text" value="0" step="1"  style="ime-mode:disabled;width: 62px;">  
+										    <div class="yt-spin-wrap">  
+										    <div class="yt-spin yt-spin-up" data-node="up"></div>  
+										    <div class="yt-spin yt-spin-down" data-node="down"></div>  
+										    </div>  
+										</div> 
+										<div class="yt-numberInput-box">  
+										    <span style="margin-left: 10px;">=</span><input class="yt-numberInput" type="text" value="0" step="1"  style="ime-mode:disabled;width: 62px;">  
+										    <div class="yt-spin-wrap">  
+										    <div class="yt-spin yt-spin-up" data-node="up"></div>  
+										    <div class="yt-spin yt-spin-down" data-node="down"></div>  
+										    </div>  
+										</div> 
+								  </div>
+								  <!--数字查询条件END-->
+		  	     	    	</th>
+		  	     	    </tr>
+		  	     </thead>
+		  	     <tbody class="yt-tbody">
+		  	     	<tr>
+		  	     		<td>软件项目管理系统</td>
+		  	     		<td>2017-05-02</td>
+		  	     		<td>清风</td>
+		  	     		<td>error</td>
+		  	     		<td>12</td>
+		  	     	</tr>
+		  	     	<tr>
+		  	     		<td>协同办公系统</td>
+		  	     		<td>2017-05-03</td>
+		  	     		<td>徐来</td>
+		  	     		<td>error</td>
+		  	     		<td>12</td>
+		  	     	</tr>
+		  	     </tbody>
+		  </table>
+			</textarea>
+			</div>
+			<p>4.展示效果:</p>
+			<div class="" style="position: relative; height: 300px;">
+				<table class="yt-table yt-screen-thead" style="width: 100%;">
+					<thead class="yt-thead">
+						<tr>
+							<th style="position: relative;">
+								<span class="yt-screen-font">系统名称<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+								<!--多选查询条件START-->
+								<div class="yt-suspension-model checobox-query">
+									<div class="yt-clear-query">
+										<a class="yt-link">清除查询</a>
+									</div>
+									<ul>
+										<li>
+											<label class="check-label yt-checkbox">
+										  	    	 		<input  type="checkbox" name="test" value="zkyt">
+										  	    	 		<span>中科倚天软件项目管理系统</span>
+										  	    	 	</label>
+										</li>
+										<li>
+											<label class="check-label yt-checkbox">
+										  	    	 		<input type="checkbox" name="test" value="bzcb">
+										  	    	 	    <span>标准成本</span>
+										  	    	 	</label>
+										</li>
+										<li>
+											<label class="check-label yt-checkbox">
+										  	    	 	<input type="checkbox" name="test" value="shenji">
+										  	    	 	<span>审计项目管理系统</span>
+										  	    	 	</label>
+										</li>
+										<li>
+											<label class="check-label yt-checkbox">
+										  	    	 		<input type="checkbox" name="test" value="zkyt">
+										  	    	 		<span>中科倚天软件项目管理系统</span>
+										  	    	 	</label>
+										</li>
+										<li>
+											<label class="check-label yt-checkbox">
+										  	    	 		<input type="checkbox" name="test" value="biaozhun">
+										  	    	 		<span>标准成本</span>
+										  	    	 	</label>
+										</li>
+									</ul>
+								</div>
+								<!--多选查询条件END-->
+							</th>
+							<th width="150px" style="position: relative;">
+								<span class="yt-screen-font">创建时间<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+								<!--日期查询条件END-->
+								<div class="yt-suspension-model data-query">
+									<div class="yt-clear-query">
+										<a class="yt-link">清除查询</a>
+									</div>
+									<div>
+										<ul class="ul-list">
+											<li>
+												<label class="check-label yt-checkbox">
+											  	    	 		<input type="checkbox" name="test" value="start">
+											  	    	 		<span>起始</span>
+										  	    	 		</label>
+												<input id="start-time" style="" class="calendar-input" type="text" />
+												<div class="dadta-right-icon"><img src="../../resources/images/icons/right.png" /></div>
+											</li>
+											<li>
+												<label class="check-label yt-checkbox">
+											  	    	 		<input type="checkbox" name="test" value="end">
+											  	    	 		<span>结束</span>
+										  	    	 		</label>
+												<input id="end-time" class="calendar-input" type="text"/>
+												<div class="dadta-right-icon"><img src="../../resources/images/icons/right.png" /></div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--日期查询条件START-->
+							</th>
+							<th width="78px" style="position: relative;">
+								<span class="yt-screen-font">创建人<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+								<!--单选查询条件END-->
+								<div class="yt-suspension-model radio-query" style="display: none;">
+									<div class="yt-clear-query">
+										<a  class="yt-link">清除查询</a>
+									</div>
+									<ul class="ul-list">
+										<li>
+											<label class="check-label yt-radio">
+									   					 <input  type="radio" name="username" value="caojianming">
+									   					 <span>曹建明</span>
+														</label>
+										</li>
+										<li>
+											<label class="check-label yt-radio">
+									   					 <input type="radio" name="username" value="chengbingbing">
+									   					 <span>程斌斌</span>
+														</label>
+										</li>
+										<li>
+											<label class="check-label yt-radio">
+									   					 <input type="radio" name="username" value="zhangchengjun">
+									   					 <span>张成俊</span>
+														</label>
+										</li>
+									</ul>
+								</div>
+								<!--单选查询条件START-->
+							</th>
+							<th style="position: relative;">
+								<span class="yt-screen-font">日志类型<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+								<!--模糊查询条件END-->
+								<div class="yt-suspension-model vague-query">
+									<div style="margin-bottom: 10px;">
+										<input type="text" class="yt-input key-word" placeholder="请输入关键字" style="width: 192px;" />
+										<span class="clear-span"><a class="yt-link">清除查询</a></span>
+									</div>
+									<div class="query-list">
+										<ul class="ul-li">
+
+										</ul>
+									</div>
+								</div>
+								<!--模糊查询条件START-->
+							</th>
+							<th style="position: relative;">
+								<span class="yt-screen-font">数字<img class="screen-icon" src="../../resources/images/icons/white-down.png"/></span>
+								<!--数字查询条件END-->
+								<div class="yt-suspension-model number-query">
+									<div class="yt-clear-query">
+										<a class="yt-link">清除查询</a>
+									</div>
+									<div class="yt-numberInput-box">
+										<span style="margin-left: 10px;">≤</span><input class="yt-numberInput" type="text" value="0" step="1" style="ime-mode:disabled;width: 62px;">
+										<div class="yt-spin-wrap">
+											<div class="yt-spin yt-spin-up" data-node="up"></div>
+											<div class="yt-spin yt-spin-down" data-node="down"></div>
+										</div>
+									</div>
+									<div class="yt-numberInput-box">
+										<span style="margin-left: 10px;">≥</span><input class="yt-numberInput" type="text" value="0" step="1" style="ime-mode:disabled;width: 62px;">
+										<div class="yt-spin-wrap">
+											<div class="yt-spin yt-spin-up" data-node="up"></div>
+											<div class="yt-spin yt-spin-down" data-node="down"></div>
+										</div>
+									</div>
+									<div class="yt-numberInput-box">
+										<span style="margin-left: 10px;">=</span><input class="yt-numberInput" type="text" value="0" step="1" style="ime-mode:disabled;width: 62px;">
+										<div class="yt-spin-wrap">
+											<div class="yt-spin yt-spin-up" data-node="up"></div>
+											<div class="yt-spin yt-spin-down" data-node="down"></div>
+										</div>
+									</div>
+								</div>
+								<!--数字查询条件END-->
+							</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>软件项目管理系统</td>
+							<td>2017-05-02</td>
+							<td>清风</td>
+							<td>error</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<td>协同办公系统</td>
+							<td>2017-05-03</td>
+							<td>徐来</td>
+							<td>error</td>
+							<td>12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/calendar/yt-calendar.min.js"></script>
+<script type="text/javascript" src="../../resources/js/tableQuery/yt-thead-query.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function(){
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+	});
+</script>

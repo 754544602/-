@@ -1,0 +1,32 @@
+{
+ "flag":0,
+ "data": [
+			{
+				   "comment": "",
+				    "commentTime": "停滞时间：20天3小时35分钟",
+					"commentTimeDate": 1551852311770,
+					"deleteReason": "",
+					"operationState": "待【部门负责人审批】",
+					"processDefinedKey": "LOAN_APP_FLOW",
+					"processInstanceId": "",
+					"taskId": "400297",
+					"taskName": "部门负责人审批",
+					"tastKey": "DMAUDIT",
+					"userCode": "sunchanglin",
+					"userName": "孙长林"
+			}, {
+				    "comment": "",
+				    "commentTime": "停滞时间：20天3小时35分钟",
+					"commentTimeDate": 1551852311770,
+					"deleteReason": "",
+					"operationState": "待【部门负责人审批】",
+					"processDefinedKey": "LOAN_APP_FLOW",
+					"processInstanceId": "",
+					"taskId": "400297",
+					"taskName": "部门负责人审批",
+					"tastKey": "DMAUDIT",
+					"userCode": "sunchanglin",
+					"userName": "孙长林"
+			}
+		]
+}

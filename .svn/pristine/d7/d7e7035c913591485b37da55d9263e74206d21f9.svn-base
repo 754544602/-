@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model">
+			<div class="method-text">横向Tab：</div>
+			<!--基础表单标签规范START-->
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-common.min.js</a></div></td>
+							<td>resources/js/common/yt-common.min.js</td>
+							<td><div>引用公用的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>sysCommon.min.js</a></div></td>
+							<td>resources/js/common/sysCommon.min.js</td>
+							<td><div>引用系统公用Js文件</div></td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="method-text">弹出框tab页：</div>
+			<p>1.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-model-tab</div>
+							</td>
+							<td>
+								<div>tab页公用样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.代码展现:</p>
+			<div class="label-code-div">
+			<textarea cols="50" rows="15" name="code" class="javaScript">
+				<button class="yt-option-btn add-btn" style="margin-left: 20px;">新增</button>
+				<!--编辑框示例START-->  
+		    	<div class="yt-pop-model yt-edit-alert">  
+		          <!--标题区域START-->  
+		          <div class="yt-edit-alert-title">  
+		                <span class="yt-edit-alert-icon"><img src="../../resources/images/icons/add-icon.png"></span>  
+		                <span class="yt-edit-alert-title-msg">新增弹出框</span>  
+		          </div>  
+		          <!--标题区域END-->  
+		          <!--主体内容部分START-->  
+		          <div class="yt-edit-alert-main cont-edit-test">  
+		            <div class="yt-model-tab">
+						<ul>
+							<li class="tab-check">城市间交通费用</li>
+							<li>住宿费</li>
+						</ul>
+					</div>
+		            <!--底部按钮START-->  
+		            <div class="yt-eidt-model-bottom" style="padding-top:20px;">  
+		                <button class="yt-option-btn yt-model-sure-btn">确定</button>  
+		                <button class="yt-assist-btn yt-model-canel-btn">取消</button>  
+		            </div>  
+		          </div>  
+		          <!--主体内容部分END-->  
+		    	</div>  
+				<!--编辑框示例END-->  
+				<script type="text/javascript">
+					//必带初始化内容
+					$(function(){
+						
+						//点击新增按钮显示编辑弹出框
+						$(".add-btn").click(function(){
+							sysCommon.showModel($(".yt-edit-alert"));
+						});
+						//点击底部按钮关闭弹出框
+						$(".yt-eidt-model-bottom button").click(function(){
+							sysCommon.closeModel($(".yt-edit-alert"));
+						});
+						//点击tab页切换
+						$(".yt-model-tab li").off().on("click",function(){
+							//清除其他选中样式
+							$(".yt-model-tab li").removeClass("tab-check");
+							//给当前选中tab添加选中样式
+							$(this).addClass("tab-check");
+						});
+						
+					});
+				</script>
+			</textarea>
+			</div>
+			<p>3.展示效果:</p>
+			<button class="yt-option-btn add-btn" style="margin-left: 20px;">新增</button>
+			<!--编辑框示例START-->  
+		    <div class="yt-pop-model yt-edit-alert">  
+		          <!--标题区域START-->  
+		          <div class="yt-edit-alert-title">  
+		                <span class="yt-edit-alert-icon"><img src="../../resources/images/icons/add-icon.png"></span>  
+		                <span class="yt-edit-alert-title-msg">新增弹出框</span>  
+		          </div>  
+		          <!--标题区域END-->  
+		          <!--主体内容部分START-->  
+		          <div class="yt-edit-alert-main cont-edit-test">  
+		            <div class="yt-model-tab">
+						<ul>
+							<li class="tab-check">城市间交通费用</li>
+							<li>住宿费</li>
+						</ul>
+					</div>
+		            <!--底部按钮START-->  
+		            <div class="yt-eidt-model-bottom" style="padding-top:20px;">  
+		                <button class="yt-option-btn yt-model-sure-btn">确定</button>  
+		                <button class="yt-assist-btn yt-model-canel-btn">取消</button>  
+		            </div>  
+		          </div>  
+		          <!--主体内容部分END-->  
+		    </div>  
+			<!--编辑框示例END-->  
+			<div class="method-text" style="margin-top: 30px;">审批列表页面tab标签：</div>
+			<p>1.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="300px">类名</th>
+							<th width="480px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>.yt-tab-header</div>
+							</td>
+							<td>
+								<div>tab页公用样式</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.代码展现:</p>
+			<div class="label-code-div">
+			<textarea cols="50" rows="15" name="code" class="javaScript">
+				<!--TAB标签页区域内容START-->
+				<!--
+					div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+				    padding内间距对应值依次是上右下左
+				-->
+				<div  class="base-form-model" style="padding: 10px 0px 0px 10px;">
+	            <!--TAB标签页内容START-->
+					<div class="yt-tab-header">
+						<ul>
+							<li class="active-li" data-state-code="WF_SUSPENDING_QUERY_SQL_PARAMS">待处理</li>
+							<li  data-state-code="WF_SOLVED_QUERY_SQL_PARAMS">已处理</li>
+							<li  data-state-code="WF_COMPLETED_QUERY_SQL_PARAMS">已完结</li>
+						</ul>
+					</div>
+	                <!--待处理状态数据START-->
+					<div class="tab-content pending-table">
+						<table class="yt-table" style="width: 100%;">
+							<thead class="yt-thead">
+								<tr>
+									<th style="width: 150px;">单据编号</th> 
+									<th>借款事由</th>
+									<th style="width: 100px;">申请人</th>
+									<th style="width: 100px;">申请部门</th>
+									<th style="width: 100px;">借款金额(元)</th>
+									<th style="width: 100px;">借款期限</th>
+									<th style="width: 100px;">停滞时间</th>
+									<th style="width: 100px;">操作</th>
+								</tr>
+							</thead>
+							<tbody class="yt-tbody"><tr><td colspan="8"><div class="listNoData"></div></td></tr></tbody>
+						</table>
+						<div class="page-info table-page page1" onselectstart="return false"></div>
+					</div>
+	                 <!--已处理,已完结状态数据START-->
+					<div class="tab-content success-table" style="display: none;">
+						<table class="yt-table" style="width: 100%;">
+							<thead class="yt-thead">
+								<tr>
+									<th style="width: 150px;">单据编号</th>
+									<th>借款事由</th>
+									<th style="width: 100px;">申请人</th>
+									<th style="width: 100px;">所属部门</th>
+									<th style="width: 100px;">借款金额(元)</th>
+									<th style="width: 100px;">借款期限</th>
+									<th style="width: 100px;">申请日期</th>
+									<th style="width: 100px;"><span id="processState">当前状态</span></th>
+									<th style="width: 100px;">操作</th>
+								</tr>
+							</thead>
+							<tbody class="yt-tbody"><tr><td colspan="9"><div class="listNoData"></div></td></tr></tbody>
+						</table>
+						<div class="page-info table-page page2" onselectstart="return false"></div>
+					</div>
+				</div>
+			<!--TAB标签区域内容END-->
+			
+				<script type="text/javascript">
+					//必带初始化内容
+					$(function(){
+						
+						//tab标签页点击切换事件方法
+						$(".yt-tab-header li").off().on("click",function(){
+							//获取当前tab标签页索引
+							var index = $(this).index();
+							//给当前选中的tab标签添加选中样式
+							$(this).addClass('active-li').siblings('li').removeClass('active-li');
+							//判断tab页索引
+							if(index == 1 || index == 2) {
+								$('.tab-content').eq(1).css("display",'block').addClass("check").siblings('.tab-content').hide().removeClass("check");
+							} else {
+								$('.tab-content').eq(index).css("display",'block').addClass("check").siblings('.tab-content').hide().removeClass("check");
+							}
+						});
+						
+					});
+				</script>
+			</textarea>
+			</div>
+			<p>3.展示效果:</p>
+				<div  class="base-form-model" style="padding: 10px 0px 0px 10px;">
+					<div class="yt-tab-header">
+						<ul>
+							<li class="active-li" data-state-code="WF_SUSPENDING_QUERY_SQL_PARAMS">待处理</li>
+							<li  data-state-code="WF_SOLVED_QUERY_SQL_PARAMS">已处理</li>
+							<li  data-state-code="WF_COMPLETED_QUERY_SQL_PARAMS">已完结</li>
+						</ul>
+					</div>
+					<div class="tab-content pending-table">
+						<table class="yt-table" style="width: 100%;">
+							<thead class="yt-thead">
+								<tr>
+									<th style="width: 150px;">单据编号</th> 
+									<th>借款事由</th>
+									<th style="width: 100px;">申请人</th>
+									<th style="width: 100px;">申请部门</th>
+									<th style="width: 100px;">借款金额(元)</th>
+									<th style="width: 100px;">借款期限</th>
+									<th style="width: 100px;">停滞时间</th>
+									<th style="width: 100px;">操作</th>
+								</tr>
+							</thead>
+							<tbody class="yt-tbody"><tr><td colspan="8"><div class="listNoData"></div></td></tr></tbody>
+						</table>
+						<div class="page-info table-page page1" onselectstart="return false"></div>
+					</div>
+					<div class="tab-content success-table" style="display: none;">
+						<table class="yt-table" style="width: 100%;">
+							<thead class="yt-thead">
+								<tr>
+									<th style="width: 150px;">单据编号</th>
+									<th>借款事由</th>
+									<th style="width: 100px;">申请人</th>
+									<th style="width: 100px;">所属部门</th>
+									<th style="width: 100px;">借款金额(元)</th>
+									<th style="width: 100px;">借款期限</th>
+									<th style="width: 100px;">申请日期</th>
+									<th style="width: 100px;"><span id="processState">当前状态</span></th>
+									<th style="width: 100px;">操作</th>
+								</tr>
+							</thead>
+							<tbody class="yt-tbody"><tr><td colspan="9"><div class="listNoData"></div></td></tr></tbody>
+						</table>
+						<div class="page-info table-page page2" onselectstart="return false"></div>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/sysCommon.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function(){
+		//动态调用主系统的换肤js
+		document.getElementById("themeJs").src = $yt_themeJs_path;
+		
+		//调用弹出框事件方法
+		tabEvents();
+	});
+	
+	function tabEvents(){
+		/**
+		 * 
+		 * 弹出框tab事件
+		 * 
+		 */
+		//点击新增按钮显示编辑弹出框
+		$(".add-btn").click(function(){
+			sysCommon.showModel($(".yt-edit-alert"));
+		});
+		//点击底部按钮关闭弹出框
+		$(".yt-eidt-model-bottom button").click(function(){
+			sysCommon.closeModel($(".yt-edit-alert"));
+			
+			$("body").css("overflow","initial");
+		});
+		//点击tab页切换
+		$(".yt-model-tab li").off().on("click",function(){
+			//清除其他选中样式
+			$(".yt-model-tab li").removeClass("tab-check");
+			//给当前选中tab添加选中样式
+			$(this).addClass("tab-check");
+		});
+		
+		/**
+		 * 
+		 * 审批列表tab页事件
+		 * 
+		 */
+		/**
+		 * tab标签页点击切换事件方法
+		 */
+		$(".yt-tab-header li").off().on("click",function(){
+			//获取当前tab标签页索引
+			var index = $(this).index();
+			//给当前选中的tab标签添加选中样式
+			$(this).addClass('active-li').siblings('li').removeClass('active-li');
+			//判断tab页索引
+			if(index == 1 || index == 2) {
+				$('.tab-content').eq(1).css("display",'block').addClass("check").siblings('.tab-content').hide().removeClass("check");
+			} else {
+				$('.tab-content').eq(index).css("display",'block').addClass("check").siblings('.tab-content').hide().removeClass("check");
+			}
+		});
+	}
+</script>

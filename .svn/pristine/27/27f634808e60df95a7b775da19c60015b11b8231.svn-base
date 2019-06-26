@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<style type="text/css">
+			.yt-table .yt-tbody tr{
+				display: table-row;
+			}
+		</style>
+		<div class="web-criterion-model">
+			<div class="method-text">table标签：</div>
+			<!--基础表单标签规范START-->
+		    <p>1.使用条件:</p>
+		    <div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+						<thead class="yt-thead the-inner">
+							<tr>
+								<th width="200px">类名</th>
+								<th width="580px">描述</th>
+							</tr>
+						</thead>
+						<tbody class="yt-tbody">
+							<tr>
+								<td><div>.yt-table</div></td>
+								<td><div>table的类名</div></td>
+							</tr>
+							<tr>
+								<td><div>.yt-thead</div></td>
+								<td><div>thead的类名</div></td>
+							</tr>
+							<tr>
+								<td><div>.yt-tbody</div></td>
+								<td><div>tbody的类名</div></td>
+							</tr>
+							<tr>
+								<td><div>.yt-table-br</div></td>
+								<td><div>文本居左显示</div></td>
+							</tr>
+							<tr>
+								<td><div>.yt-link</div></td>
+								<td><div>表格内文本超链接</div></td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div" style="height: auto;">
+				<textarea cols="50" rows="15" name="code" class="javaScript" >
+					<!--列表数据显示区域START-->
+					<!--
+						div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+					    padding内间距对应值依次是上右下左
+					-->
+					<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+						<table class="yt-table" style="width: 100%;">
+							<thead class="yt-thead">
+								<tr>
+									<th width="200px">合同名称</th>
+									<th width="200px">合同编号</th>
+									<th width="200px">项目名称</th>
+									<th width="200px">委托单位</th>
+									<th width="200px">负责人</th>
+									<th width="200px">备注</th>
+								</tr>
+							</thead>
+							<tbody class="yt-tbody">
+								<tr>
+									<td>
+										<!--文本内容较多处理方式
+										1.存放div标签显示,
+										2.加上文本超出截取显示...公用类样式yt-text-overflow
+										3.给div设置一个固定宽度
+										4.加上title属性,鼠标悬浮显示全部内容
+										-->
+										<div  class="yt-text-overflow" style="width: 300px;" title="这是一个很长很长很长很长很长很长很长很长的合同名称">这是一个很长很长很长很长很长很长很长很长的合同名称</div>
+									</td>
+									<td>
+										<!--超链接可点击文本,使用a标签引用公用类样式yt-link-->
+										<a class="yt-link">ZKYT-HT1</a>
+									</td>
+									<td>项目名称1></td>
+									<td>委托单位1</td>
+									<td>张四</td>
+									<td><div class="yt-text-overflow">无</div></td>
+								</tr>
+								<tr>
+									<td>
+										<div  class="yt-text-overflow" style="width: 300px;">这是一个很长很长的合同名称</div>
+									</td>
+									<td><a class="yt-link">ZKYT-HT1</a></td>
+									<td>项目名称1</td>
+									<td>委托单位1</td>
+									<td>张四</td>
+									<td><div class="yt-text-overflow">无</div></td>
+								</tr>
+								<tr>
+									<td>
+										<div  class="yt-text-overflow" style="width: 300px;">合同名称</div>
+									</td>
+									<td><a class="yt-link">ZKYT-HT1</a></td>
+									<td>项目名称1</td>
+									<td>委托单位1</td>
+									<td>张四</td>
+									<td><div class="yt-text-overflow" style="width: 300px;">无</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--列表数据显示区域END-->
+				</textarea>
+			</div>
+			<p>4.展示效果:</p>
+			<!--列表数据显示区域START-->
+			<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+				<table class="yt-table" style="width: 100%;">
+					<thead class="yt-thead">
+						<tr>
+							<th width="200px">合同名称</th>
+							<th width="100px">合同编号</th>
+							<th width="200px">项目名称</th>
+							<th width="200px">委托单位</th>
+							<th width="100px">负责人</th>
+							<th width="200px">备注</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<!--文本内容较多处理方式
+								1.存放div标签显示,
+								2.加上文本超出截取显示...公用类样式yt-text-overflow
+								3.给div设置一个固定宽度
+								4.加上title属性,鼠标悬浮显示全部内容
+								-->
+								<div  class="yt-text-overflow" style="width: 300px;" title="这是一个很长很长很长很长很长很长很长很长的合同名称">这是一个很长很长很长很长很长很长很长很长的合同名称</div>
+							</td>
+							<td><a class="yt-link">ZKYT-HT1</a></td>
+							<td><div>项目名称1</div></td>
+							<td><div>委托单位1</div></td>
+							<td><div>张四</div></td>
+							<td><div>无</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div  class="yt-text-overflow" style="width: 300px;">这是一个很长很长的合同名称</div>
+							</td>
+							<td><a class="yt-link">ZKYT-HT1</a></td>
+							<td><div>项目名称1</div></td>
+							<td><div>委托单位1</div></td>
+							<td><div>张四</div></td>
+							<td><div>无</div></td>
+						</tr>
+						<tr>
+							<td>
+								<div  class="yt-text-overflow" style="width: 300px;">合同名称</div>
+							</td>
+							<td><a class="yt-link">ZKYT-HT1</a></td>
+							<td><div>项目名称1</div></td>
+							<td><div>委托单位1</div></td>
+							<td><div>张四</div></td>
+							<td><div>无</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--列表数据显示区域END-->
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+	<script type="text/javascript">
+		$(function() {
+				//动态引用主系统的换肤js
+				document.getElementById("themeJs").src = $yt_themeJs_path; 
+			
+		});
+	</script>

@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<style>
+			.from-div td {
+				padding-bottom: 15px;
+			}
+		</style>
+		<div class="web-criterion-model" style="padding-bottom: 20px;">
+			<div class="method-text  test-title">[CB06]表单数据未保存提示</div>
+			<p>1.规范说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<p style="font-weight: normal;">
+					<span style="font-size: 14px;">
+						编辑表单页面，若要执行离开页面操作，应对表单内容进行判断是否有变更，如有变更应给出友好提示，避免误操作。
+					</span>
+				</p>
+			</div>
+			<p>2.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.css</a>
+								</div>
+							</td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td>
+								<div>引用全局的css文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>jquery.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td>
+								<div>引用jquery的js文件</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>
+									<a>yt-common.min.js</a>
+								</div>
+							</td>
+							<td>resources/js/common/yt-common.min.js</td>
+							<td>
+								<div>引用全局的js文件</div>
+							</td>
+						</tr>
+					</tbody>
+				</table> 
+			</div>
+			<p>3.调用方法:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">方法名</th>
+							<th width="200px">参数名</th>
+							<th width="300px">参数类型/默认值</th>
+							<th width="400px">参数描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td rowspan="9">$yt_alert_Model.alertOne()</td>
+							<td>
+								<div>haveAlertIcon</div>
+							</td>
+							<td>
+								<div>boolean类型;默认值false</div>
+							</td>
+							<td>
+								<div>是否带有提示图标</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>haveCloseIcon</div>
+							</td>
+							<td>
+								<div>boolean类型;默认值false</div>
+							</td>
+							<td>
+								<div>是否带有关闭图标</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>iconUrl</div>
+							</td>
+							<td>
+								<div>string类型;默认空</div>
+							</td>
+							<td>
+								<div>提示图标url路径</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>closeIconUrl</div>
+							</td>
+							<td>
+								<div>string类型;默认空</div>
+							</td>
+							<td>
+								<div>关闭图标url路径</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>alertMsg</div>
+							</td>
+							<td>
+								<div>string类型;默认空</div>
+							</td>
+							<td>
+								<div>提示信息</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>leftBtnName</div>
+							</td>
+							<td>
+								<div>string类型;默认"确定"</div>
+							</td>
+							<td>
+								<div>左侧按钮名称</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>rightBtnName</div>
+							</td>
+							<td>
+								<div>string类型;默认"取消"</div>
+							</td>
+							<td>
+								<div>右侧按钮名称</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>cancelFunction</div>
+							</td>
+							<td>
+								<div>回调方法</div>
+							</td>
+							<td>
+								<div>取消按钮操作方法</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div>confirmFunction</div>
+							</td>
+							<td>
+								<div>回调方法</div>
+							</td>
+							<td>
+								<div>确定按钮操作方法</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="secondary-back receiving-objectinfo-back" style="top: 1px;"></div>
+			<div class="secondary-title receiving-objectinfo-title">示例展示</div>
+			<p class="color-p">&lt;&lt;代码展现:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			<div class="from-div" style="padding-left: 35px;">
+				<table>
+					<tr>
+						<td><span>姓名：</span><input class="yt-input" type="text" placeholder="请输入姓名" value="张三" /></td>
+					</tr>
+					<tr>
+						<td><span>职务：</span><input class="yt-input" type="text" placeholder="请输入职务" value="高级讲师" /></td>
+					</tr>
+					<tr>
+						<td><span>单位：</span><input class="yt-input" type="text" placeholder="请输入单位" />
+						</td>
+					</tr>
+				</table>
+				<!--底部按钮START-->
+				<div class="yt-eidt-model-bottom" style="padding-left: 35px;">
+					<button class="yt-option-btn sure-btn">保存</button>
+					<button class="yt-assist-btn clear-btn"style="margin-left: 20px;">取消</button>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(function() {
+					var numArr = []; // 定义一个空数组
+					var numArrAfter = []; // 定义一个空数组
+					var inpTxt = $('.from-div').find('.yt-input'); // 获取所有文本框
+					$.each(inpTxt, function(i, n) {
+						numArr.push(inpTxt.eq(i).val()); // 将文本框的值添加到数组中
+					});
+					//点击取消
+					$(".yt-model-canel-btn").on('click', function() {
+						numArrAfter = [];
+						var txtAfter = $('.from-div').find('.yt-input'); // 获取所有文本框
+						$.each(txtAfter, function(i, n) {
+							numArrAfter.push(txtAfter.eq(i).val()); // 将文本框的值添加到数组中
+						});
+						//获取到的两个数组进行转json格式对比，不相同则提示
+						if(JSON.stringify(numArr) != JSON.stringify(numArrAfter)) {
+							$yt_alert_Model.alertOne({
+								alertMsg: "信息尚未保存，确定要离开吗？", //提示信息  
+								leftBtnName: "确认", //左侧按钮名称,默认确定  
+								confirmFunction: function() { //点击确定按钮执行方法  
+									//alert("确定离开");
+								},
+			
+							});
+						}
+					});
+				})
+			</script>
+		</textarea>
+			</div>
+			<p class="color-p">&lt;&lt;效果展示:</p>
+			<div class="from-div" style="padding-left: 120px;">
+				<table>
+					<tr>
+						<td><span>姓名：</span><input class="yt-input" type="text" placeholder="请输入姓名" value="张三" /></td>
+					</tr>
+					<tr>
+						<td><span>职务：</span><input class="yt-input" type="text" placeholder="请输入职务" value="高级讲师" /></td>
+					</tr>
+					<tr>
+						<td><span>单位：</span><input class="yt-input" type="text" placeholder="请输入单位" />
+						</td>
+					</tr>
+				</table>
+				<!--底部按钮START-->
+				<div class="yt-eidt-model-bottom" style="padding-left: 35px;">
+					<button class="yt-option-btn sure-btn">保存</button>
+					<button class="yt-assist-btn clear-btn"style="margin-left: 20px;">取消</button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function() {
+		//动态调用主系统的换主题JS
+		document.getElementById("themeJs").src = $yt_themeJs_path; 
+		
+		
+		var numArr = []; // 定义一个空数组
+		var numArrAfter = []; // 定义一个空数组
+		var boolval = "1"; //标准值
+		var inpTxt = $('.from-div').find('.yt-input'); // 获取所有文本框
+		$.each(inpTxt, function(i, n) {
+			numArr.push(inpTxt.eq(i).val()); // 将文本框的值添加到数组中
+		});
+		//点击取消
+		$(".clear-btn").on('click', function() {
+			numArrAfter = [];
+			var txtAfter = $('.from-div').find('.yt-input'); // 获取所有文本框
+			$.each(txtAfter, function(i, n) {
+				numArrAfter.push(txtAfter.eq(i).val()); // 将文本框的值添加到数组中
+			});
+			//获取到的两个数组进行转json格式对比，不相同则提示
+			if(JSON.stringify(numArr) != JSON.stringify(numArrAfter)) {
+				$yt_alert_Model.alertOne({
+					alertMsg: "信息尚未保存，确定要离开吗？", //提示信息  
+					leftBtnName: "确认", //左侧按钮名称,默认确定  
+					confirmFunction: function() { //点击确定按钮执行方法  
+						//alert("确定离开");
+					},
+
+				});
+			}
+		});
+	})
+</script>

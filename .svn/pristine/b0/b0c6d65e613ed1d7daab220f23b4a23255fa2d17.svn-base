@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>前端框架规整</title>
+	</head>
+	<style>
+		.click-div{
+			width: 90%;
+			background-color: rgba(217, 232, 245, 1);
+			padding-left: 10px;
+			margin-top: 10px;
+			height: 45px;
+			line-height: 45px;
+			font-weight: bold;
+		}
+	</style>
+	<body>
+		<span style="font-weight: bold;"><img src="../../resources/images/icons/notice.png">日常开发过程中，在UE原型对以下规范项没有明确要求的情况，前端开发人员必须严格遵守规范项进行开发。</span>
+			<div class="click-div">[CB01]金额字段处理</div>
+			<div class="click-div">[CB02]字段空值处理</div>
+			<div class="click-div">[CB03]数字字段处理</div>
+			<div class="click-div">[CB04]列表数据显示规则</div>
+			<div class="click-div">[CB05]弹出框表单字段初始化设置</div>
+			<div class="click-div">[CB06]表单数据未保存提示</div>
+			<div class="click-div">[CB07]功能按钮操作禁用</div>
+			<div class="click-div">[CB08]表单验证,定位滚动条位置</div>
+	</body>
+</html>

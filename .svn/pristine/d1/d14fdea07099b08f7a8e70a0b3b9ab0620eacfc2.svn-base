@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--窗口小图标-->
+		<link rel="shortcut icon" type="image/x-icon" href="./resources/images/common/web-ico.ico">
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="./resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="./resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端开发体系建设平台</title>
+	</head>
+
+	<body>
+		<div id="yt-index-head-nav">
+			<!--<img class="top-img" src="resources/images/top-img.jpg" />-->
+			<div class="head-top-nav">
+				<!--<div class="heard-logo-img"></div>-->
+				<!--<img src="./resources/images/common/web-icon.png" class="heard-top-img">-->
+				<img src="./resources/images/common/web-icon.png" style="float: left;display: inline;margin: 18px 8px 0px 0px;"/>
+				<div class="heard-top-text">
+					<div class="text-one" style="letter-spacing: 1PX;">前端开发体系建设平台</div>
+					<div class="text-two" style="font-family: cursive;">WEBDEVELOPMENT HIERARCHY CONSTRUCT PLATFORM</div>
+				</div>
+			</div>
+			<div class="nav-right-model">
+				<ul id="nav-fun-list">
+					<li>
+						<div class="common-div home-model nav-check">
+							<img class="nav-fun-icon" src="./resources/images/common/index-icon2.png" style="margin-bottom: 5px;" /><span>首页</span>
+							<input type="hidden" class="nav-fun-hid" value="index" />
+						</div>
+					</li>
+					<li class="them-li">
+						<div class="common-div change-model">
+							<img class="nav-fun-icon" src="./resources/images/common/cf1.png" style="margin-bottom: 5px;" /><span>主题</span>
+							<input type="hidden" class="nav-fun-hid" value="changeTheme" />
+						</div>
+						<div class="theme-panel">
+							<div class="theme-div" theme-code="default"><span class="def-theme"></span><span>默认</span></div>
+							 <div class="theme-div" theme-code="purple"><span class="purple-theme"></span><span>紫色系</span></div>
+							 <div class="theme-div" theme-code="red"><span class="red-theme"></span><span>红色系</span></div>
+						</div>
+					</li>
+					<!--<li>
+						<div>
+							<img class="nav-fun-icon" src="./resources/images/newPPs/common/address-list-icon1.png" /><span>通讯录</span>
+							<input type="hidden" class="nav-fun-hid" value="address" />
+						</div>
+					</li>
+					<li style="position: relative;">
+						<div>
+							<img class="nav-fun-icon" src="./resources/images/newPPs/common/msg-icon1.png" /><span>消息</span>
+							<div class="msg-num">3</div>
+							<input type="hidden" class="nav-fun-hid" value="msg" />
+						</div>
+					</li>
+					<li>
+						<div>
+							<img class="nav-fun-icon" src="resources/images/newPPs/common/set-icon1.png" /><span>设置</span>
+							<input type="hidden" class="nav-fun-hid" value="set" />
+						</div>
+					</li>-->
+					<li>
+						<div class="common-div logout-model">
+							<img class="nav-fun-icon" src="./resources/images/common/logo-out-icon1.png" /><span>注销</span>
+							<input type="hidden" class="nav-fun-hid" value="out" />
+						</div>
+					</li>
+					<li class="users-info-li">
+						<!--<div class="user-photo-bak"></div>
+						<div class="user-photo-model"><img id="user-photo" src="./resources/images/test/test-user.jpg" /></div>-->
+						<span class="logo-user-name"></span>
+					</li>
+					<li class="li-bak" style="display: none;"></li>
+				</ul>
+				<div style="clear: both;"></div>
+			</div>
+			<div id="heard-nav-bak"></div>
+		</div>
+		<div id="yt-index-bottom-nav">
+			<!--左侧菜单START-->
+			<div id="yt-index-left-nav">
+				<div id="left-menu-cnt">
+					<div id="nav-resource">
+					</div>
+				</div>
+			</div>
+			<!--左侧菜单END-->
+			<!--右侧子页面内容START-->
+			<div id="frame-right-model" class="iframe-flow" style="z-index: 1;">
+				<iframe name="right" id="rightMain" src="./homePage.html" frameborder="no" scrolling="auto" width="100%" height="100%" allowtransparency="true" style="display: block;"></iframe>
+				<!--<div id="yt-index-main-nav"></div>-->
+			</div>
+			<!--右侧子页面内容END-->
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="./resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="./resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="./resources/js/common/yt-option.js?YTVERSIONCODE=2018111901"></script>
+<script type="text/javascript" src="./resources/js/common/yt-common.min.js?YTVERSIONCODE=2018111901"></script>
+<script type="text/javascript" src="./resources/js/common/yt-frame.js?YTVERSIONCODE=2018111901"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<!--引用JS文件END-->
+<script>
+	$(function() {
+		//动态调用主系统换主题的js
+		document.getElementById("themeJs").src = $yt_themeJs_path;  
+		
+		
+		$left_menu.init();
+		var divMinHei = $(window).height() - 80;
+		$(".web-criterion-model").css("min-height", divMinHei);
+		//给左侧菜单添加高度
+		$("#left-menu-cnt").css("height", divMinHei);
+		//窗体改变
+		$(window).resize(function() {
+			//给左侧菜单添加高度
+			var divMinHei = $(window).height() - 80;
+			$("#left-menu-cnt").css("height", divMinHei);
+		});
+		//左菜单调用滚动条方法
+		$(window).load(function() {
+			$("#left-menu-cnt").mCustomScrollbar({
+				autoHideScrollbar: true,
+				theme: "square"
+			});
+		});
+	});
+	/**
+	 * 关闭窗体方法
+	 */
+	function closeWindow() {
+		window.opener = null;
+		window.open('', '_self');
+		window.close();
+	}
+</script>

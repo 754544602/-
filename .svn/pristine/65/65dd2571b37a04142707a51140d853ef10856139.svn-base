@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<div class="web-criterion-model" style="height: auto;">
+			<div class="method-text">button标签：</div>
+			<!--基础表单标签规范START-->
+			<p>1.使用条件:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>2.类样式说明:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">类名</th>
+							<th width="580px">描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div>.yt-option-btn</div></td>
+							<td><div>主按钮公用默认样式</div></td>
+						</tr>
+						<tr>
+							<td><div>.yt-assist-btn</div></td>
+							<td><div>辅助按钮公用样式</div></td>
+						</tr>
+						<tr>
+							<td><div>.yt-btn-disabled</div></td>
+							<td><div>按钮禁用效果</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>3.代码展现:</p>
+			<div class="label-code-div article_content" style="height: auto;">
+			<textarea cols="50" rows="15" name="code" class="javaScript" >
+				<!--
+					统一的表单布局div,页面已存在可不拷贝,div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+				    padding内间距对应值依次是上右下左
+				-->
+				<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+					<!--统一的表单布局table,页面已存在可不拷贝-->
+					<table class="yt-form-table" style="width: 100%;">
+						<tr>
+							<td>
+								<!--页面局部按钮START-->
+									<!--主按钮-->
+									<button class="yt-option-btn" onselectstart="return false">查询</button>
+									<!--辅助按钮-->
+									<button class="yt-assist-btn" onselectstart="return false" style="margin-left: 10px;">重置</button>
+									<!--禁用按钮-->
+								    <button class="yt-option-btn yt-btn-disabled" onselectstart="return false"  style="margin-left: 10px;">禁用</button>
+								<!--页面局部按钮END-->
+							</td>
+						</tr>
+						<tr>
+							<!--局部按钮居中显示效果td标签的align=center属性设置当前td标签的内容显示效果START-->
+							<td align="center">
+								<!--主按钮-->
+								<button class="yt-option-btn" onselectstart="return false">查询</button>
+								<!--辅助按钮-->
+								<button class="yt-assist-btn" onselectstart="return false" style="margin-left: 10px;">重置</button>
+							</td>
+							<!--局部按钮居中显示效果END-->
+						</tr>
+					</table>
+				</div>
+			</textarea>
+			</div>
+			<p>4.展示效果:</p>
+			<div style="padding-left: 10px;">
+				<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+					<table class="yt-form-table" style="width: 100%;">
+						<tr>
+							<td><label class="yt-read-text">页面局部按钮(常见显示效果)：</label></td>
+						</tr>
+						<tr>
+							<td>
+								<!--页面局部按钮START-->
+									<!--主按钮-->
+									<button class="yt-option-btn" onselectstart="return false">查询</button>
+									<!--辅助按钮-->
+									<button class="yt-assist-btn" onselectstart="return false" style="margin-left: 10px;">重置</button>
+									<!--禁用按钮-->
+								    <button class="yt-option-btn yt-btn-disabled" onselectstart="return false"  style="margin-left: 10px;">禁用</button>
+								<!--页面局部按钮END-->
+							</td>
+						</tr>
+						<tr>
+							<td><label class="yt-read-text">局部按钮居中显示效果：</label></td>
+						</tr>
+						<tr>
+							<td align="center">
+								<!--主按钮-->
+								<button class="yt-option-btn" onselectstart="return false">查询</button>
+								<!--辅助按钮-->
+								<button class="yt-assist-btn" onselectstart="return false" style="margin-left: 10px;">重置</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<label class="yt-read-text">页面底部全局功能按钮代码展示：</label>
+				<textarea cols="50" rows="15" name="code" class="javaScript" >
+				<!--页面底部全局功能按钮START-->
+				<!--
+					text-align: center;属性样式设置文本内容居中显示
+				-->
+				<div class="bot-btn-group" style="padding: 20px 0px;text-align: center;">
+					<button class="yt-overall-btn" style="margin-right: 35px;">保存</button>
+					<button class="yt-overall-assist-btn">取消</button>
+				</div>
+				<!--页面底部全局功能按钮END-->
+				</textarea>
+				<div class="bot-btn-group" style="padding: 20px 0px;text-align: center;">
+					 <button class="yt-overall-btn" style="margin-right: 35px;">保存</button>
+				     <button class="yt-overall-assist-btn">取消</button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	document.getElementById("themeJs").src = $yt_themeJs_path;  
+</script>	

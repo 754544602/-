@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" style="overflow: scroll;overflow-x: auto;">
+
+	<head>
+		<meta http-equiv="x-ua-compatible" content="ie=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<!--引用CSS文件START-->
+		<!--滚动条样式-->
+		<link rel="stylesheet" type="text/css" href="../../resources/js/scroll/jquery.mCustomScrollbar.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../resources/wordShow/Styles/SyntaxHighlighter.css">
+		<!--[if lt IE 9 ]><link rel="stylesheet" type="text/css" href="./resources/css/common/yt-common-ie.min.css"/><![endif]-->
+		<!--引用CSS文件END-->
+		<title>前端框架规整</title>
+	</head>
+
+	<body>
+		<style type="text/css">
+			table tr td {
+				padding-bottom: 20px;
+			}
+		</style>
+		<div class="web-criterion-model">
+			<div class="method-text">设置表单值setDatas()方法：</div>
+			<p>1.在html页面中,根据不同的标签赋值属性添加相对应的自定义参数</p>
+			<p>2.在Js中用需要赋值的表单对象，直接调用setDatas()，传入数据参数</p>
+			<p>代码展示如下:</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			<table class="users-tab-info">
+			   <tr>
+			   	    <td>
+			   	    	//(1)标签赋值需要用val的，给当前标签添加自定义属性data-val=""，值为js调用方法时，传输数据参数中，相对应的字段名称。
+			   	    	<label>用户名：</label><input type="text" class="yt-input users-name" data-val="userName" value=""/>
+			   	    </td>
+			   </tr>
+			   <tr>
+			   	   <td>
+			   	   	//(2).标签赋值需要用text的，给当前标签添加自定义属性data-text=""，值为js里调用方法时，传输数据参数中，相对应的字段名称。
+			   	   	<label>年龄：</label><span class="user-age" data-text="usersAge">--</span>
+			   	   </td>
+			   </tr>
+			   <tr>
+			   	   <td align="center">
+			   	   	<button class="yt-option-btn yt-common-btn set-val-btn" style="margin-right: 15px;">设置值</button>
+			   	   	<button class="yt-option-btn yt-common-btn reset-val-btn">重置</button>
+			   	   </td>
+			   </tr>
+		</table>
+		<script type="text/javascript">
+			$(function(){
+				//测试声明一个数据对象
+				var  usersObj = {
+					userName:"张三",
+					usersAge:"25",
+				};
+				//点击设置值按钮操作事件
+				$("button.set-val-btn").click(function(){
+					//调用设置值方法,传输数据对象
+					$(".users-tab-info").setDatas(usersObj);
+				});
+				//重置按钮操作事件
+				$("button.reset-val-btn").click(function(){
+					$(".users-tab-info input").val("");
+					$(".users-tab-info span").text("--");
+				});
+			});
+		</script>	
+		</textarea>
+			</div>
+			<p>展示效果：</p>
+			<div class="base-form-model" style="padding-left: 10px;">
+				<table class="users-tab-info">
+					<tr>
+						<td><label>用户名：</label><input type="text" class="yt-input users-name" data-val="userName" value="" /></td>
+					</tr>
+					<tr>
+						<td><label>年龄：</label><span class="user-age" data-text="usersAge">--</span></td>
+					</tr>
+					<tr>
+						<td align="center">
+							<button class="yt-option-btn yt-common-btn set-val-btn" style="margin-right: 15px;">设置值</button>
+							<button class="yt-option-btn yt-common-btn reset-val-btn">重置</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="method-text">获取表单字段值getDatas()方法：</div>
+			<p>1.在html中，给标签赋值需要用val的，给当前标签添加自定义属性data-val=""</p>
+			<p>2.在html中，标签赋值需要用text的，给当前标签添加自定义属性data-text=""</p>
+			<p>3.js中对象直接调用获取值，得到相对应的参数值，对象。</p>
+			<p>代码展示如下：</p>
+			<div class="label-code-div">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+			  <table class="student-info">
+	     	    <tr>
+	     	    	 <td>
+	     	    	 	 <label>学员姓名：</label>
+	     	    	 	 <input type="text" class="yt-input" value="徐来"  data-val="stuName"/>
+	     	    	 </td>
+	     	    </tr>
+	     	    <tr>
+	     	    	<td>
+	     	    	 	<label>学员年龄：</label>
+	     	    	 	<input  type="text" class="yt-input" value="24"  data-val="stuAge"/>
+	     	    	 </td>
+	     	    </tr>
+	     	    <tr>
+	     	    	<td>
+	     	    	 	<label>家庭地址：</label>
+	     	    	 	<input  type="text" class="yt-input" value="北京市海淀区中关村"  data-val="stuAddress"/>
+	     	    	 </td>
+	     	    </tr>
+	     	    <tr>
+	     	    	<td align="center"><button class="yt-option-btn yt-common-btn get-val-btn">获取数据</button></td>
+	     	    </tr>
+	     </table>
+	     <!--获取表单数据显示区域-->
+	     <div class="stu-get-val-model">
+    		<label>学员姓名：</label><span data-text="stuName">--</span><br />
+    		<label>学员年龄：</label><span data-text="stuAge">--</span><br />
+    		<label>家庭地址：</label><span data-text="stuAddress">--</span>
+		</div>
+		 <!--获取表单数据显示区域-->
+		<script type="text/javascript">
+			$(function(){
+				//点击获取值按钮操作事件
+				$("button.get-val-btn").click(function(){
+					//调用获取表单值的方法
+					var studentObj =  $(".student-info").getDatas();
+					//调用设置值方法,传输数据对象
+					$(".stu-get-val-model").setDatas(studentObj);
+				});
+			});
+		</script>
+		</textarea>
+			</div>
+			<div class="base-form-model" style="padding-left: 10px;">
+				<table class="student-info">
+					<tr>
+						<td>
+							<label>学员姓名：</label>
+							<input type="text" class="yt-input" value="徐来" data-val="stuName" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>学员年龄：</label>
+							<input type="text" class="yt-input" value="24" data-val="stuAge" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>家庭地址：</label>
+							<input type="text" class="yt-input" value="北京市海淀区中关村" data-val="stuAddress" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center"><button class="yt-option-btn yt-common-btn get-val-btn">获取数据</button></td>
+					</tr>
+				</table>
+				<!--获取表单数据显示区域-->
+				<div class="stu-get-val-model">
+					<label>学员姓名：</label><span data-text="stuName">--</span><br />
+					<label>学员年龄：</label><span data-text="stuAge">--</span><br />
+					<label>家庭地址：</label><span data-text="stuAddress">--</span>
+				</div>
+				<!--获取表单数据显示区域-->
+			</div>
+		</div>
+	</body>
+
+</html>
+<!--引用JS文件START-->
+<script type="text/javascript" src="../../resources/js/common/jquery.min.js"></script>
+<!--滚动条js-->
+<script type="text/javascript" src="../../resources/js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-option.js"></script>
+<!--引用换肤js-->
+<script type="text/javascript" id="themeJs"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-common.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common/yt-frame.min.js"></script>
+<script type="text/javascript" src="../../resources/wordShow/Scripts/shCore.js"></script>
+<!--引用JS文件END-->
+<script type="text/javascript">
+	$(function() {
+		//动态调用主系统的换主题JS
+		document.getElementById("themeJs").src = $yt_themeJs_path;  
+		
+		//测试声明一个数据对象
+		var usersObj = {
+			userName: "张三",
+			usersAge: "25",
+		};
+		//点击设置值按钮操作事件
+		$("button.set-val-btn").click(function() {
+			//调用设置值方法,传输数据对象
+			$(".users-tab-info").setDatas(usersObj);
+		});
+		//重置按钮操作事件
+		$("button.reset-val-btn").click(function() {
+			$(".users-tab-info input").val("");
+			$(".users-tab-info span").text("--");
+		});
+	});
+	$(function() {
+		//点击获取值按钮操作事件
+		$("button.get-val-btn").click(function() {
+			//调用获取表单值的方法
+			var studentObj = $(".student-info").getDatas();
+			//调用设置值方法,传输数据对象
+			$(".stu-get-val-model").setDatas(studentObj);
+		});
+	});
+</script>
