@@ -91,6 +91,141 @@
 					</tr>
 				</table>
 			</div>
+			 <div class="method-text">【textarea文本域@人员联想】</div>
+			<p>1.使用条件</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="500px">文件名</th>
+							<th width="500px">文件路径</th>
+							<th width="400px">文件描述</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td><div><a>yt-common.min.css</a></div></td>
+							<td>resources/css/common/yt-common.min.css</td>
+							<td><div>引用公用的样式文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>jquery.min.js</a></div></td>
+							<td>resources/js/common/jquery.min.js</td>
+							<td><div>引用jquery的js文件</div></td>
+						</tr>
+						<tr>
+							<td><div><a>yt-common.min.js</a></div></td>
+							<td>resources/js/common/yt-common.min.js</td>
+							<td><div>引用公用的js文件</div></td>
+						</tr>
+					</tbody>
+				</table> 
+			</div>
+			<p>3.调用方法:</p>
+			<div class="label-code-div-first" style="height: auto">
+				<table class="yt-table">
+					<thead class="yt-thead the-inner">
+						<tr>
+							<th width="200px">方法名</th>
+							<th width="200px">方法描述</th>
+							<th width="300px">参数类型</th>
+							<th width="450px">参数说明</th>
+						</tr>
+					</thead>
+					<tbody class="yt-tbody">
+						<tr>
+							<td>
+								<div>thinkTextarea()</div>
+							</td>
+							<td>初始化textarea联想数据</td>
+							<td>
+								<div>list</div>
+							</td>
+							<td>
+								<div>$yt_base.thinkTextarea([{ &nbsp;&nbsp;&nbsp;
+									<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:id,
+									<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:name,
+									<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:value
+									<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}]);</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--基础表单标签规范START-->
+			<p>3.代码展现:</p>
+			<div class="label-code-div" style="height: auto;">
+				<textarea cols="50" rows="15" name="code" class="javaScript">
+				<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+					<table class="yt-form-table" style="width: 100%;">
+						<tr>
+						   <td>
+						   	   <label class="not-null">*</label>
+						   	   <label>邮件：</label>
+						   	   <!--
+						   		1.类名yt-textarea公用的联想输入框公用样式,不可修改删除
+						   	    3.类名 name-textarea 自定义的类名,可自行修改，不可重复。
+						   	   -->
+						   	   <textarea class="yt-textarea name-textarea">
+						   </td>
+					    </tr>
+			        </table>
+			    </div>
+					
+				<script type="text/javascript">
+					//必带初始化内容
+					$(function(){
+						
+						    //创建静态数据,开发人员开发时获取动态数据
+							var list = [{
+					    		id:1,
+					    		name:'王一'
+					    	},
+					    	{
+					    		id:2,
+					    		name:'王二'
+					    	},
+					    	{
+					    		id:3,
+					    		name:'张三'
+					    	},
+					    	{
+					    		id:4,
+					    		name:'李四'
+					    	},
+					    	{
+					    		id:5,
+					    		name:'赵六'
+					    	}];
+					    	//改变list数据结构
+					    	list = list.map(function(json){//json是list的每个值
+									return {
+										id:json.id,//人员id字段
+										name:json.name,//指定在input框中最终显示的内容字段名称
+										value:json.id+'-'+json.name //联想列表显示的数据内容,字段名拼接显示
+									}
+								});
+							//调用联想输入框初始化方法,name-input自定义的联想输入框类名	
+							$('textarea.name-textarea').thinkData(list);
+					});
+				</script>
+				</textarea>
+			</div>
+			<p>4.展示效果:</p>
+		   <!--
+				div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+			    padding内间距对应值依次是上右下左
+			-->
+			<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+				<table class="yt-form-table" style="width: 100%;">
+					<tr>
+					   <td style="display: flex;">
+					   	   <label>邮件：</label>
+					   	   <textarea class="yt-textarea name-textarea"></textarea>
+					   </td>
+				    </tr>
+		        </table>
+		    </div>
 		</div>
 	</body>
 
@@ -110,5 +245,34 @@
 	$(function() {
 			//动态引用主系统的换肤js
 			document.getElementById("themeJs").src = $yt_themeJs_path; 
+			var list = [{  
+                id:1,  
+                name:'王一'  
+            },  
+            {  
+                id:2,  
+                name:'王二'  
+            },  
+            {  
+                id:3,  
+                name:'张三'  
+            },  
+            {  
+                id:4,  
+                name:'李四'  
+            },  
+            {  
+                id:5,  
+                name:'赵六'  
+            }];  
+            //改变list数据结构  
+            list = list.map(function(json){//json是list的每个值  
+                    return {  
+                        id:json.id,//人员id字段  
+                        name:json.name,//指定在input框中最终显示的内容字段名称  
+                        value:json.id+'-'+json.name //联想列表显示的数据内容,字段名拼接显示  
+                    }  
+                });
+			$('.name-textarea').thinkTextarea(list);
 	});
 </script>

@@ -22,6 +22,9 @@ var $yt_baseElement = {
 		}else{
 			$(".yt-money-input").val('0.00');
 		}
+		$(".yt-money-input").click(function(){
+			$(this).select();
+		});
 		//设定只能输入数字
 		$(".yt-money-input").keyup(function(){     
 	        var tmptxt=$(this).val();     
@@ -1496,13 +1499,13 @@ $.fn.extend({
 
 	},
 	getThinkId:function(){
-		return $(this).attr('thisId')
+		return $(this).attr('thisId');
 	},
 	setThinkVal:function(id){
 		var me = this; 
 		var datas = $(this).siblings('.yt-thinkNameList').data('data');
 		$.each(datas,function(i,n){
-			if(id==n.id){
+			if(id == n.id){
 				$(me).attr('isTrue',true);
 				$(me).attr('thisId',id);
 				$(me).val(n.name);
@@ -1518,7 +1521,7 @@ $.fn.extend({
 				$(n).siblings('.valid-font').remove();
 				$(n).wrap('<div class="yt-thinkDiv"></div>');
 				$(n).parents('.yt-thinkDiv').append(validDiv);
-				$(n).after('<div class="yt-thinkNameList"><ul></ul></div>');
+				$(n).after('<div class="yt-thinkNameList" style="width:'+$(n).width()+'px"><ul></ul></div>');
 				//人员验证默认 false
 				$(n).attr('isTrue',false);
 				$(n).attr('thisId','');
@@ -1592,20 +1595,24 @@ $.fn.extend({
 								return false;
 						}
 					})
-					return false;
-				})
+				});
 				thinkListDom.off('mousedown').on('mousedown','li',function(){
 					//点击选中数据
 					chooseData($(n))
-				})
+				});
 				//课程主题联想失去焦点
 				$(n).off('blur').blur(function(){
 					//失去焦点后隐藏弹框
 					setTimeout(function(){
 						thinkListDom.hide();
+						if($(n).attr('istrue')==='true'){
+						if(opt.backFunction){
+								opt.backFunction();
+							}
+						}
 					},100);
-				})
-				//实时监听课程主题
+				});
+				//实时监听输入框
 				$(n)[0].oninput = function(){
 					//是否匹配联想数据
 					var isTrue = assNameList($(this));
@@ -1643,7 +1650,7 @@ $.fn.extend({
 			//验证
 			var isTrue = false;
 			//获取当前input值
-			var value =$.trim($(dom).val());
+			var value = $.trim($(dom).val());
 			var a = '';
 			//如果input值为空，不验证
 			value==''?isTrue=true:'';
@@ -1656,7 +1663,7 @@ $.fn.extend({
 					if(value==n.name){
 						isTrue = true;
 					}
-					a += '<li data-value="'+n.id+'" data-name="'+n.name+'">'+v+'</li>'
+					a += '<li data-value="'+n.id+'" data-name="'+n.name+'">'+v+'</li>';
 				}
 			});
 			var b = thinkListDom.find('ul').empty();
@@ -1671,6 +1678,162 @@ $.fn.extend({
 			a==''?thinkListDom.hide():'';
 			return isTrue;
 		}
+},
+thinkTextarea:function(list){
+	if(!$('.yt-think-textareaDiv')[0]){
+		$('body').append('<div class="yt-think-textareaDiv"><input class="yt-input yt-think-input yt-thinkTextareaInput" type="text"/></div>');
+	}
+	var $think = $('.yt-think-textareaDiv');
+	var $thinkInput = $think.find('.yt-think-input');
+	var me = this ;
+	$.each($(me), function(x,y) {
+		var $ref = $(y);
+		$ref.data('thinkDatas',list);
+		$ref[0].oninput = function(e) {
+			var json = InputCaret.getOffset($(this), this.selectionStart)
+			if(InputCaret.start_range.slice(InputCaret.start_range.length-1) == "@") {
+				$thinkInput.thinkData({
+					data:list,
+					valid:false,
+					backFunction:function(){
+						$thinkInput.val('')
+					}
+				})
+				$think.show()
+				$think.css({
+					'left': json.left + 'px',
+					'top': json.top + 'px'
+				})
+				$thinkInput.focus(function(){
+					$(this).keydown(function(e){
+						if($(this).val()==''){
+							if(e.keyCode==8||e.keyCode==27){
+								$think.hide();
+								$ref.focus();
+								return false;
+							}
+						}
+					})
+				}).blur(function(){
+					if($(this).attr('istrue')=='true'){
+						$ref.focus();
+						$ref.val(InputCaret.start_range+$(this).val()+InputCaret.end_range);
+						$ref[0].selectionStart = InputCaret.start_range.length+$(this).val().length
+						$ref[0].selectionEnd = InputCaret.start_range.length+$(this).val().length
+					}
+					setTimeout(function(){
+						$thinkInput.val('');
+						$think.hide()
+					},150)
+				});
+					$thinkInput.focus();
+				
+			} else {
+				$think.hide()
+			}
+		}
+	});
+	var InputCaret = {
+		start_range:'',
+		end_range:'',
+		getOffset: function(event, pos) {
+			var $inputor, offset, position;
+			this.$inputor = event;
+			$inputor = event;
+			//		    if (oDocument.selection) {
+			//		      offset = this.getIEOffset(pos);
+			//		      offset.top += $(oWindow).scrollTop() + $inputor.scrollTop();
+			//		      offset.left += $(oWindow).scrollLeft() + $inputor.scrollLeft();
+			//		      return offset;
+			//		    } else {
+			offset = $inputor.offset();
+			position = this.getPosition(pos);
+			return offset = {
+				left: offset.left + position.left - $inputor.scrollLeft(),
+				top: offset.top + position.top - $inputor.scrollTop(),
+				height: position.height
+			};
+			//		    }
+		},
+		getPosition: function(pos) {
+			var $inputor, at_rect, end_range, format, html, mirror, start_range;
+			$inputor = this.$inputor;
+			format = function(value) {
+				value = value.replace(/<|>|`|"|&/g, '?').replace(/\r\n|\r|\n/g, "<br/>");
+				if(/firefox/i.test(navigator.userAgent)) {
+					value = value.replace(/\s/g, '&nbsp;');
+				}
+				return value;
+			};
+			if(pos === void 0) {
+				pos = this.getPos();
+			}
+			this.start_range = start_range = $inputor.val().slice(0, pos);
+			this.end_range = end_range = $inputor.val().slice(pos);
+			html = "<span style='position: relative; display: inline;'>" + format(start_range) + "</span>";
+			html += "<span id='caret' style='position: relative; display: inline;'>|</span>";
+			html += "<span style='position: relative; display: inline;'>" + format(end_range) + "</span>";
+			mirror = new Mirror($inputor);
+			return at_rect = mirror.create(html).rect();
+		},
+
+		getPos: function() {
+			//		    if (oDocument.selection) {
+			//		      return this.getIEPos();
+			//		    } else {
+			return this.domInputor.selectionStart;
+			//		    }
+		}
+	}
+	Mirror = (function() {
+		Mirror.prototype.css_attr = ["borderBottomWidth", "borderLeftWidth", "borderRightWidth", "borderTopStyle", "borderRightStyle", "borderBottomStyle", "borderLeftStyle", "borderTopWidth", "boxSizing", "fontFamily", "fontSize", "fontWeight", "height", "letterSpacing", "lineHeight", "marginBottom", "marginLeft", "marginRight", "marginTop", "outlineWidth", "overflow", "overflowX", "overflowY", "paddingBottom", "paddingLeft", "paddingRight", "paddingTop", "textAlign", "textOverflow", "textTransform", "whiteSpace", "wordBreak", "wordWrap"];
+
+		function Mirror($inputor) {
+			this.$inputor = $inputor;
+		}
+
+		Mirror.prototype.mirrorCss = function() {
+			var css,
+				_this = this;
+			css = {
+				position: 'absolute',
+				left: -9999,
+				top: 0,
+				zIndex: -20000
+			};
+			if(this.$inputor.prop('tagName') === 'TEXTAREA') {
+				this.css_attr.push('width');
+			}
+			$.each(this.css_attr, function(i, p) {
+				return css[p] = _this.$inputor.css(p);
+			});
+			return css;
+		};
+
+		Mirror.prototype.create = function(html) {
+			this.$mirror = $('<div></div>');
+			this.$mirror.css(this.mirrorCss());
+			this.$mirror.html(html);
+			this.$inputor.after(this.$mirror);
+			return this;
+		};
+
+		Mirror.prototype.rect = function() {
+			var $flag, pos, rect;
+			$flag = this.$mirror.find("#caret");
+			pos = $flag.position();
+			rect = {
+				left: pos.left,
+				top: pos.top,
+				height: $flag.height()
+			};
+			this.$mirror.remove();
+			return rect;
+		};
+
+		return Mirror;
+
+	})();
 	}
 })
 
@@ -1920,7 +2083,8 @@ Object.keys = Object.keys || function(obj) { //ecma262v5 15.2.3.14
 		//var currentUserInfo = $yt_common.user_info;
 		var ytParams = {
 			ajax: 1,
-			dynamicKey:dynamicKey
+			dynamicKey:dynamicKey,
+			systemCode:$yt_option.systemCode
 		}
 		ytParams[cookieKey] = dynamicKey;
 		var gettype = Object.prototype.toString;

@@ -294,7 +294,7 @@
 		        </table>
 		    </div>
 		    
-		    <div class="method-text">【input输入框数据联想】</div>
+		    <div class="method-text">【input联想输入框】</div>
 			<p>1.使用条件</p>
 			<div class="label-code-div-first" style="height: auto">
 				<table class="yt-table">
@@ -374,29 +374,82 @@
 			<p>3.代码展现:</p>
 			<div class="label-code-div" style="height: auto;">
 				<textarea cols="50" rows="15" name="code" class="javaScript">
-				<html>	
-					<body>
-						<label>人员：</label>
-				   		<input type="text" class="yt-input yt-think-input"  validFont="填写内容不符合填写规则。"/>  
-				   		<!--validFont验证是否匹配显示文字-->
-                    <div class="valid-font"></div>
-					</body>
-				</html>
+				<!--
+					div区域划分设置padding内间距,距离上内间距10px,右内间距0px,下内间距0px,左内间距10px
+				    padding内间距对应值依次是上右下左
+				-->
+				<div class="base-form-model" style="padding: 10px 0px 0px 10px;">
+					<table class="yt-form-table" style="width: 100%;">
+						<tr>
+						   <td>
+						   	   <label class="not-null">*</label>
+						   	   <label><span class="yt-lep5">项目经</span>理：</label>
+						   	   <!--
+						   		1.类名yt-think-input公用的联想输入框公用样式,不可修改删除
+						   	    2.validFont属性,验证提示信息文本内容,可自行修改文本内容。
+						   	    3.类名 name-input 自定义的类名,可自行修改，不可重复。
+						   	   -->
+							   <input type="text" class="yt-input yt-think-input name-input" validFont="填写内容不符合填写规则。"/>
+							   <!--验证提示信息-->
+	                   <div class="valid-font"></div>
+						   </td>
+					    </tr>
+			        </table>
+			    </div>
 					
+				<script type="text/javascript">
+					//必带初始化内容
+					$(function(){
+						
+						    //创建静态数据,开发人员开发时获取动态数据
+							var list = [{
+					    		id:1,
+					    		name:'王一'
+					    	},
+					    	{
+					    		id:2,
+					    		name:'王二'
+					    	},
+					    	{
+					    		id:3,
+					    		name:'张三'
+					    	},
+					    	{
+					    		id:4,
+					    		name:'李四'
+					    	},
+					    	{
+					    		id:5,
+					    		name:'赵六'
+					    	}];
+					    	//改变list数据结构
+					    	list = list.map(function(json){//json是list的每个值
+									return {
+										id:json.id,//人员id字段
+										name:json.name,//指定在input框中最终显示的内容字段名称
+										value:json.id+'-'+json.name //联想列表显示的数据内容,字段名拼接显示
+									}
+								});
+							//调用联想输入框初始化方法,name-input自定义的联想输入框类名	
+							$('input.name-input').thinkData({
+								valid:true,//是否支持匹配验证 
+								data:list//传入联想的数据
+							});
+					});
 					
+					/******************************以下示例代码为开发人员实际开发实现业务提供参考***********************************/
 					
-				<!--转换数据结构-->
-				data = data.map(function(json){
-						return {
-							id:json.id,
-							name:json.name,
-							value:json.id+'-'+json.name
-						}
-					})
-					$('.yt-think-input').thinkData({
-						valid:true,//是否支持匹配验证 
-						data:data
-					})
+					//获取选中的数据的ID值(新增操作调用接口获取值使用)
+					function getThinkId(){
+						$('.get-test-sel-val').text($('input.name-input').getThinkId());
+					}
+					//设置某个值选中(修改操作时赋值使用)
+					function setThinkVal(){
+						$('input.name-input').setThinkVal(4);
+					}
+				</script>
+			
+		    	
 				</textarea>
 			</div>
 			<p>4.展示效果:</p>
@@ -408,13 +461,18 @@
 				<table class="yt-form-table" style="width: 100%;">
 					<tr>
 					   <td>
-					   	   <label>人员：</label>
-						   <input type="text" class="yt-input yt-think-input"  validFont="填写内容不符合填写规则。"/><label style="margin: 5px 0px 0px 10px;font-weight: bold;">选中的id是:</label><span class="get-test-sel-val" style="font-size: 16px;color:red;"></span>
+					   	   <label class="not-null">*</label>
+					   	   <label><span class="yt-lep5">项目经</span>理：</label>
+					   	   <!--类名yt-think-input公用的联想输入框公用样式,不可修改删除-->
+						   <input type="text" class="yt-input yt-think-input name-input" validFont="填写内容不符合填写规则。"/>
                         <div class="valid-font"></div>
 					   </td>
 				    </tr>
 		        </table>
-		        <div class="bot-fun-btn" style="padding:20px 0px;">
+		        <div>
+		        	<label style="margin: 5px 0px 0px 10px;font-weight: bold;">选中的id是:</label><span class="get-test-sel-val" style="font-size: 16px;color:red;"></span>
+		        </div>
+		        <div class="bot-fun-btn" style="padding:20px 0px;text-align: left;">
 					<button class="yt-option-btn yt-common-btn" onclick="getThinkId()">获取选中的id</button>
 					<button class="yt-option-btn yt-common-btn" onclick="setThinkVal()">设置选中某个值</button>
 				</div>
@@ -436,7 +494,7 @@
 <!--引用JS文件END-->
 <script type="text/javascript">
 	document.getElementById("themeJs").src = $yt_themeJs_path;  
-	var data = [{
+	var list = [{
     		id:1,
     		name:'王一'
     	},
@@ -456,21 +514,22 @@
     		id:5,
     		name:'赵六'
     	}]
-    	data = data.map(function(json){
+    	list = list.map(function(json){
 				return {
 					id:json.id,
 					name:json.name,
 					value:json.id+'-'+json.name
 				}
-			})
-		$('.yt-think-input').thinkData({
+			});
+		$('input.name-input').thinkData({
 			valid:true,//是否支持匹配验证 
-			data:data
-		})
+			data:list
+		});
+		
 		function getThinkId(){
-			$('.get-test-sel-val').text($('.yt-think-input').getThinkId())
+			$('.get-test-sel-val').text($('input.name-input').getThinkId())
 		}
 		function setThinkVal(){
-			$('.yt-think-input').setThinkVal(4);
+			$('input.name-input').setThinkVal(4);
 		}
 </script>

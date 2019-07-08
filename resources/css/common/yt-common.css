@@ -4066,7 +4066,56 @@ label.yt-checkbox-half {
 .tree-collapsed {
 	background: url('../../images/tree/tree-collapsed-icon.png') no-repeat 0 6px;
 }
-
+/**
+ * 局部文件图标
+ */
+.yt-area-tree .tree-file{
+	background: url('../../images/tree/tree-file-icon.png') no-repeat 0 0px;
+	vertical-align: middle;
+}
+/**
+ * 文件夹打开图标
+ */
+.yt-area-tree .tree-folder-open{
+	background: url('../../js/jquery-easyui-1.5.1/themes/default/images/folderopen.gif') no-repeat -1px -1px;
+    vertical-align: middle;
+}
+/**
+ * 文件夹关闭图标
+ */
+.yt-area-tree .tree-folder {
+	background-position: -1px -1px;
+    vertical-align: middle;
+}
+/**
+ * 展开加号图标
+ */
+.yt-area-tree .tree-expanded {
+    background: url('../../js/jquery-easyui-1.5.1/themes/default/images/minus.gif') no-repeat 0px 3px;
+    vertical-align: middle;
+}
+/**
+ * 关闭减号图标
+ */
+.yt-area-tree .tree-collapsed {
+    background: url('../../js/jquery-easyui-1.5.1/themes/default/images/plus.gif') no-repeat 0px 3px;
+    vertical-align: middle;
+}
+/**
+ * 局部树形样式复选框
+ */
+.yt-area-tree .tree-checkbox0 {
+    background: url('../../js/jquery-easyui-1.5.1/themes/default/images/unchecked.png') no-repeat 5px 11px;
+    height: 22px;
+}
+.yt-area-tree .tree-checkbox1 {
+    background: url('../../js/jquery-easyui-1.5.1/themes/default/images/checked.png') no-repeat 5px 11px;
+    height: 22px;
+}
+.yt-area-tree .tree-checkbox2 {
+    background: url('../../js/jquery-easyui-1.5.1/themes/default/images/check-half.png') no-repeat 5px 11px;
+    height: 22px;
+}
 .menu-line {
 	display: none;
 }
@@ -4109,6 +4158,11 @@ label.yt-checkbox-half {
 	background: #e5e5e5;
 	border-color: #e5e5e5;
 }
+/**
+ * 
+ * 联想输入框样式
+ * 
+ */
 .yt-thinkDiv{
 	display: inline-block;
 	position: relative;
@@ -4135,5 +4189,20 @@ label.yt-checkbox-half {
 	white-space: nowrap;
 }
 .yt-thinkNameList .hoverAction{
-		background-color: #EEEEEE;
+	background-color: #EEEEEE;
 }
+.yt-think-textareaDiv{
+	background: #fff;
+	position: absolute;
+	padding: 5px;
+	border: 1px solid #DFE6F3;
+	box-shadow: 0 0 3px #C1C1C1;
+	left: 50px;top: 50px;
+	display: none;
+}
+.yt-think-textareaDiv .yt-thinkNameList{
+    border: none;
+    box-shadow: none;
+    position: inherit;
+}
+	

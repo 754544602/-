@@ -3461,3 +3461,36 @@ label.yt-checkbox-half {
 
 
 /*上传模板弹出框样式END*/
+/**
+ * 
+ * 联想输入框样式
+ * 
+ */
+.yt-thinkDiv{
+	display: inline-block;
+	position: relative;
+}
+.yt-thinkNameList{
+	width:205px;
+	max-height: 150px;
+	overflow: auto;
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #DFE6F3;	
+	box-shadow:0 0 5px 1px #eeeeee;
+	position: absolute;
+	z-index: 100;
+	display: none;
+}
+.yt-thinkNameList li{
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.yt-thinkNameList .hoverAction{
+		background-color: #EEEEEE;
+}

@@ -98,12 +98,27 @@
 							$("#"+opt.idName+" .uedit-font-number").text('请不要超过'+opt.fontLen+'个字').css('color', 'red');
 							//添加红色边框
 							$("#"+opt.idName+" .edui-editor").addClass("valid-hint");
+							$("#"+opt.idName).next().text('');
 						} else {
 							$("#"+opt.idName+" .uedit-font-number").text('已输入' + txt.length + '个字，您还可以输入' + (parseInt(opt.fontLen) - txt.length) + '个字').css('color', '#999');
 							//清除红色边框
 							$("#"+opt.idName+" .edui-editor").removeClass("valid-hint");
+							$("#"+opt.idName).next().text('');
 						}
 						//判断是否是必填字段
+						if(opt.validMsg !=""){
+							if(txt.length > 0) {
+								//清除红色边框
+								$("#"+opt.idName+" .edui-editor").removeClass("valid-hint");
+								$("#"+opt.idName).next().text('');
+							}
+						}
+					});
+					//文本编辑器失去焦点事件
+					ue.addListener("blur",function(){
+						var txt = this.getContent();
+						txt = txt.replace(/<[^>]+>/g, "");
+		                //判断是否是必填字段
 						if(opt.validMsg !=""){
 							if(txt.length > 0) {
 								//清除红色边框
@@ -115,7 +130,7 @@
 								$("#"+opt.idName).next().text(opt.validMsg);
 							}
 						}
-					});
+		            });
 				}
 			}else{
 				var ueTwo = UE.getEditor(opt.idName, {
@@ -230,12 +245,27 @@
 							$("#"+opt.idName+" .uedit-font-number").text('请不要超过'+opt.fontLen+'个字').css('color', 'red');
 							//添加红色边框
 							$("#"+opt.idName+" .edui-editor").addClass("valid-hint");
+							$("#"+opt.idName).next().text('');
 						} else {
 							$("#"+opt.idName+" .uedit-font-number").text('已输入' + txt.length + '个字，您还可以输入' + (parseInt(opt.fontLen) - txt.length) + '个字').css('color', '#999');
 							//清除红色边框
 							$("#"+opt.idName+" .edui-editor").removeClass("valid-hint");
+							$("#"+opt.idName).next().text('');
 						}
 						//判断是否是必填字段
+						if(opt.validMsg !=""){
+							if(txt.length > 0) {
+								//清除红色边框
+								$("#"+opt.idName+" .edui-editor").removeClass("valid-hint");
+								$("#"+opt.idName).next().text('');
+							}
+						}
+					});
+					//文本编辑器失去焦点事件
+					ueTwo.addListener("blur",function(){
+						var txt = this.getContent();
+						txt = txt.replace(/<[^>]+>/g, "");
+		                //判断是否是必填字段
 						if(opt.validMsg !=""){
 							if(txt.length > 0) {
 								//清除红色边框
@@ -247,7 +277,7 @@
 								$("#"+opt.idName).next().text(opt.validMsg);
 							}
 						}
-					});
+		            });
 				}
 			}
 		}

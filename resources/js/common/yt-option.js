@@ -31,5 +31,6 @@ var $yt_option = {
 	menu_path: 'http://192.168.1.63:8020/webCriterion/index/getChildMenusByUserToTreeMap',
 	//menu_path: 'http://192.168.1.63:5656/coso/index/getChildMenusByUserToTreeMap',
 	parent_action_path: $yt_themeCss_path + 'parentAction.html',
+	systemCode:'dF24N8Oz1B',//系统code
 	is_origin: true
 }
